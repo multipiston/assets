@@ -12,6 +12,7 @@
 A catalog listing is optional. Choose an existing entry, fill in a recipe or describe your own asset. Use the supplied ref in your intent and include the definition in asset_definitions.
 
 - [Latest](/catalog/latest.json): the current catalog version and download address — start here.
+- Signature: /catalog/catalog.json.minisig, the minisign signature of catalog.json; Multipiston public key RWQAC4QC/Z9aCZXzn3uizdnX/J3kEAEzAWU+UjCjVtQ9znjCn2OeGTj3.
 - [Index](/catalog/index.json): sections → families → their recipes, the units and the address of every file.
 - [Catalog](/catalog/catalog.json): every entry (ref, definition, English name), recipe, family, network and unit in one file. Load it with loadCatalog from the SDK. Earlier versions: /catalog/v<N>/catalog.json. Schema: /catalog/catalog.schema.json.
 - [Entries](/catalog/entries.json): one line per entry; /catalog/entries/<id>.json — one entry whole.

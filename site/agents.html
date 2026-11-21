@@ -56,6 +56,7 @@ MULTIPISTON_API_KEY=mpk1.…</code></pre>
 <p>Amounts are positive whole numbers of the definition's <code>unit</code>, written as strings without leading zeros. For example, 1.5 kg with <code>unit: "g"</code> is <code>"1500"</code>. The largest amount is <code>340282366920938463463374607431768211455</code>. A <code>Unique</code> asset always has amount <code>"1"</code>.</p>
 <h3 id="catalog">Use the catalog</h3>
 <p>Browse <a href="/catalog/index.html">the catalog</a> or load <a href="/catalog/catalog.json">catalog.json</a> with the SDK. The SDK checks the entries and recipes it loads. Stop if loading fails or <code>dropped</code> is not empty.</p>
+<p>Every release is signed. Check <code>catalog.json</code> against <code>/catalog/catalog.json.minisig</code> with the Multipiston public key <code>RWQAC4QC/Z9aCZXzn3uizdnX/J3kEAEzAWU+UjCjVtQ9znjCn2OeGTj3</code>: <code>minisign -Vm catalog.json -P RWQAC4QC/Z9aCZXzn3uizdnX/J3kEAEzAWU+UjCjVtQ9znjCn2OeGTj3</code>.</p>
 <pre><code class="language-js">import { loadCatalog } from "@multipiston/catalog";
 
 const response = await fetch("https://&lt;site&gt;/catalog/catalog.json");

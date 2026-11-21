@@ -5,7 +5,6 @@
 # repository). Variables: SITE_REPOSITORY (owner/name), SITE_PUBLIC_DIR (e.g. frontend/public),
 # SITE_ENGINE_DIR (e.g. frontend/src/vendor/multipiston-catalog), SITE_ORIGIN (e.g.
 # https://multipiston.example — the absolute addresses of the manual's sitemap).
-# When the repository is created, pin each action to a commit SHA.
 name: release
 on:
   push:
@@ -17,10 +16,10 @@ jobs:
     runs-on: ubuntu-24.04
     environment: release
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
       - run: npm ci
@@ -66,6 +65,7 @@ jobs:
             dist/catalog/catalog.json dist/catalog/catalog.json.sha256 dist/catalog/catalog.json.minisig \
             --title "Catalog $GITHUB_REF_NAME" --notes-from-tag
       - name: Pull request into the site
+        if: ${{ vars.SITE_REPOSITORY != '' }}
         env:
           GH_TOKEN: ${{ secrets.SITE_TOKEN }}
           SITE: ${{ vars.SITE_REPOSITORY }}

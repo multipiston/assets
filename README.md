@@ -56,7 +56,7 @@ Earlier versions and icons are never deleted: an old link keeps working.
 
 ## How to check a release
 
-1. The signature `catalog.json.minisig` — with the Multipiston public key: it is given here and in `/agents.html` (the owner creates the key; until then releases are unsigned).
+1. The signature `catalog.json.minisig` — with the Multipiston public key `RWQAC4QC/Z9aCZXzn3uizdnX/J3kEAEzAWU+UjCjVtQ9znjCn2OeGTj3` (minisign; also given in `/agents.html` and `/llms.txt`): `minisign -Vm catalog.json -P RWQAC4QC/Z9aCZXzn3uizdnX/J3kEAEzAWU+UjCjVtQ9znjCn2OeGTj3`.
 2. `version` is not lower than the one already known.
 3. Every `ref` is recomputed from its `definition` (`engine/definition.js`).
 4. Repeatability: `node scripts/build.mjs <dir>` on the tag gives the same bytes.
