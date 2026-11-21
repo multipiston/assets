@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.wrapped",
+  "symbol": "WETH",
+  "aliases": [],
+  "name": "Wrapped Ether",
+  "decimals": 18,
+  "icon": "icons/weth.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:62fb3eaa255ad50f6cbd4dbd700d58b024558d48a9d26060371ed4e694f30cc8"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: the WETH9 contract (no issuer: an ownerless wrapper of ETH), https://ethereum.org/en/wrapped-eth/ (Ethereum), retrieved 2026-11-01: No issuer page exists. ethereum.org/en/wrapped-eth lists 'Ethereum Mainnet' linking to https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 and says 'Besides the canonical implementat. Decimals 18: the issuer, and decimals() on the chain. Icon drawn for this catalog (no open icon of the token)."
+}

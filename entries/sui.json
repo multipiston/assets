@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "SUI",
+  "aliases": [],
+  "name": "Sui",
+  "decimals": 9,
+  "icon": "icons/sui.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:f72c8a7d919f52b8726b17c77f0ca889c61164b100072a2c87f3961da8d7d9ea"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "sui:mainnet/slip44:784",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces sui/caip2.md (Sui). Decimals 9: https://docs.sui.io/references/framework/sui_sui/sui. Coin type 784: SLIP-0044 (SUI). Icon: web3icons 4.0.58 (MIT), tokens/branded/SUI.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

@@ -1,0 +1,43 @@
+{
+  "family": "logistics.air",
+  "name": "Air freight between two airports' cities",
+  "symbol": "FREIGHT",
+  "icon": "icons/recipes/plane.svg",
+  "kind": "Fungible",
+  "source": "spec:unlocode-lane",
+  "unit": "kg",
+  "decimals": 0,
+  "display": "kg",
+  "instrument": "air",
+  "params": [
+    {
+      "id": "from",
+      "name": "From (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "origin",
+      "example": "CNSHA"
+    },
+    {
+      "id": "to",
+      "name": "To (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "destination",
+      "example": "DEFRA"
+    },
+    {
+      "id": "week",
+      "name": "Departure week",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "week"
+      ],
+      "to": "window",
+      "example": "2026-W49"
+    }
+  ],
+  "note": "Carriage of general cargo between two places named by UN/LOCODE, departing in an ISO week (UTC); the amount is chargeable weight."
+}

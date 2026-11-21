@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "PAB",
+  "aliases": [],
+  "name": "Panamanian Balboa",
+  "decimals": 2,
+  "icon": "icons/pab.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:dc963b9d17fc1e39cf8cf2addd9c12c8f1fef5e4db8349758ed4c175cfbdf1bb"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "PAB",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 PAB (Balboa), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/pa.svg, unmodified."
+}

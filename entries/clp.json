@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CLP",
+  "aliases": [],
+  "name": "Chilean Peso",
+  "decimals": 0,
+  "icon": "icons/clp.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:b9d4ea9226c1a10c5e27a3f08e78814ea4e410ea93cb87b1f90582a4b62345ed"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CLP",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CLP (Chilean Peso), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/cl.svg, unmodified."
+}

@@ -1,0 +1,98 @@
+{
+  "family": "energy.power",
+  "name": "Electricity at a US hub (MISO, Eastern Standard Time)",
+  "symbol": "POWER",
+  "icon": "icons/recipes/power.svg",
+  "kind": "Fungible",
+  "source": "spec:us-power-hub-est",
+  "unit": "kWh",
+  "decimals": 3,
+  "display": "MWh",
+  "instrument": "{hub}",
+  "params": [
+    {
+      "id": "hub",
+      "name": "Hub",
+      "type": "choice",
+      "options": [
+        {
+          "id": "miso-indiana-hub",
+          "name": "MISO Indiana Hub",
+          "short": "Indiana Hub"
+        },
+        {
+          "id": "miso-illinois-hub",
+          "name": "MISO Illinois Hub",
+          "short": "Illinois Hub"
+        },
+        {
+          "id": "miso-michigan-hub",
+          "name": "MISO Michigan Hub",
+          "short": "Michigan Hub"
+        },
+        {
+          "id": "miso-minnesota-hub",
+          "name": "MISO Minnesota Hub",
+          "short": "Minn Hub"
+        },
+        {
+          "id": "miso-arkansas-hub",
+          "name": "MISO Arkansas Hub",
+          "short": "Arkansas Hub"
+        },
+        {
+          "id": "miso-louisiana-hub",
+          "name": "MISO Louisiana Hub",
+          "short": "Louisiana Hub"
+        },
+        {
+          "id": "miso-texas-hub",
+          "name": "MISO Texas Hub",
+          "short": "MISO Texas Hub"
+        },
+        {
+          "id": "miso-mississippi-hub",
+          "name": "MISO Mississippi Hub",
+          "short": "MS Hub"
+        }
+      ],
+      "to": "instrument",
+      "example": "miso-indiana-hub"
+    },
+    {
+      "id": "period",
+      "name": "Delivery period",
+      "type": "period",
+      "clock": "EST",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    },
+    {
+      "id": "profile",
+      "name": "Load profile",
+      "type": "choice",
+      "options": [
+        {
+          "id": "base",
+          "name": "Baseload (7x24)"
+        },
+        {
+          "id": "peak",
+          "name": "Peak (5x16, hours ending 08-23, Monday to Friday)"
+        }
+      ],
+      "to": "term:profile",
+      "example": "base"
+    }
+  ],
+  "note": "Delivery at a US trading hub as its ISO names it, the day in the hub's market time (MISO keeps Eastern Standard Time all year). The amount in kWh, shown in MWh. Sources: https://www.ice.com/api/productguide/spec/6590460/pdf https://opensource.gridstatus.io/en/api-refactor/autoapi/gridstatus/miso/index.html"
+}

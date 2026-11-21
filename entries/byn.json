@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BYN",
+  "aliases": [],
+  "name": "Belarusian Ruble",
+  "decimals": 2,
+  "icon": "icons/byn.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:33ef70ae2ff788f38a93eb76b8e7b27cbd23fbd287685c79d72459425bd3ede2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BYN",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BYN (Belarusian Ruble), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/by.svg, unmodified."
+}

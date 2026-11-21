@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BDT",
+  "aliases": [],
+  "name": "Bangladeshi Taka",
+  "decimals": 2,
+  "icon": "icons/bdt.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:e327a1f848c7c218fc69b791a0a01dfb274243801b61c1d808c6fc6cddac082c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BDT",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BDT (Taka), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/bd.svg, unmodified."
+}

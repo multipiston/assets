@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "XPF",
+  "aliases": [],
+  "name": "CFP Franc",
+  "decimals": 0,
+  "icon": "icons/xpf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:d691b306d41a7efd931369afc87ffe7361e84774620906a61679f1b3904a491a"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "XPF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 XPF (CFP Franc), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon drawn for this catalog: the franc sign."
+}

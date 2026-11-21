@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "BNB",
+  "aliases": [],
+  "name": "BNB",
+  "decimals": 18,
+  "icon": "icons/bnb.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:4b284956a2c1bd56d1e501cd2cac339654420a69426d761bd9e6ed4b7b5488f5"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:56/slip44:714",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 56: ethereum-lists/chains (chainid.network, 2026-11-01), native BNB, 18 decimals; 1 atom = 10^-18 BNB. Coin type 714: SLIP-0044 (BNB). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/bnb.svg, unmodified."
+}

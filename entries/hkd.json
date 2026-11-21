@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "HKD",
+  "aliases": [],
+  "name": "Hong Kong Dollar",
+  "decimals": 2,
+  "icon": "icons/hkd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:f80ccb582f6eca6a32d17be6c4b2744b391768be4748953e2faf4ad3e1031eb0"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "HKD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 HKD (Hong Kong Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/hk.svg, unmodified."
+}

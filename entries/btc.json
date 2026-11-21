@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "BTC",
+  "aliases": [],
+  "name": "Bitcoin",
+  "decimals": 8,
+  "icon": "icons/btc.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:7c9a3a668f148301d2bc4bd5fd93d09676a671968b1dbe2169ecfae5b23c71a3"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "bip122:000000000019d6689c085ae165831e93/slip44:0",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces bip122/caip2.md (Bitcoin mainnet); coin type 0: SLIP-0044. 1 atom = 1 satoshi. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/btc.svg, unmodified."
+}

@@ -1,0 +1,29 @@
+{
+  "family": "energy.gas-supply",
+  "name": "Gas at Henry Hub",
+  "symbol": "GAS",
+  "icon": "icons/recipes/gas.svg",
+  "kind": "Fungible",
+  "source": "spec:henry-hub",
+  "unit": "MMBtu",
+  "instrument": "henry-hub",
+  "params": [
+    {
+      "id": "period",
+      "name": "Gas days",
+      "type": "period",
+      "clock": "CT",
+      "day_start": 9,
+      "grains": [
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2027-01"
+    }
+  ],
+  "note": "Gas delivered at Henry Hub (Sabine Pipe Line, Erath, Louisiana), gas days of 09:00-09:00 Central time. The amount in MMBtu. Sources: https://cmegroup.com/trading/energy/natural-gas/natural-gas_contractSpecs_futures.html"
+}

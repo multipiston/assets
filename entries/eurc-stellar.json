@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "EURC",
+  "aliases": [],
+  "name": "EURC",
+  "decimals": 7,
+  "icon": "icons/eurc-stellar.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:bfb738815fca5ee23ed24f607f6dc1679fcb8a814ec672b9ee349239767a001f"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "stellar:pubnet/asset:EURC-GDHU6WRG4IEQXM5NZ4BMPKOXHW76MZM4Y2IEMFDVXBSDP6SJY4ITNPP2",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/eurc-contract-addresses (Stellar), retrieved 2026-11-01. Decimals 7: Stellar amounts have 7 decimal places (https://developers.stellar.org/docs/learn/fundamentals/stellar-data-structures/assets). Icon: web3icons 4.0.58 (MIT), tokens/branded/EURC.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

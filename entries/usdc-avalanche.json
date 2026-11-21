@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDC",
+  "aliases": [],
+  "name": "USD Coin",
+  "decimals": 6,
+  "icon": "icons/usdc-avalanche.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:f4638bd5f0e56c978c9e648a9f176bb3bedba983b273fa2fbe4263528fdb833e"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:43114/erc20:0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/usdc-contract-addresses (Avalanche C-Chain), retrieved 2026-11-01. Decimals 6: the issuer, and decimals() via api.avax.network. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdc.svg, unmodified."
+}

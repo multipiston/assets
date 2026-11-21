@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "DAI",
+  "aliases": [],
+  "name": "Dai",
+  "decimals": 18,
+  "icon": "icons/dai.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:29133b66ce5324a0e134c6cb8035b93186fb5f3debb7308ef2758418ca10b78a"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0x6b175474e89094c44da98b954eedeac495271d0f",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Contract: MCD_DAI in the Sky (Maker) chainlog, https://chainlog.skyeco.com/api/mainnet/active.json; id verbatim in namespaces eip155/caip19.md; decimals() = 18. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/dai.svg, unmodified."
+}

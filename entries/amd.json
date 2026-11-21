@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "AMD",
+  "aliases": [],
+  "name": "Armenian Dram",
+  "decimals": 2,
+  "icon": "icons/amd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:f437bd8b5a53474774f9fbb89d4d2cf9e5d1b0e61187e889a64bd3cf7071f9a0"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "AMD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 AMD (Armenian Dram), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/am.svg, unmodified."
+}

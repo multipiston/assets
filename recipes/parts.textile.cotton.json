@@ -1,0 +1,47 @@
+{
+  "family": "parts.textile",
+  "name": "Raw cotton of a standard grade",
+  "symbol": "COTTON",
+  "icon": "icons/recipes/cotton.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "ice-cotton-no2-slm",
+          "name": "Upland cotton, Strict Low Middling 1-1/16 inch (ICE Cotton No.",
+          "short": "CT SLM",
+          "unit": "lb"
+        }
+      ],
+      "to": "instrument",
+      "example": "ice-cotton-no2-slm"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.ice.com/publicdocs/rulebooks/futures_us/10_Cotton.pdf"
+}

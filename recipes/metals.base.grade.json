@@ -1,0 +1,135 @@
+{
+  "family": "metals.base",
+  "name": "A base metal of an exchange-deliverable grade",
+  "symbol": "METAL",
+  "icon": "icons/recipes/base-metal.svg",
+  "kind": "Fungible",
+  "source": "spec:metal-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade",
+      "type": "choice",
+      "options": [
+        {
+          "id": "lme-copper-grade-a",
+          "name": "Copper Grade A cathode (LME)",
+          "short": "Cu Grade A",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "comex-hg-copper-grade-1",
+          "name": "Copper Grade 1 electrolytic cathode (COMEX HG)",
+          "short": "COMEX Cu",
+          "unit": "lb"
+        },
+        {
+          "id": "lme-primary-aluminium-p1020a",
+          "name": "High Grade Primary Aluminium (LME)",
+          "short": "Al P1020A",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-aluminium-alloy",
+          "name": "Aluminium Alloy (LME)",
+          "short": "Al alloy",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-nasaac",
+          "name": "North American Special Aluminium Alloy (LME NASAAC)",
+          "short": "NASAAC",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-zinc-shg",
+          "name": "Special High Grade Zinc (LME)",
+          "short": "Zn SHG",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-lead",
+          "name": "Standard Lead (LME)",
+          "short": "Pb",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-nickel-primary",
+          "name": "Primary Nickel (LME)",
+          "short": "Ni",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-tin",
+          "name": "Tin (LME)",
+          "short": "Sn",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-cobalt",
+          "name": "Cobalt (LME)",
+          "short": "Co",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-roasted-molybdenum-concentrate",
+          "name": "Roasted Molybdenum Concentrate (LME)",
+          "short": "Mo RMC",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "lme-steel-billet",
+          "name": "Steel Billet (LME)",
+          "short": "Billet",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        }
+      ],
+      "to": "instrument",
+      "example": "lme-copper-grade-a"
+    },
+    {
+      "id": "place",
+      "name": "Warehouse location (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "NLRTM"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A physical grade as the exchange rulebook defines it (brand on the approved list, purity, shape), in a warehouse at a place named by UN/LOCODE, in a month (UTC). Cash-settled price indexes are not grades and are not here. Sources: https://www.lme.com/-/media/files/physical-services/warehousing/physical-markets-reform-2026/appendix-11-lme-rulebook-part-6--clean.pdf https://www.cmegroup.com/rulebook/COMEX/1a/111.pdf"
+}

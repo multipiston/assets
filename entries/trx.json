@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "TRX",
+  "aliases": [],
+  "name": "Tron",
+  "decimals": 6,
+  "icon": "icons/trx.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:ffcb1ddb897cfeb414dd46138551b27a617d0451ca9fddf394f49df37382c5c2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "tron:728126428/slip44:195",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces tron/caip2.md (mainnet, decimal form); coin type 195: SLIP-0044. 1 atom = 1 sun. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/trx.svg, unmodified."
+}

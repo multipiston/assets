@@ -1,0 +1,155 @@
+{
+  "family": "eco.allowance",
+  "name": "A compliance emission allowance",
+  "symbol": "ALLOW",
+  "icon": "icons/recipes/allowance.svg",
+  "kind": "Fungible",
+  "source": "registry:ets",
+  "unit": "allowance",
+  "instrument": "{scheme}",
+  "params": [
+    {
+      "id": "scheme",
+      "name": "Scheme and unit",
+      "type": "choice",
+      "options": [
+        {
+          "id": "EUA",
+          "name": "EU Emissions Trading System general allowance (EU Allowance)",
+          "short": "EUA"
+        },
+        {
+          "id": "EUAA",
+          "name": "EU Aviation Allowance",
+          "short": "EUAA"
+        },
+        {
+          "id": "eu-ets2",
+          "name": "EU ETS2 allowance (buildings, road transport and additional",
+          "short": "ETS2 / EUA2"
+        },
+        {
+          "id": "UKA",
+          "name": "UK Emissions Trading Scheme allowance (UK Allowance)",
+          "short": "UKA"
+        },
+        {
+          "id": "CHU",
+          "name": "Swiss ETS emission allowance (CHU; aviation: CHUA)",
+          "short": "CHU"
+        },
+        {
+          "id": "CCA",
+          "name": "California Cap-and-Invest Program allowance (California Carbon",
+          "short": "CCA"
+        },
+        {
+          "id": "wa-cap-and-invest",
+          "name": "Washington Cap-and-Invest Program allowance",
+          "short": "WCA"
+        },
+        {
+          "id": "qc-spede",
+          "name": "Québec Cap-and-Trade System (SPEDE) emission unit",
+          "short": "QC (WCI)"
+        },
+        {
+          "id": "rggi",
+          "name": "Regional Greenhouse Gas Initiative CO2 allowance",
+          "short": "RGGI"
+        },
+        {
+          "id": "NZU",
+          "name": "New Zealand Emissions Trading Scheme unit (New Zealand Unit)",
+          "short": "NZU"
+        },
+        {
+          "id": "KAU",
+          "name": "Korea Emissions Trading Scheme allowance (Korean Allowance Unit)",
+          "short": "KAU"
+        },
+        {
+          "id": "CEA",
+          "name": "China National ETS Chinese Emission Allowance",
+          "short": "CEA"
+        },
+        {
+          "id": "kz-ets",
+          "name": "Kazakhstan Emissions Trading System allowance",
+          "short": "KAZ ETS"
+        },
+        {
+          "id": "me-ets",
+          "name": "Montenegro Emissions Trading System allowance",
+          "short": "ME ETS"
+        },
+        {
+          "id": "PTBAE-PU",
+          "name": "Indonesia Economic Value of Carbon (NEK) power-sector ETS",
+          "short": "PTBAE-PU"
+        },
+        {
+          "id": "jp-gx-ets",
+          "name": "Japan GX-ETS (mandatory phase)",
+          "short": "GX-ETS"
+        },
+        {
+          "id": "jp-tokyo-ctp",
+          "name": "Tokyo Cap-and-Trade Program compliance unit",
+          "short": "Tokyo C&T"
+        },
+        {
+          "id": "mx-ets",
+          "name": "Mexican Emissions Trading System (pilot)",
+          "short": "MX ETS"
+        },
+        {
+          "id": "de-nehs",
+          "name": "Germany national fuel emissions trading (nEHS/BEHG) national",
+          "short": "nEZ"
+        },
+        {
+          "id": "at-nehs",
+          "name": "Austria national emissions certificate trading (NEHG 2022)",
+          "short": "AT NEHG"
+        },
+        {
+          "id": "ma-310cmr774",
+          "name": "Massachusetts 310 CMR 7.74 power-plant CO2 allowance",
+          "short": "MA 7.74"
+        },
+        {
+          "id": "in-ccts",
+          "name": "India Carbon Credit Trading Scheme (compliance mechanism) Carbon",
+          "short": "CCC"
+        },
+        {
+          "id": "VN2025",
+          "name": "Vietnam pilot ETS allowance",
+          "short": "VN2025"
+        },
+        {
+          "id": "ca-obps",
+          "name": "Canada federal Output-Based Pricing System surplus credit",
+          "short": "OBPS SC"
+        }
+      ],
+      "to": "instrument",
+      "example": "EUA"
+    },
+    {
+      "id": "vintage",
+      "name": "Vintage year",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "year"
+      ],
+      "to": "period",
+      "example": "2026"
+    }
+  ],
+  "regulated": true,
+  "note": "An allowance of a compliance emissions trading system (one allowance = one tonne CO2e, or as the scheme defines it), of a vintage year, held in the scheme's registry. Sources: https://eur-lex.europa.eu/eli/dir/2003/87/2021-01-01/eng/pdf https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets/union-registry_en https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets/ets2-buildings-road-transport-and-additional-sectors_en https://legislation.gov.uk/uksi/2020/1265/article/18/data.html https://icapcarbonaction.com/en/ets/swiss-ets https://icapcarbonaction.com/en/ets/usa-california-cap-and-trade-program"
+}

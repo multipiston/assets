@@ -1,0 +1,21 @@
+{
+  "family": "machines.container",
+  "name": "One container by ISO 6346 number",
+  "symbol": "BOX",
+  "icon": "icons/recipes/container.svg",
+  "kind": "Unique",
+  "source": "spec:iso6346",
+  "unit": "item",
+  "instrument": "{number}",
+  "params": [
+    {
+      "id": "number",
+      "name": "Container number",
+      "type": "code",
+      "check": "iso6346",
+      "to": "instrument",
+      "example": "CSQU3054383"
+    }
+  ],
+  "note": "A single container by its ISO 6346 owner code, serial number and check digit."
+}

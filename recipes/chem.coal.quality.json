@@ -1,0 +1,61 @@
+{
+  "family": "chem.coal",
+  "name": "Thermal coal of a standard quality",
+  "symbol": "COAL",
+  "icon": "icons/recipes/coal.svg",
+  "kind": "Fungible",
+  "source": "spec:coal-quality",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "{quality}",
+  "params": [
+    {
+      "id": "quality",
+      "name": "Quality and basis",
+      "type": "choice",
+      "options": [
+        {
+          "id": "coal-nar6000-cif-ara",
+          "name": "Thermal coal 6,000 kcal/kg NAR, CIF ARA",
+          "short": "Coal 6000 CIF ARA"
+        },
+        {
+          "id": "coal-nar6000-fob-newcastle",
+          "name": "Thermal coal 6,000 kcal/kg NAR, FOB Newcastle (Australia)",
+          "short": "Coal 6000 FOB NEWC"
+        },
+        {
+          "id": "coal-nar6000-fob-richards-bay",
+          "name": "Thermal coal 6,000 kcal/kg NAR, FOB Richards Bay (South Africa)",
+          "short": "Coal 6000 FOB RB"
+        },
+        {
+          "id": "coal-nar5500-fob-newcastle",
+          "name": "Thermal coal 5,500 kcal/kg NAR, FOB Newcastle (Australia)",
+          "short": "Coal 5500 FOB NEWC"
+        },
+        {
+          "id": "coal-nar5500-fob-richards-bay",
+          "name": "Thermal coal 5,500 kcal/kg NAR, FOB Richards Bay",
+          "short": "Coal 5500 FOB RB"
+        }
+      ],
+      "to": "instrument",
+      "example": "coal-nar6000-cif-ara"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "Thermal coal by calorific value (kcal/kg NAR) and delivery basis, in a month (UTC); the amount in kg, shown in tonnes. Sources: https://status.ice.com/api/productguide/spec/243/pdf https://www.ice.com/api/productguide/spec/1137/pdf https://status.ice.com/api/productguide/spec/241/pdf https://argusmedia.com/en/methodology/key-commodity-prices/argus-mccloskeys-api-5 https://www.argusmedia.com/ja/methodology/key-commodity-prices/argus-mccloskeys-api-4"
+}

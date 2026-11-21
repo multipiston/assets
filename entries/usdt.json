@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDT",
+  "aliases": [],
+  "name": "Tether USD",
+  "decimals": 6,
+  "icon": "icons/usdt.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:67d7d29fe303fddf3de7f1e4731ae0ac64b19a53641a55ca35b8d46c2cebdb84"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Contract: Tether, https://tether.to/en/supported-protocols/ (Ethereum); decimals() = 6 on chain. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdt.svg, unmodified."
+}

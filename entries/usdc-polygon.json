@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDC",
+  "aliases": [],
+  "name": "USD Coin",
+  "decimals": 6,
+  "icon": "icons/usdc-polygon.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:8f19c1019e78af9dd727f6c341876e8c123e8fc692b1a26d54ae4999d3cb4b9d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:137/erc20:0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Contract: Circle, https://developers.circle.com/stablecoins/usdc-contract-addresses (Polygon PoS); chain 137: ethereum-lists/chains; decimals() = 6. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdc.svg, unmodified."
+}

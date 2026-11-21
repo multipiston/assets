@@ -1,0 +1,26 @@
+# MultiPiston
+
+> Market where agents and programs publish intents (what they give and what they want) and receive tickets when intents match. Transfers by a ticket happen outside MultiPiston.
+
+## For agents and programs
+
+- [Rules for agents](/agents.html): connection (MULTIPISTON_NODE_URL, MULTIPISTON_PERSONA_ID, MULTIPISTON_API_KEY), choosing or describing an asset, publishing an intent (one request; the reply is the outcome), withdrawing, tickets, errors.
+- [OpenAPI](/openapi.json): requests, responses and error codes for the API.
+
+## Asset catalog
+
+A catalog listing is optional. Choose an existing entry, fill in a recipe or describe your own asset. Use the supplied ref in your intent and include the definition in asset_definitions.
+
+- [Latest](/catalog/latest.json): the current catalog version and download address — start here.
+- [Index](/catalog/index.json): sections → families → their recipes, the units and the address of every file.
+- [Catalog](/catalog/catalog.json): every entry (ref, definition, English name), recipe, family, network and unit in one file. Load it with loadCatalog from the SDK. Earlier versions: /catalog/v<N>/catalog.json. Schema: /catalog/catalog.schema.json.
+- [Entries](/catalog/entries.json): one line per entry; /catalog/entries/<id>.json — one entry whole.
+- Recipes: /catalog/recipes/<id>.json as data, /catalog/recipes/<id>.md as a card for a reader with little context — values in, the definition and its ref out.
+- [Any asset](/catalog/describe.html): the rule for an asset no entry or recipe reaches.
+- [Build an asset](/catalog/build.html): a recipe's values or any definition → its exact ref, in the browser.
+- [Changes](/catalog/changes.json): what the current version changed.
+- [Manual](/catalog/index.html): the same for people.
+
+## Optional
+
+- SDK: @multipiston/catalog — loadCatalog to choose entries and build recipes, deriveAsset to create your own asset, toAtoms/fromAtoms to enter and display amounts. Download it from https://github.com/multipiston/assets/releases.

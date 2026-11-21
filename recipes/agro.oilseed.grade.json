@@ -1,0 +1,101 @@
+{
+  "family": "agro.oilseed",
+  "name": "Oilseeds and oils of a standard grade",
+  "symbol": "OILSEED",
+  "icon": "icons/recipes/oilseed.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "cbot-soybeans-no2-yellow",
+          "name": "US No. 2 Yellow soybeans (CBOT Soybeans)",
+          "short": "Soy #2Y",
+          "unit": "bushel"
+        },
+        {
+          "id": "cbot-soybean-oil-crude",
+          "name": "Crude soybean oil (CBOT Soybean Oil)",
+          "short": "SBO crude",
+          "unit": "lb"
+        },
+        {
+          "id": "bursa-fcpo-crude-palm-oil",
+          "name": "Crude palm oil (Bursa Malaysia FCPO)",
+          "short": "CPO",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "rbd-palm-olein",
+          "name": "RBD palm olein (DCE contract / PORAM standard)",
+          "short": "RBD olein",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "euronext-rapeseed-eco",
+          "name": "Rapeseed, double-zero (Euronext Paris)",
+          "short": "ECO",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "ice-canola-no1-canada",
+          "name": "No. 1 Canada canola (ICE Canola)",
+          "short": "Canola #1",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "jse-sunflower-seed-suns",
+          "name": "Sunflower seed (JSE SAFEX SUNS)",
+          "short": "SUNS",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "crude-sunflower-oil",
+          "name": "Crude sunflower oil (physical trade grade)",
+          "short": "CSFO",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        }
+      ],
+      "to": "instrument",
+      "example": "cbot-soybeans-no2-yellow"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.cmegroup.com/rulebook/CBOT/II/11/11.pdf https://cmegroup.com/content/dam/cmegroup/rulebook/CBOT/II/12/12.pdf https://mondovisione.com/news/bursa-malaysia-derivatives-berhad-includes-dobi-in-fcpo-contract-specifications--2011124 https://www.orientfutures.com.sg/china-market-access/dce-internationalised-palm-olein-futures/ https://live.euronext.com/en/product/commodities-futures/ECO-DPAR/contract-specification https://www.ice.com/products/251/Canola-Futures"
+}

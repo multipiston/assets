@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "GEL",
+  "aliases": [],
+  "name": "Georgian Lari",
+  "decimals": 2,
+  "icon": "icons/gel.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:c9e84a1147bb96082d668ac2dcad6bcdf15d69a20f53c9aae096f771e6883581"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "GEL",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 GEL (Lari), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ge.svg, unmodified."
+}

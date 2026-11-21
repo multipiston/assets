@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "ETH",
+  "aliases": [],
+  "name": "Ether",
+  "decimals": 18,
+  "icon": "icons/eth-zksync.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:b2bb4d2f833fa6de291b3f05d2fbdecc9de54ab815e76730cdd951ebca5438dd"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:324/slip44:60",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 324: ethereum-lists/chains (chainid.network, 2026-11-01), native ETH, 18 decimals; 1 atom = 10^-18 ETH. Coin type 60: SLIP-0044 (ETH). The network’s native coin is ETH over its canonical bridge. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/eth.svg, unmodified."
+}

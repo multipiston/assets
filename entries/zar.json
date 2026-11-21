@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "ZAR",
+  "aliases": [],
+  "name": "South African Rand",
+  "decimals": 2,
+  "icon": "icons/zar.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:7cb7a6cc4ca538053fd9940456b4ca75810aecf012adfc863afb84342060a605"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "ZAR",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 ZAR (Rand), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/za.svg, unmodified."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "RLUSD",
+  "aliases": [],
+  "name": "Ripple USD",
+  "decimals": 18,
+  "icon": "icons/rlusd.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:6e9b85b43c2cc4509b75b8daeb128c5dad35ea53a28f8bc384ca2bc6baab9a99"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Ripple, https://docs.ripple.com/products/stablecoin/developer-resources/rlusd-on-ethereum (Ethereum), retrieved 2026-11-01. Decimals 18: the issuer, and decimals() via ethereum-rpc.publicnode.com. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

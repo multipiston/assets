@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "VND",
+  "aliases": [],
+  "name": "Vietnamese Dong",
+  "decimals": 0,
+  "icon": "icons/vnd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:613912071e2b23bb2549c3afa35921bd5ab528d9106ecf982b54e6d17f94def6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "VND",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 VND (Dong), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/vn.svg, unmodified."
+}

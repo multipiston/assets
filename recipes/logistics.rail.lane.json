@@ -1,0 +1,43 @@
+{
+  "family": "logistics.rail",
+  "name": "Rail freight between two places",
+  "symbol": "FREIGHT",
+  "icon": "icons/recipes/train.svg",
+  "kind": "Fungible",
+  "source": "spec:unlocode-lane",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "rail",
+  "params": [
+    {
+      "id": "from",
+      "name": "From (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "origin",
+      "example": "CNXIY"
+    },
+    {
+      "id": "to",
+      "name": "To (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "destination",
+      "example": "PLMAL"
+    },
+    {
+      "id": "week",
+      "name": "Departure week",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "week"
+      ],
+      "to": "window",
+      "example": "2026-W49"
+    }
+  ],
+  "note": "Carriage of general cargo between two places named by UN/LOCODE, departing in an ISO week (UTC); the amount is chargeable weight."
+}

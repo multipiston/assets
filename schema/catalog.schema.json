@@ -1,0 +1,682 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "multipiston.catalog/3",
+  "title": "MultiPiston asset catalog",
+  "description": "A shared dictionary of exact asset descriptions, in English. Not a permission: the market accepts any valid description. Trust an entry only after recomputing its ref.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "updated",
+    "sources",
+    "term_groups",
+    "sections",
+    "families",
+    "networks",
+    "units",
+    "recipes",
+    "assets"
+  ],
+  "properties": {
+    "schema": {
+      "const": "multipiston.catalog/3"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Grows by one with every change; never accept a smaller one."
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "repository": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^https://",
+      "description": "The catalog's repository: its history, issue forms for proposals and releases."
+    },
+    "sources": {
+      "type": "object",
+      "description": "Who gives an asset its meaning; definition.source starts with one of these prefixes. An on-chain asset: spec:caip19 with its CAIP-19 id as instrument. A national currency: spec:iso4217 with its ISO 4217 code as instrument.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "prefix",
+          "description"
+        ],
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "pattern": "^[a-z]+:$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    "term_groups": {
+      "type": "object",
+      "description": "Asset properties (mp.*); provide all keys of each group together.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "keys",
+          "description"
+        ],
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^mp\\."
+            }
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "source",
+          "terms"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{1,15}$"
+          },
+          "name": {
+            "$ref": "#/$defs/name"
+          },
+          "source": {
+            "type": "string"
+          },
+          "terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "families": {
+      "type": "array",
+      "description": "Templates: an inline asset of a family takes the family's domain (domain, else id) as definition.domain.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "section",
+          "name",
+          "kinds",
+          "identity"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+\\.[a-z0-9-]+$",
+            "maxLength": 32
+          },
+          "section": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/$defs/name"
+          },
+          "kinds": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": [
+                "Fungible",
+                "Unique"
+              ]
+            }
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "description": "The usual unit of delivery for the family (a hint, not definition.unit)."
+          },
+          "identity": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "description": "What makes two assets of this family the same asset."
+          },
+          "domain": {
+            "type": "string",
+            "pattern": "^[a-z0-9._:-]{1,32}$",
+            "description": "When several families share one domain: on-chain assets follow their token standard."
+          }
+        }
+      }
+    },
+    "networks": {
+      "type": "array",
+      "description": "The networks of on-chain assets: CAIP-2 id and English name. One token issued on several networks is a separate asset on each network (its own entry and ref) that shares symbol and name; show the network to tell them apart, never treat them as one.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[-a-z0-9]{3,8}:[-_a-zA-Z0-9]{1,32}$"
+          },
+          "name": {
+            "$ref": "#/$defs/name"
+          }
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "description": "Units of amounts (RECIPES.md §1–2): every amount is a whole number of a unit; a display unit is the unit times 10^decimals on the same ladder (base, exp).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "symbol",
+          "name",
+          "quantity"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "How an amount of this unit is marked wherever it is shown (MWh, t, troy oz), in English."
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          },
+          "exp": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "description": "Recipes (RECIPES.md): the one way to describe every asset of a kind from open codes, closed lists and calendar periods. Build the definition from the values, derive its ref, and check your build against the example.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "family",
+          "domain",
+          "name",
+          "symbol",
+          "icon",
+          "kind",
+          "source",
+          "instrument",
+          "terms",
+          "params",
+          "regulated",
+          "template",
+          "note",
+          "example"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "family": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string",
+            "pattern": "^[a-z0-9._:-]{1,32}$",
+            "description": "The family's domain: the definition's domain and the ref's chain"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]{2,8}$"
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "Fungible",
+              "Unique"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^(spec|registry):"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 18
+          },
+          "display": {
+            "type": "string"
+          },
+          "instrument": {
+            "type": "string",
+            "description": "An asset template; fill in the recipe parameters with the SDK or asset builder."
+          },
+          "terms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "value"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64
+                },
+                "value": {
+                  "type": "string",
+                  "maxLength": 256
+                }
+              }
+            }
+          },
+          "params": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "name",
+                "type",
+                "to",
+                "example"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9_]{0,31}$"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64
+                },
+                "type": {
+                  "enum": [
+                    "choice",
+                    "code",
+                    "place",
+                    "text",
+                    "period",
+                    "date"
+                  ]
+                },
+                "to": {
+                  "type": "string",
+                  "description": "instrument, a typed term group (period, window, deadline, place, origin, destination, object, configuration, resource, meter, package), term:<key> or unit"
+                },
+                "example": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "name"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                      },
+                      "short": {
+                        "type": "string",
+                        "maxLength": 24
+                      },
+                      "unit": {
+                        "type": "string"
+                      },
+                      "decimals": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 18
+                      },
+                      "display": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "check": {
+                  "type": "string"
+                },
+                "authority": {
+                  "enum": [
+                    "unlocode",
+                    "iso3166",
+                    "eic"
+                  ]
+                },
+                "max": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 256
+                },
+                "case": {
+                  "enum": [
+                    "keep",
+                    "upper",
+                    "lower"
+                  ]
+                },
+                "clock": {
+                  "enum": [
+                    "UTC",
+                    "WET",
+                    "CET",
+                    "EET",
+                    "ET",
+                    "EST",
+                    "CT",
+                    "PT"
+                  ]
+                },
+                "day_start": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 23
+                },
+                "grains": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "hour",
+                      "day",
+                      "week",
+                      "month",
+                      "quarter",
+                      "year"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "regulated": {
+            "type": "boolean"
+          },
+          "template": {
+            "type": "boolean",
+            "description": "true for a family's template, derived from the family"
+          },
+          "note": {
+            "type": "string"
+          },
+          "example": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "values",
+              "ref"
+            ],
+            "properties": {
+              "values": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "definition": {
+                "type": "object"
+              },
+              "ref": {
+                "type": "object"
+              }
+            },
+            "description": "The worked example: values and the ref they give; a recipe's own (not a template's) also shows the definition."
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "family",
+          "kind",
+          "symbol",
+          "aliases",
+          "name",
+          "network",
+          "decimals",
+          "icon",
+          "ref",
+          "definition",
+          "replaced_by"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{1,39}$"
+          },
+          "status": {
+            "enum": [
+              "listed",
+              "retired"
+            ],
+            "description": "Use only listed for new intents; retired names old tickets."
+          },
+          "family": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "Fungible",
+              "Unique"
+            ]
+          },
+          "symbol": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]{2,8}$"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Former symbols, never given to another asset."
+          },
+          "name": {
+            "$ref": "#/$defs/name"
+          },
+          "network": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[-a-z0-9]{3,8}:[-_a-zA-Z0-9]{1,32}$",
+            "description": "CAIP-2 id of an on-chain asset's network (the first part of its CAIP-19 instrument), one of networks; null for any other asset. A symbol is unique within a network."
+          },
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 38,
+            "description": "Display only: an amount is a whole number of definition.unit (atoms, minor units); decimals shows it in the larger unit."
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^icons/[a-z0-9-]+\\.svg$"
+          },
+          "ref": {
+            "$ref": "#/$defs/ref"
+          },
+          "definition": {
+            "$ref": "#/$defs/definition"
+          },
+          "replaced_by": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/ref"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "English."
+    },
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain",
+        "token"
+      ],
+      "description": "The asset reference to use in an API request; copy it from an entry or prepare it with the asset SDK.",
+      "properties": {
+        "chain": {
+          "type": "string",
+          "pattern": "^[a-z0-9._:-]{1,32}$"
+        },
+        "token": {
+          "type": "string",
+          "pattern": "^(af1|au1):[0-9a-f]{64}$"
+        }
+      }
+    },
+    "definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "domain",
+        "instrument",
+        "source",
+        "kind",
+        "unit",
+        "terms"
+      ],
+      "description": "AssetDefinition1, sent as is in asset_definitions of submit-offer prepare.",
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "domain": {
+          "type": "string",
+          "pattern": "^[a-z0-9._:-]{1,32}$"
+        },
+        "instrument": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "Fungible",
+            "Unique"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "value"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

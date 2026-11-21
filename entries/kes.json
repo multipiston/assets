@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "KES",
+  "aliases": [],
+  "name": "Kenyan Shilling",
+  "decimals": 2,
+  "icon": "icons/kes.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:b3baba0a4064f44d8335c52e314561eb68b0e9cb4eea31acd0c87eb7f659c833"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "KES",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 KES (Kenyan Shilling), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ke.svg, unmodified."
+}

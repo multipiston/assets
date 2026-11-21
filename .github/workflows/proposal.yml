@@ -1,0 +1,67 @@
+# A proposal — an issue made from a form in .github/ISSUE_TEMPLATE — is checked on every open and
+# edit by the rules of a pull request (scripts/proposal.mjs). The bot keeps one comment on the issue
+# with the exact ref and every problem; a clean proposal gets a draft pull request from the branch
+# proposal/<issue>. Nothing is listed or merged automatically: a maintainer lists a new entry and
+# merges.
+# The issue text is data. It is read from the event file by scripts/proposal.mjs and reaches the
+# shell only as files; no ${{ }} expression here carries any of it.
+# A pull request opened with the workflow's token starts no other workflow: the files were checked
+# here, and verify runs again when a maintainer pushes to the branch or reopens the pull request.
+# When the repository is created, pin each action to a commit SHA (Dependabot keeps them current).
+name: proposal
+on:
+  issues:
+    types: [opened, edited, reopened, labeled]
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+concurrency:
+  group: proposal-${{ github.event.issue.number }}
+  cancel-in-progress: true
+jobs:
+  check:
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'proposal')
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+      BASE: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Check the proposal
+        run: node scripts/proposal.mjs "$GITHUB_EVENT_PATH" "$RUNNER_TEMP/proposal"
+      - name: Comment — one per issue, updated in place
+        run: |
+          OUT="$RUNNER_TEMP/proposal"
+          id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE/comments" --paginate \
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- multipiston-proposal -->"))) | .id' | head -n 1)
+          if [ -n "$id" ]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -F "body=@$OUT/comment.md" > /dev/null
+          else
+            gh issue comment "$ISSUE" --body-file "$OUT/comment.md"
+          fi
+      - name: Draft pull request
+        run: |
+          OUT="$RUNNER_TEMP/proposal"
+          [ "$(jq -r .ok "$OUT/result.json")" = "true" ] || exit 0
+          branch=$(jq -r .branch "$OUT/result.json")
+          title=$(jq -r .title "$OUT/result.json")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "$branch"
+          cp -R "$OUT/files/." .
+          npm test
+          node scripts/verify.mjs
+          git add --all entries icons recipes
+          git commit --file "$OUT/message.txt"
+          git push --force origin "$branch"
+          if gh pr view "$branch" --json number > /dev/null 2>&1; then
+            gh pr edit "$branch" --title "$title" --body-file "$OUT/body.md"
+          else
+            gh pr create --draft --base "$BASE" --head "$branch" --title "$title" --body-file "$OUT/body.md"
+          fi

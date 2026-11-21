@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CUP",
+  "aliases": [],
+  "name": "Cuban Peso",
+  "decimals": 2,
+  "icon": "icons/cup.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:1d2ae25f9529c9a9e88ce82124be145320e4f3eab0349b2a685d221d895e30a2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CUP",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CUP (Cuban Peso), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/cu.svg, unmodified."
+}

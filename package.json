@@ -1,0 +1,17 @@
+{
+  "name": "multipiston-catalog",
+  "private": true,
+  "type": "module",
+  "description": "MultiPiston asset catalog: exact asset descriptions, families and rules for agents and programs.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "test": "node --test",
+    "build": "node scripts/build.mjs dist"
+  },
+  "devDependencies": {
+    "@noble/hashes": "1.8.0"
+  }
+}

@@ -1,0 +1,59 @@
+name: Propose a recipe
+description: A recipe for every asset of a kind, or new options of a recipe.
+title: "Recipe: "
+labels: ["proposal", "recipe"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A recipe describes every asset of a kind from open codes, closed lists and periods: the same values give the same definition and ref to everyone (RECIPES.md). A published recipe keeps what it builds; it only grows by new options at the end of a list. A bot checks the recipe by the rules of a pull request — its worked example included — and, when nothing is wrong, opens a draft pull request.
+  - type: dropdown
+    id: action
+    attributes:
+      label: What to do
+      options:
+        - New recipe
+        - Add options to a recipe
+    validations:
+      required: true
+  - type: input
+    id: recipe
+    attributes:
+      label: Recipe id
+      description: <family>.<name>, the file name in recipes/, for example agro.coffee.grade.
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: Recipe
+      description: The whole recipe file as JSON (RECIPES.md §2), its worked example included. For new options — the file as it is with the options added at the end.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: icon
+    attributes:
+      label: Icon
+      description: SVG for the path the recipe's icon names (icons/recipes/<name>.svg), if it is new.
+      render: xml
+  - type: textarea
+    id: sources
+    attributes:
+      label: Where the values come from
+      description: The registry, standard or exchange rule behind every code and option, with its address.
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: Who will trade it
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: No keys, passwords, payment details or personal data
+          required: true

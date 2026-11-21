@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "GYD",
+  "aliases": [],
+  "name": "Guyanaese Dollar",
+  "decimals": 2,
+  "icon": "icons/gyd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:9df100c0b99713e80232a0106d740b482251c1a4fa7b6eea043ab3c5ca03eb66"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "GYD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 GYD (Guyana Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/gy.svg, unmodified."
+}

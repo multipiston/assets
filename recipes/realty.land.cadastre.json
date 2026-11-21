@@ -1,0 +1,30 @@
+{
+  "family": "realty.land",
+  "name": "A land plot by cadastral number",
+  "symbol": "REALTY",
+  "icon": "icons/recipes/land.svg",
+  "kind": "Unique",
+  "source": "registry:cadastre",
+  "unit": "item",
+  "instrument": "{number}",
+  "params": [
+    {
+      "id": "country",
+      "name": "Country",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "RU"
+    },
+    {
+      "id": "number",
+      "name": "Cadastral number in the national register",
+      "type": "text",
+      "max": 64,
+      "case": "upper",
+      "to": "instrument",
+      "example": "77:01:0001001:1001"
+    }
+  ],
+  "note": "The object by the country (ISO 3166) and its number in that country's land or property register; the right transferred is ownership unless the asset says otherwise."
+}

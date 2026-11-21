@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "ATOM",
+  "aliases": [],
+  "name": "Atom",
+  "decimals": 6,
+  "icon": "icons/atom.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:de6efd45f1cfe20cef96fdf66e61e47e8be4afbae9c060aba0e54b6c4ba723a8"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "cosmos:cosmoshub-4/slip44:118",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces cosmos/caip2.md (Cosmos Hub). Decimals 6: https://docs.cosmos.network/hub/v25/resources/service-providers. Coin type 118: SLIP-0044 (ATOM). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/atom.svg, unmodified."
+}

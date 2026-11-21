@@ -1,0 +1,21 @@
+{
+  "family": "machines.vessel",
+  "name": "One ship by IMO number",
+  "symbol": "VESSEL",
+  "icon": "icons/recipes/vessel.svg",
+  "kind": "Unique",
+  "source": "spec:imo",
+  "unit": "item",
+  "instrument": "{imo}",
+  "params": [
+    {
+      "id": "imo",
+      "name": "IMO ship identification number",
+      "type": "code",
+      "check": "imo",
+      "to": "instrument",
+      "example": "9074729"
+    }
+  ],
+  "note": "A single ship by its IMO number (check digit verified); the right transferred is the whole ship."
+}

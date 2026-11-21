@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "UYU",
+  "aliases": [],
+  "name": "Uruguayan Peso",
+  "decimals": 2,
+  "icon": "icons/uyu.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:a1b96010b1d7dee5754c05636e003d9ba7b5f0c5c2cc516d6e5900d448b3df32"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "UYU",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 UYU (Peso Uruguayo), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/uy.svg, unmodified."
+}

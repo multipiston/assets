@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CZK",
+  "aliases": [],
+  "name": "Czech Koruna",
+  "decimals": 2,
+  "icon": "icons/czk.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:1505e3f114832318b0891bdbbe6259101b87e74c6721e335246aa450d8f773be"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CZK",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CZK (Czech Koruna), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/cz.svg, unmodified."
+}

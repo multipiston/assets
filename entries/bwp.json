@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BWP",
+  "aliases": [],
+  "name": "Botswanan Pula",
+  "decimals": 2,
+  "icon": "icons/bwp.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:33ea1b304205b4d6812383ebea6cefbcda4c43d84708472a3e54d7c18bcabf81"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BWP",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BWP (Pula), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/bw.svg, unmodified."
+}

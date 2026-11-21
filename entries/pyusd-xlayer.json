@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "PYUSD",
+  "aliases": [],
+  "name": "PayPal USD",
+  "decimals": 6,
+  "icon": "icons/pyusd-xlayer.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:e8c07d2afbbf24bd581c1e2e14a733541ab7407c41620eff22a9c0cfcedd39aa"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:196/erc20:0x87b4a8176b3df6b71e26cc095edcaf4db07506b4",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos (issued for PayPal), https://docs.paxos.com/guides/stablecoin/pyusd/mainnet (X Layer), retrieved 2026-11-01. Decimals 6: decimals() via rpc.xlayer.tech. Icon: web3icons 4.0.58 (MIT), tokens/branded/PYUSD.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

@@ -1,0 +1,21 @@
+{
+  "family": "compute.domain-name",
+  "name": "A domain name",
+  "symbol": "DOMAIN",
+  "icon": "icons/recipes/domain.svg",
+  "kind": "Unique",
+  "source": "spec:dns",
+  "unit": "item",
+  "instrument": "{name}",
+  "params": [
+    {
+      "id": "name",
+      "name": "Domain name",
+      "type": "code",
+      "check": "domain",
+      "to": "instrument",
+      "example": "example.com"
+    }
+  ],
+  "note": "A registered domain name in its ASCII (xn--) form, lower case; the right transferred is the registrant's."
+}

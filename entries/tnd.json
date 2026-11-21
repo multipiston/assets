@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "TND",
+  "aliases": [],
+  "name": "Tunisian Dinar",
+  "decimals": 3,
+  "icon": "icons/tnd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:f8513d25d67a9da190853e2630644a50be268f37d397389a0453c4b6a2200e8e"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "TND",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 TND (Tunisian Dinar), minor unit 10^-3 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/tn.svg, unmodified."
+}

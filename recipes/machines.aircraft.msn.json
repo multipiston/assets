@@ -1,0 +1,40 @@
+{
+  "family": "machines.aircraft",
+  "name": "One aircraft by manufacturer serial number",
+  "symbol": "AIRCRFT",
+  "icon": "icons/recipes/aircraft.svg",
+  "kind": "Unique",
+  "source": "spec:msn",
+  "unit": "item",
+  "instrument": "{manufacturer}:{type}:{msn}",
+  "params": [
+    {
+      "id": "manufacturer",
+      "name": "Manufacturer",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Airbus"
+    },
+    {
+      "id": "type",
+      "name": "Type (ICAO type designator)",
+      "type": "text",
+      "max": 8,
+      "case": "upper",
+      "to": "instrument",
+      "example": "A320"
+    },
+    {
+      "id": "msn",
+      "name": "Manufacturer serial number",
+      "type": "text",
+      "max": 16,
+      "case": "upper",
+      "to": "instrument",
+      "example": "1234"
+    }
+  ],
+  "note": "A single aircraft by manufacturer, ICAO type designator and manufacturer serial number (a registration mark can change; the serial number does not)."
+}

@@ -1,0 +1,103 @@
+{
+  "family": "energy.power",
+  "name": "Electricity at a US hub (Central time)",
+  "symbol": "POWER",
+  "icon": "icons/recipes/power.svg",
+  "kind": "Fungible",
+  "source": "spec:us-power-hub-ct",
+  "unit": "kWh",
+  "decimals": 3,
+  "display": "MWh",
+  "instrument": "{hub}",
+  "params": [
+    {
+      "id": "hub",
+      "name": "Hub",
+      "type": "choice",
+      "options": [
+        {
+          "id": "ercot-hb-north",
+          "name": "ERCOT North Hub",
+          "short": "ERCOT North"
+        },
+        {
+          "id": "ercot-hb-houston",
+          "name": "ERCOT Houston Hub",
+          "short": "ERCOT Houston"
+        },
+        {
+          "id": "ercot-hb-south",
+          "name": "ERCOT South Hub",
+          "short": "ERCOT South"
+        },
+        {
+          "id": "ercot-hb-west",
+          "name": "ERCOT West Hub",
+          "short": "ERCOT West"
+        },
+        {
+          "id": "ercot-hb-pan",
+          "name": "ERCOT Panhandle Hub",
+          "short": "ERCOT Pan"
+        },
+        {
+          "id": "ercot-hb-hubavg",
+          "name": "ERCOT Hub Average",
+          "short": "ERCOT HubAvg"
+        },
+        {
+          "id": "ercot-hb-busavg",
+          "name": "ERCOT Hub Bus Average",
+          "short": "ERCOT BusAvg"
+        },
+        {
+          "id": "spp-north-hub",
+          "name": "SPP North Hub",
+          "short": "SPP North"
+        },
+        {
+          "id": "spp-south-hub",
+          "name": "SPP South Hub",
+          "short": "SPP South"
+        }
+      ],
+      "to": "instrument",
+      "example": "ercot-hb-north"
+    },
+    {
+      "id": "period",
+      "name": "Delivery period",
+      "type": "period",
+      "clock": "CT",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    },
+    {
+      "id": "profile",
+      "name": "Load profile",
+      "type": "choice",
+      "options": [
+        {
+          "id": "base",
+          "name": "Baseload (7x24)"
+        },
+        {
+          "id": "peak",
+          "name": "Peak (5x16, hours ending 08-23, Monday to Friday)"
+        }
+      ],
+      "to": "term:profile",
+      "example": "base"
+    }
+  ],
+  "note": "Delivery at a US trading hub as its ISO names it, the day in the hub's market time (prevailing local time). The amount in kWh, shown in MWh. Sources: https://www.ercot.com/content/cdr/html/hb_lz.html https://www.rtoinsider.com/wp-content/uploads/2026/01/RTOE-Trading-Hub-Analysis-Report.docx"
+}

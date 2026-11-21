@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "ISK",
+  "aliases": [],
+  "name": "Icelandic Króna",
+  "decimals": 0,
+  "icon": "icons/isk.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:8d5f19b28cd1b6d784b7e4df2d44ef5dcbcf3d09d5b7e58414f2468a90354395"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "ISK",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 ISK (Iceland Krona), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/is.svg, unmodified."
+}

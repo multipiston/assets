@@ -1,0 +1,22 @@
+{
+  "family": "debt.paper",
+  "name": "Commercial paper by ISIN",
+  "symbol": "BOND",
+  "icon": "icons/recipes/bond.svg",
+  "kind": "Fungible",
+  "source": "spec:iso6166",
+  "unit": "nominal",
+  "instrument": "{isin}",
+  "params": [
+    {
+      "id": "isin",
+      "name": "ISIN",
+      "type": "code",
+      "check": "isin",
+      "to": "instrument",
+      "example": "XS0000000009"
+    }
+  ],
+  "regulated": true,
+  "note": "The example shows the spelling only (an all-zero ISIN is a placeholder). The security by its ISIN (ISO 6166, check digit verified); the name comes from an open registry such as OpenFIGI or GLEIF. A regulated instrument: only where the parties may trade it. The amount is the face value in whole units of the issue currency."
+}

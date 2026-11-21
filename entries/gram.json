@@ -1,0 +1,26 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "GRAM",
+  "aliases": [
+    "TON"
+  ],
+  "name": "Gram",
+  "decimals": 9,
+  "icon": "icons/gram.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:15202f66b99ede1a5b4553667975beefb2e27a7594639a2bf5355877a19c6bb4"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "tvm:-239/slip44:607",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces tvm/caip2.md (TON). Decimals 9: https://docs.ton.org/ecosystem/wallet-apps/deep-links. Coin type 607: SLIP-0044 (TON). Toncoin was renamed Gram (GRAM) on 2026-06-15; SLIP-0044 keeps TON. Icon: web3icons 4.0.58 (MIT), tokens/branded/GRAM.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

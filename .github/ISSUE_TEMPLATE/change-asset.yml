@@ -1,0 +1,60 @@
+name: Change or retire an asset
+description: A new symbol, name or icon for a listed entry, or its retirement.
+title: "Change: "
+labels: ["proposal", "asset-change"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A published entry keeps its ref, definition, kind and decimals forever; its former symbol stays in its aliases, and a retired entry stays in the catalog so that old tickets keep its name (CONTRIBUTING.md §5). A bot checks the change and, when nothing is wrong, opens a draft pull request.
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The entry's id (entries/<id>.json), for example usdc.
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: What to do
+      options:
+        - Change name, symbol or icon
+        - Retire
+    validations:
+      required: true
+  - type: input
+    id: symbol
+    attributes:
+      label: New symbol
+      description: 2–8 Latin letters and digits; the former one moves to aliases.
+  - type: input
+    id: name
+    attributes:
+      label: New name
+      description: In English, up to 64 characters.
+  - type: textarea
+    id: icon
+    attributes:
+      label: New icon
+      description: SVG with a square viewBox, up to 16 KB, no text, scripts or external references.
+      render: xml
+  - type: input
+    id: replaced_by
+    attributes:
+      label: Replaced by
+      description: For a retirement, the id of the listed entry that replaces it, if any.
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The icon is my own work, or I own the brand, or I have its permission, or it comes from an openly licensed set (name the set and license)
+        - label: No keys, passwords, payment details or personal data
+          required: true

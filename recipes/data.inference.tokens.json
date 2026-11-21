@@ -1,0 +1,50 @@
+{
+  "family": "data.inference",
+  "name": "Model tokens of a provider's model",
+  "symbol": "TOKENS",
+  "icon": "icons/recipes/inference.svg",
+  "kind": "Fungible",
+  "source": "spec:model-tokens",
+  "unit": "token",
+  "decimals": 6,
+  "display": "million-tokens",
+  "instrument": "{provider}:{model}",
+  "params": [
+    {
+      "id": "provider",
+      "name": "Provider",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Anthropic"
+    },
+    {
+      "id": "model",
+      "name": "Model id as the provider names it",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "claude-opus-5-5"
+    },
+    {
+      "id": "direction",
+      "name": "Input or output",
+      "type": "choice",
+      "options": [
+        {
+          "id": "input",
+          "name": "Input tokens"
+        },
+        {
+          "id": "output",
+          "name": "Output tokens"
+        }
+      ],
+      "to": "term:direction",
+      "example": "output"
+    }
+  ],
+  "note": "Tokens processed by one exact model of one provider, input or output; the amount in tokens, shown in millions."
+}

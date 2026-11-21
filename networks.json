@@ -1,0 +1,203 @@
+{
+  "algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73k": {
+    "name": "Algorand"
+  },
+  "bip122:000000000000000000651ef99cb9fcbe": {
+    "name": "Bitcoin Cash"
+  },
+  "bip122:000000000019d6689c085ae165831e93": {
+    "name": "Bitcoin"
+  },
+  "bip122:12a765e31ffd4059bada1e25190f6e98": {
+    "name": "Litecoin"
+  },
+  "bip122:1a91e3dace36e2be3bf030a65679fe82": {
+    "name": "Dogecoin"
+  },
+  "casper:casper": {
+    "name": "Casper"
+  },
+  "cosmos:cosmoshub-4": {
+    "name": "Cosmos Hub"
+  },
+  "cosmos:dydx-mainnet-1": {
+    "name": "dYdX Chain"
+  },
+  "eip155:1": {
+    "name": "Ethereum"
+  },
+  "eip155:10": {
+    "name": "OP Mainnet"
+  },
+  "eip155:100": {
+    "name": "Gnosis"
+  },
+  "eip155:130": {
+    "name": "Unichain"
+  },
+  "eip155:1329": {
+    "name": "Sei"
+  },
+  "eip155:137": {
+    "name": "Polygon PoS"
+  },
+  "eip155:143": {
+    "name": "Monad"
+  },
+  "eip155:1440000": {
+    "name": "XRPL EVM Sidechain"
+  },
+  "eip155:146": {
+    "name": "Sonic"
+  },
+  "eip155:1672": {
+    "name": "Pharos"
+  },
+  "eip155:1776": {
+    "name": "Injective"
+  },
+  "eip155:196": {
+    "name": "X Layer"
+  },
+  "eip155:204": {
+    "name": "opBNB"
+  },
+  "eip155:2222": {
+    "name": "Kava"
+  },
+  "eip155:25": {
+    "name": "Cronos"
+  },
+  "eip155:2818": {
+    "name": "Morph"
+  },
+  "eip155:30": {
+    "name": "Rootstock"
+  },
+  "eip155:324": {
+    "name": "ZKsync Era"
+  },
+  "eip155:3343": {
+    "name": "Edge"
+  },
+  "eip155:42161": {
+    "name": "Arbitrum One"
+  },
+  "eip155:42220": {
+    "name": "Celo"
+  },
+  "eip155:43114": {
+    "name": "Avalanche C-Chain"
+  },
+  "eip155:4663": {
+    "name": "Robinhood Chain"
+  },
+  "eip155:480": {
+    "name": "World Chain"
+  },
+  "eip155:50": {
+    "name": "XDC Network"
+  },
+  "eip155:5000": {
+    "name": "Mantle"
+  },
+  "eip155:5042": {
+    "name": "Arc"
+  },
+  "eip155:534352": {
+    "name": "Scroll"
+  },
+  "eip155:56": {
+    "name": "BNB Smart Chain"
+  },
+  "eip155:57073": {
+    "name": "Ink"
+  },
+  "eip155:59144": {
+    "name": "Linea"
+  },
+  "eip155:61": {
+    "name": "Ethereum Classic"
+  },
+  "eip155:7777777": {
+    "name": "Zora"
+  },
+  "eip155:80094": {
+    "name": "Berachain"
+  },
+  "eip155:81224": {
+    "name": "Codex"
+  },
+  "eip155:81457": {
+    "name": "Blast"
+  },
+  "eip155:8217": {
+    "name": "Kaia"
+  },
+  "eip155:8453": {
+    "name": "Base"
+  },
+  "eip155:9745": {
+    "name": "Plasma"
+  },
+  "eip155:988": {
+    "name": "Stable"
+  },
+  "eip155:98866": {
+    "name": "Plume"
+  },
+  "eip155:999": {
+    "name": "HyperEVM"
+  },
+  "fil:f": {
+    "name": "Filecoin"
+  },
+  "flow:mainnet": {
+    "name": "Flow"
+  },
+  "hedera:mainnet": {
+    "name": "Hedera"
+  },
+  "monero:418015bb9ae982a1975da7d79277c270": {
+    "name": "Monero"
+  },
+  "mvx:1": {
+    "name": "MultiversX"
+  },
+  "neo:860833102": {
+    "name": "Neo N3"
+  },
+  "polkadot:91b171bb158e2d3848fa23a9f1c25182": {
+    "name": "Polkadot"
+  },
+  "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": {
+    "name": "Solana"
+  },
+  "stacks:1": {
+    "name": "Stacks"
+  },
+  "stellar:pubnet": {
+    "name": "Stellar"
+  },
+  "sui:mainnet": {
+    "name": "Sui"
+  },
+  "tezos:NetXdQprcVkpaWU": {
+    "name": "Tezos"
+  },
+  "tron:728126428": {
+    "name": "Tron"
+  },
+  "tvm:-239": {
+    "name": "TON"
+  },
+  "vechain:b1ac3413d346d43539627e6be7ec1b4a": {
+    "name": "VeChain"
+  },
+  "waves:087": {
+    "name": "Waves"
+  },
+  "xrpl:0": {
+    "name": "XRP Ledger"
+  }
+}

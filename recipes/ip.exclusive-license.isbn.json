@@ -1,0 +1,29 @@
+{
+  "family": "ip.exclusive-license",
+  "name": "Exclusive rights in a book by ISBN",
+  "symbol": "WORK",
+  "icon": "icons/recipes/copyright.svg",
+  "kind": "Unique",
+  "source": "spec:iso2108",
+  "unit": "item",
+  "instrument": "{work}",
+  "params": [
+    {
+      "id": "work",
+      "name": "ISBN",
+      "type": "code",
+      "check": "isbn",
+      "to": "instrument",
+      "example": "9780306406157"
+    },
+    {
+      "id": "territory",
+      "name": "Territory (country)",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "US"
+    }
+  ],
+  "note": "The work by its ISBN, the territory by ISO 3166; term and scope as the asset's family requires are agreed in the deal."
+}

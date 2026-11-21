@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "DOT",
+  "aliases": [],
+  "name": "Polkadot",
+  "decimals": 10,
+  "icon": "icons/dot.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:d9e115e5c9a0a776750b481650ee28c0274b0c0c59c5a9f937d92e1fe0309297"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "polkadot:91b171bb158e2d3848fa23a9f1c25182/slip44:354",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces polkadot/caip2.md (Polkadot). Decimals 10: https://docs.polkadot.com/reference/polkadot-hub/consensus-and-security/relay-chain/. Coin type 354: SLIP-0044 (DOT). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/dot.svg, unmodified."
+}

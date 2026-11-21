@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "MGA",
+  "aliases": [],
+  "name": "Malagasy Ariary",
+  "decimals": 2,
+  "icon": "icons/mga.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:4d7892d147a55b1d1f3dad6f473d24467181a946614cc11eb639dc4b3b7f9ee9"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "MGA",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 MGA (Malagasy Ariary), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/mg.svg, unmodified."
+}

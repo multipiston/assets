@@ -1,0 +1,71 @@
+{
+  "family": "agro.coffee",
+  "name": "Coffee or cocoa of a standard grade",
+  "symbol": "SOFTS",
+  "icon": "icons/recipes/coffee.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "ice-coffee-c-washed-arabica",
+          "name": "Washed Arabica coffee (ICE Coffee 'C')",
+          "short": "KC Arabica",
+          "unit": "lb"
+        },
+        {
+          "id": "ice-robusta-class-1",
+          "name": "Robusta coffee Class 1 (ICE Robusta, London)",
+          "short": "RC Robusta",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "ice-us-cocoa",
+          "name": "Cocoa beans (ICE Cocoa, New York)",
+          "short": "CC Cocoa",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "ice-london-cocoa",
+          "name": "Cocoa beans (ICE London Cocoa)",
+          "short": "C Cocoa",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        }
+      ],
+      "to": "instrument",
+      "example": "ice-coffee-c-washed-arabica"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.ice.com/publicdocs/rulebooks/futures_us/8_Coffee.pdf https://www.ice.com/publicdocs/futures/Robusta_Coffee_Allowances_and_Discounts.pdf https://www.ice.com/publicdocs/rulebooks/futures_us/9_Cocoa.pdf https://www.ice.com/products/37089076"
+}

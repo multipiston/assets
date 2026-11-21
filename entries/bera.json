@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "BERA",
+  "aliases": [],
+  "name": "Bera",
+  "decimals": 18,
+  "icon": "icons/bera.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:3610fc1027e8578e72c3b66c7293f7459bcbf0e59fd5bfc416f3fea52bcf7f5e"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:80094/slip44:8008",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 80094: ethereum-lists/chains (chainid.network, 2026-11-01), native BERA, 18 decimals; 1 atom = 10^-18 BERA. Coin type 8008: SLIP-0044 (BERA). Icon: web3icons 4.0.58 (MIT), networks/branded/berachain.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

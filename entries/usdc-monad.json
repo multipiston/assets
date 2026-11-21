@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDC",
+  "aliases": [],
+  "name": "USD Coin",
+  "decimals": 6,
+  "icon": "icons/usdc-monad.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:3c190ac0dd21da1b83cfef7cf0ae38af30d4df8a13d1bc27a95e3fd38a3b3bdc"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:143/erc20:0x754704bc059f8c67012fed69bc8a327a5aafb603",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/usdc-contract-addresses (Monad), retrieved 2026-11-01. Decimals 6: the issuer, and decimals() via rpc.monad.xyz. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdc.svg, unmodified."
+}

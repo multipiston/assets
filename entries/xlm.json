@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "XLM",
+  "aliases": [],
+  "name": "Stellar Lumens",
+  "decimals": 7,
+  "icon": "icons/xlm.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:e5059a95861951bc437c0a76eebb2d7bdb7dcf60c211a379e91cfd4ae502e8a8"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "stellar:pubnet/slip44:148",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Id verbatim in namespaces stellar/caip19.md (native lumens). 1 atom = 1 stroop. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/xlm.svg, unmodified."
+}

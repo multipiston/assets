@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "INR",
+  "aliases": [],
+  "name": "Indian Rupee",
+  "decimals": 2,
+  "icon": "icons/inr.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:620cb750b1d04abb4901dfba98dcbbfa448c4ee0ee18ac4d8c8492e2aef48fe9"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "INR",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 INR (Indian Rupee), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/in.svg, unmodified."
+}

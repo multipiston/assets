@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "SBD",
+  "aliases": [],
+  "name": "Solomon Islands Dollar",
+  "decimals": 2,
+  "icon": "icons/sbd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:a613cbd00e67bb4aec1684204660ec0a430ce55e00c304c7df215e108481f30a"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "SBD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 SBD (Solomon Islands Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/sb.svg, unmodified."
+}

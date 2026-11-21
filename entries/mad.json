@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "MAD",
+  "aliases": [],
+  "name": "Moroccan Dirham",
+  "decimals": 2,
+  "icon": "icons/mad.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:602e8b7465520a67a2779f0d67d2f2ac9a2aefec29d46df95a8a5a81e4bbd9b8"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "MAD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 MAD (Moroccan Dirham), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ma.svg, unmodified."
+}

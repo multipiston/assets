@@ -1,0 +1,115 @@
+{
+  "family": "logistics.sea",
+  "name": "A container slot between two ports",
+  "symbol": "SLOT",
+  "icon": "icons/recipes/ship.svg",
+  "kind": "Fungible",
+  "source": "spec:iso6346-size-type",
+  "unit": "container",
+  "instrument": "{container}",
+  "params": [
+    {
+      "id": "container",
+      "name": "Container (ISO 6346 size and type)",
+      "type": "choice",
+      "options": [
+        {
+          "id": "22G1",
+          "name": "20ft general purpose (dry) container, 8ft6in high, passive vents",
+          "short": "20' GP"
+        },
+        {
+          "id": "42G1",
+          "name": "40ft general purpose (dry) container, 8ft6in high",
+          "short": "40' GP"
+        },
+        {
+          "id": "45G1",
+          "name": "40ft high cube general purpose container, 9ft6in high",
+          "short": "40' HC"
+        },
+        {
+          "id": "22R1",
+          "name": "20ft integral reefer, mechanically refrigerated and heated",
+          "short": "20' RF"
+        },
+        {
+          "id": "45R1",
+          "name": "40ft high cube integral reefer, mechanically refrigerated and",
+          "short": "40' HC RF"
+        },
+        {
+          "id": "22U1",
+          "name": "20ft open top container with removable top members in end frames",
+          "short": "20' OT"
+        },
+        {
+          "id": "42U1",
+          "name": "40ft open top container with removable top members in end frames",
+          "short": "40' OT"
+        },
+        {
+          "id": "22P1",
+          "name": "20ft flat rack (platform) with two complete and fixed ends",
+          "short": "20' FR fixed"
+        },
+        {
+          "id": "22P3",
+          "name": "20ft flat rack (platform) with folding complete end structure",
+          "short": "20' FR collapsible"
+        },
+        {
+          "id": "45P3",
+          "name": "40ft high cube flat rack with folding (collapsible) complete end",
+          "short": "40' HC FR"
+        },
+        {
+          "id": "22T6",
+          "name": "20ft tank container for dangerous liquids, minimum test pressure",
+          "short": "20' Tank (DG)"
+        },
+        {
+          "id": "22T0",
+          "name": "20ft tank container for non-dangerous liquids, minimum test",
+          "short": "20' Tank (non-DG)"
+        },
+        {
+          "id": "L5G1",
+          "name": "45ft high cube general purpose container, 9ft6in high, passive",
+          "short": "45' HC"
+        }
+      ],
+      "to": "instrument",
+      "example": "45G1"
+    },
+    {
+      "id": "from",
+      "name": "Port of loading (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "origin",
+      "example": "CNSHA"
+    },
+    {
+      "id": "to",
+      "name": "Port of discharge (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "destination",
+      "example": "NLRTM"
+    },
+    {
+      "id": "week",
+      "name": "Departure week",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "week"
+      ],
+      "to": "window",
+      "example": "2026-W50"
+    }
+  ],
+  "note": "Carriage of one container of an ISO 6346 size and type code between two ports named by UN/LOCODE, departing in an ISO week (UTC). Sources: https://en.wikipedia.org/wiki/ISO_6346 https://www.hapag-lloyd.com/es/services-information/cargo-fleet/container/container-type-groups.html"
+}

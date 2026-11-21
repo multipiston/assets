@@ -1,0 +1,69 @@
+{
+  "family": "contingent.option",
+  "name": "Exchange-listed option",
+  "symbol": "OPT",
+  "icon": "icons/recipes/option.svg",
+  "kind": "Fungible",
+  "source": "spec:iso10383",
+  "unit": "contract",
+  "instrument": "{venue}:{product}:{right}:{strike}",
+  "params": [
+    {
+      "id": "venue",
+      "name": "Exchange (ISO 10383 MIC)",
+      "type": "code",
+      "check": "mic",
+      "to": "instrument",
+      "example": "XCME"
+    },
+    {
+      "id": "product",
+      "name": "Option contract code",
+      "type": "text",
+      "max": 16,
+      "case": "upper",
+      "to": "instrument",
+      "example": "LO"
+    },
+    {
+      "id": "right",
+      "name": "Call or put",
+      "type": "choice",
+      "options": [
+        {
+          "id": "C",
+          "name": "Call"
+        },
+        {
+          "id": "P",
+          "name": "Put"
+        }
+      ],
+      "to": "instrument",
+      "example": "C"
+    },
+    {
+      "id": "strike",
+      "name": "Strike as the exchange quotes it",
+      "type": "text",
+      "max": 24,
+      "case": "keep",
+      "to": "instrument",
+      "example": "75.00"
+    },
+    {
+      "id": "expiry",
+      "name": "Expiry month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "regulated": true,
+  "note": "Venue by ISO 10383 MIC, contract code, call or put, strike as quoted by the exchange, expiry month in UTC."
+}

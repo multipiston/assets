@@ -1,0 +1,68 @@
+{
+  "family": "metals.precious",
+  "name": "Unallocated precious metal, loco London or Zurich",
+  "symbol": "METAL",
+  "icon": "icons/recipes/gold.svg",
+  "kind": "Fungible",
+  "source": "spec:lbma-lppm",
+  "unit": "milli-troy-ounce",
+  "decimals": 3,
+  "display": "troy-ounce",
+  "instrument": "{metal}",
+  "terms": [
+    {
+      "key": "form",
+      "value": "unallocated"
+    }
+  ],
+  "params": [
+    {
+      "id": "metal",
+      "name": "Metal (ISO 4217 code)",
+      "type": "choice",
+      "options": [
+        {
+          "id": "XAU",
+          "name": "Gold",
+          "short": "XAU LGD"
+        },
+        {
+          "id": "XAG",
+          "name": "Silver",
+          "short": "XAG LGD"
+        },
+        {
+          "id": "XPT",
+          "name": "Platinum",
+          "short": "XPT LPPM"
+        },
+        {
+          "id": "XPD",
+          "name": "Palladium",
+          "short": "XPD LPPM"
+        }
+      ],
+      "to": "instrument",
+      "example": "XAU"
+    },
+    {
+      "id": "place",
+      "name": "Loco",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "GBLON",
+      "options": [
+        {
+          "id": "GBLON",
+          "name": "London"
+        },
+        {
+          "id": "CHZRH",
+          "name": "Zurich"
+        }
+      ]
+    }
+  ],
+  "note": "A claim on Good Delivery metal (LBMA for gold and silver, LPPM for platinum and palladium), unallocated, loco London or Zurich; the amount in 0.001 fine troy ounce, shown in ounces, as unallocated accounts keep it. Sources: https://www.lbma.org.uk/publications/the-otc-guide/london-good-delivery-gold-and-silver https://www.lbma.org.uk/publications/the-otc-guide/good-delivery-platinum-and-palladium"
+}

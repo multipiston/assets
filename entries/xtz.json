@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "XTZ",
+  "aliases": [],
+  "name": "Tez",
+  "decimals": 6,
+  "icon": "icons/xtz.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:384af2f3d3221a4b6acf14bba93206c8dfc9d381c4ae428533a57a7e091464c2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "tezos:NetXdQprcVkpaWU/slip44:1729",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces tezos/caip2.md (Tezos). Decimals 6: https://docs.tezos.com/architecture/tokens. Coin type 1729: SLIP-0044 (XTZ). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/xtz.svg, unmodified."
+}

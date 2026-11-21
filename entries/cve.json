@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CVE",
+  "aliases": [],
+  "name": "Cape Verdean Escudo",
+  "decimals": 2,
+  "icon": "icons/cve.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:08bd6b3c21ebf1b71ee27e76c83246e7bd0b427d5063ee600abdbf1c3523de78"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CVE",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CVE (Cabo Verde Escudo), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/cv.svg, unmodified."
+}

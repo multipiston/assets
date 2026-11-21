@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "GIP",
+  "aliases": [],
+  "name": "Gibraltar Pound",
+  "decimals": 2,
+  "icon": "icons/gip.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:1740e667fad4fc0e736f80d69ad96509de81d8d1ad43d01a923c29cbd4ad4d9d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "GIP",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 GIP (Gibraltar Pound), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/gi.svg, unmodified."
+}

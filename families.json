@@ -1,0 +1,2326 @@
+{
+  "sources": {
+    "spec": {
+      "prefix": "spec:",
+      "description": "A standard or specification defining the item: anyone may deliver it to that specification. An on-chain asset is spec:caip19; a national currency, spec:iso4217"
+    },
+    "issuer": {
+      "prefix": "issuer:",
+      "description": "The issuer or obligor: the right is its obligation"
+    },
+    "registry": {
+      "prefix": "registry:",
+      "description": "The external registry where the right or object is recorded"
+    }
+  },
+  "term_groups": {
+    "place": {
+      "keys": [
+        "mp.place_authority",
+        "mp.place_id"
+      ],
+      "description": "Place: the naming authority and the id within it"
+    },
+    "route": {
+      "keys": [
+        "mp.origin_authority",
+        "mp.origin_id",
+        "mp.destination_authority",
+        "mp.destination_id"
+      ],
+      "description": "Route: origin and destination, all four fields"
+    },
+    "period": {
+      "keys": [
+        "mp.start_us",
+        "mp.end_us"
+      ],
+      "description": "Period [start, end) in UTC POSIX microseconds"
+    },
+    "window": {
+      "keys": [
+        "mp.start_window_from_us",
+        "mp.start_window_to_us"
+      ],
+      "description": "Start window in UTC POSIX microseconds"
+    },
+    "deadline": {
+      "keys": [
+        "mp.provision_complete_by_us"
+      ],
+      "description": "Completion deadline in UTC POSIX microseconds — a stated condition, not a check"
+    },
+    "capacity": {
+      "keys": [
+        "mp.capacity_unit",
+        "mp.concurrent_units"
+      ],
+      "description": "Concurrent capacity: unit and a positive count"
+    },
+    "configuration": {
+      "keys": [
+        "mp.configuration_id"
+      ],
+      "description": "Exact configuration"
+    },
+    "resource": {
+      "keys": [
+        "mp.resource_id"
+      ],
+      "description": "Exact resource (machine, cluster, instrument)"
+    },
+    "object": {
+      "keys": [
+        "mp.object_id"
+      ],
+      "description": "A specific object: serial, cadastral or registry number"
+    },
+    "meter": {
+      "keys": [
+        "mp.meter_id"
+      ],
+      "description": "Metering point"
+    },
+    "package": {
+      "keys": [
+        "mp.package_id"
+      ],
+      "description": "Exact package or kit"
+    },
+    "version": {
+      "keys": [
+        "mp.object_version"
+      ],
+      "description": "Exact version of the object"
+    }
+  },
+  "sections": [
+    {
+      "id": "money",
+      "name": "Money and money claims",
+      "source": "issuer",
+      "terms": []
+    },
+    {
+      "id": "crypto",
+      "name": "Crypto assets and tokenized issues",
+      "source": "spec",
+      "terms": []
+    },
+    {
+      "id": "equity",
+      "name": "Shares and investment units",
+      "source": "issuer",
+      "terms": []
+    },
+    {
+      "id": "debt",
+      "name": "Debt instruments and receivables",
+      "source": "issuer",
+      "terms": []
+    },
+    {
+      "id": "contingent",
+      "name": "Contingent financial and insurance rights",
+      "source": "issuer",
+      "terms": [
+        "period"
+      ]
+    },
+    {
+      "id": "metals",
+      "name": "Metals and minerals",
+      "source": "spec",
+      "terms": [
+        "place",
+        "period"
+      ]
+    },
+    {
+      "id": "chem",
+      "name": "Fuel, chemicals and gases",
+      "source": "spec",
+      "terms": [
+        "place",
+        "period"
+      ]
+    },
+    {
+      "id": "agro",
+      "name": "Agricultural products, food and feed",
+      "source": "spec",
+      "terms": [
+        "place",
+        "period"
+      ]
+    },
+    {
+      "id": "bio",
+      "name": "Timber, biomass and living things",
+      "source": "spec",
+      "terms": [
+        "place"
+      ]
+    },
+    {
+      "id": "parts",
+      "name": "Standardized industrial goods",
+      "source": "spec",
+      "terms": [
+        "place"
+      ]
+    },
+    {
+      "id": "machines",
+      "name": "Machinery, equipment and vehicles",
+      "source": "spec",
+      "terms": [
+        "object"
+      ]
+    },
+    {
+      "id": "goods",
+      "name": "Consumer goods, luxury and collectibles",
+      "source": "spec",
+      "terms": [
+        "object"
+      ]
+    },
+    {
+      "id": "realty",
+      "name": "Real estate and land rights",
+      "source": "registry",
+      "terms": [
+        "place",
+        "object"
+      ]
+    },
+    {
+      "id": "infra",
+      "name": "Infrastructure and resource use",
+      "source": "issuer",
+      "terms": [
+        "place",
+        "period",
+        "capacity"
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Electricity, heat and energy services",
+      "source": "spec",
+      "terms": [
+        "place",
+        "period",
+        "meter",
+        "capacity"
+      ]
+    },
+    {
+      "id": "nuclear",
+      "name": "Civil nuclear industry",
+      "source": "spec",
+      "terms": [
+        "place",
+        "object"
+      ]
+    },
+    {
+      "id": "eco",
+      "name": "Environmental rights, certificates and quotas",
+      "source": "registry",
+      "terms": [
+        "object"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "Logistics, transport and storage",
+      "source": "spec",
+      "terms": [
+        "route",
+        "window",
+        "package"
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "Production capacity and time slots",
+      "source": "spec",
+      "terms": [
+        "place",
+        "resource",
+        "period",
+        "window",
+        "capacity"
+      ]
+    },
+    {
+      "id": "services",
+      "name": "Professional services and work results",
+      "source": "spec",
+      "terms": [
+        "deadline",
+        "configuration"
+      ]
+    },
+    {
+      "id": "compute",
+      "name": "Computing, software and digital resources",
+      "source": "spec",
+      "terms": [
+        "resource",
+        "configuration",
+        "period",
+        "capacity"
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data, AI and digital results",
+      "source": "issuer",
+      "terms": [
+        "object"
+      ]
+    },
+    {
+      "id": "ip",
+      "name": "Intellectual property and media rights",
+      "source": "registry",
+      "terms": [
+        "object"
+      ]
+    },
+    {
+      "id": "access",
+      "name": "Access, programs and administrative rights",
+      "source": "issuer",
+      "terms": [
+        "place",
+        "period",
+        "object"
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Documents, bundles and new assets",
+      "source": "spec",
+      "terms": [
+        "package",
+        "object"
+      ]
+    }
+  ],
+  "families": [
+    {
+      "id": "money.cash",
+      "section": "money",
+      "name": "National cash currencies",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "minor-unit",
+      "identity": "The currency and essential requirements on the cash form; a collectible specimen is a separate Unique asset."
+    },
+    {
+      "id": "money.bank-transfer",
+      "section": "money",
+      "name": "Money obligation paid by bank transfer",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "minor-unit",
+      "identity": "The currency and the exact payment item; the payee's details do not make a new currency."
+    },
+    {
+      "id": "money.deposit-claim",
+      "section": "money",
+      "name": "Bank deposit claim",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "claim unit or contract",
+      "identity": "The specific bank, issue/contract, currency, term and assignment conditions."
+    },
+    {
+      "id": "money.e-money",
+      "section": "money",
+      "name": "Electronic money",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "issue unit",
+      "identity": "The issuer, program and circulation rules; a currency code alone is not enough."
+    },
+    {
+      "id": "money.tokenized-deposit",
+      "section": "money",
+      "name": "Tokenized bank deposit",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "issue unit",
+      "identity": "The bank, the issue and the exact ledger system/network."
+    },
+    {
+      "id": "money.cbdc",
+      "section": "money",
+      "name": "Central bank digital money",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "system unit",
+      "identity": "The specific system and the transfer right permitted to the parties."
+    },
+    {
+      "id": "money.custody-claim",
+      "section": "money",
+      "name": "Cash claim on a broker or custodian",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The obligor, the claim regime and the currency; not automatically cash currency."
+    },
+    {
+      "id": "money.local-credit",
+      "section": "money",
+      "name": "Local settlement units and barter credits",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "program unit",
+      "identity": "The issuer/community, redemption rules and transferability."
+    },
+    {
+      "id": "crypto.coin",
+      "section": "crypto",
+      "name": "Native blockchain coins",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "atom",
+      "identity": "The network and its native coin, by CAIP-19 id (its SLIP-44 coin type)."
+    },
+    {
+      "id": "crypto.token",
+      "section": "crypto",
+      "name": "Fungible tokens",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "atom",
+      "identity": "The network, contract/mint and the established quantity law."
+    },
+    {
+      "id": "crypto.stablecoin",
+      "section": "crypto",
+      "name": "Stablecoins",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "atom",
+      "identity": "The specific issue and network; USDT, USDC and other issues are not merged under a USD ticker.",
+      "domain": "crypto.token"
+    },
+    {
+      "id": "crypto.backed-token",
+      "section": "crypto",
+      "name": "Commodity- or asset-backed tokens",
+      "kinds": [
+        "Fungible"
+      ],
+      "identity": "The issue, network and contractual rights; the backing commodity is a separate item.",
+      "domain": "crypto.token",
+      "unit": "atom"
+    },
+    {
+      "id": "crypto.pool-share",
+      "section": "crypto",
+      "name": "Pool and vault share tokens",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "atom",
+      "identity": "The specific instrument; not the current value of the underlying.",
+      "domain": "crypto.token"
+    },
+    {
+      "id": "crypto.wrapped",
+      "section": "crypto",
+      "name": "Wrapped and bridged representations",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "atom",
+      "identity": "The wrapper/bridge, network and contract; the original asset stays separate.",
+      "domain": "crypto.token"
+    },
+    {
+      "id": "crypto.nft",
+      "section": "crypto",
+      "name": "Individual NFTs",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "atom",
+      "identity": "The network, contract/collection and the specific token ID."
+    },
+    {
+      "id": "crypto.multi-token",
+      "section": "crypto",
+      "name": "Editioned and semi-fungible tokens",
+      "kinds": [
+        "Fungible"
+      ],
+      "identity": "The contract and the type id; one id is one Fungible asset, a single item is the amount 1.",
+      "unit": "atom"
+    },
+    {
+      "id": "equity.common",
+      "section": "equity",
+      "name": "Common shares",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "share",
+      "identity": "The issuer, class, issue, rights and external recording regime."
+    },
+    {
+      "id": "equity.preferred",
+      "section": "equity",
+      "name": "Preferred shares",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "share",
+      "identity": "The issuer, series, preferences and terms."
+    },
+    {
+      "id": "equity.private",
+      "section": "equity",
+      "name": "Private company and partnership interests",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "interest",
+      "identity": "The company, class of right, size and transfer conditions."
+    },
+    {
+      "id": "equity.etf",
+      "section": "equity",
+      "name": "ETF units",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "unit",
+      "identity": "The fund, class and issue."
+    },
+    {
+      "id": "equity.fund",
+      "section": "equity",
+      "name": "Other investment fund units",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "unit",
+      "identity": "The fund, class, class currency and dealing terms."
+    },
+    {
+      "id": "equity.reit",
+      "section": "equity",
+      "name": "Real estate fund units",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "unit/share",
+      "identity": "The fund and the instrument; the property does not become the same asset."
+    },
+    {
+      "id": "equity.receipt",
+      "section": "equity",
+      "name": "Depositary receipts",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "receipt",
+      "identity": "The program, depositary, issue and representation ratio."
+    },
+    {
+      "id": "equity.portfolio-share",
+      "section": "equity",
+      "name": "Formalized investment portfolio shares",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "share",
+      "identity": "One specific instrument and its composition rules; not an arbitrary dynamic basket."
+    },
+    {
+      "id": "debt.t-bill",
+      "section": "debt",
+      "name": "Short-term government debt",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "security/face value",
+      "identity": "The issuer, issue, currency and maturity."
+    },
+    {
+      "id": "debt.gov-bond",
+      "section": "debt",
+      "name": "Government bonds",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "security/face value",
+      "identity": "The specific issue and its terms."
+    },
+    {
+      "id": "debt.corp-bond",
+      "section": "debt",
+      "name": "Corporate bonds",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "security/face value",
+      "identity": "The issuer, issue, seniority and terms."
+    },
+    {
+      "id": "debt.muni-bond",
+      "section": "debt",
+      "name": "Municipal and regional bonds",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "security/face value",
+      "identity": "The issuer and the issue."
+    },
+    {
+      "id": "debt.paper",
+      "section": "debt",
+      "name": "Commercial paper and promissory notes",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The obligor, issue/document, currency and term."
+    },
+    {
+      "id": "debt.cd",
+      "section": "debt",
+      "name": "Transferable certificates of deposit",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The issuer, issue/instrument and transfer conditions."
+    },
+    {
+      "id": "debt.loan",
+      "section": "debt",
+      "name": "Assignable loan rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "right/share",
+      "identity": "The agreement, the obligor and the exact assigned amount."
+    },
+    {
+      "id": "debt.invoice",
+      "section": "debt",
+      "name": "Invoices and factoring receivables",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The identified debt, its documents and the limits of assignment."
+    },
+    {
+      "id": "contingent.future",
+      "section": "contingent",
+      "name": "Transferable futures or forward rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "contract",
+      "identity": "The exact existing contract, underlying item, term and transfer mechanism."
+    },
+    {
+      "id": "contingent.option",
+      "section": "contingent",
+      "name": "Option rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "contract",
+      "identity": "The underlying, type, strike, expiry and exercise style."
+    },
+    {
+      "id": "contingent.warrant",
+      "section": "contingent",
+      "name": "Warrants",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "warrant",
+      "identity": "The issuer, issue and terms."
+    },
+    {
+      "id": "contingent.swap",
+      "section": "contingent",
+      "name": "Transferable swap rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The agreement, cash flows, dates and required consents."
+    },
+    {
+      "id": "contingent.insurance",
+      "section": "contingent",
+      "name": "Assignable insurance rights",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The policy and exactly the right transferred."
+    },
+    {
+      "id": "contingent.insurance-claim",
+      "section": "contingent",
+      "name": "Insurance event claims",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The specific claim and the assigned amount."
+    },
+    {
+      "id": "contingent.guarantee",
+      "section": "contingent",
+      "name": "Guarantee or letter of credit rights",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The instrument, guarantor/bank and transferability regime."
+    },
+    {
+      "id": "contingent.structured",
+      "section": "contingent",
+      "name": "Structured notes and securitized claims",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The issue and the external settlement system; the runtime does not compute payouts."
+    },
+    {
+      "id": "metals.precious",
+      "section": "metals",
+      "name": "Precious metals of a standard grade",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The metal, fineness, form and specification."
+    },
+    {
+      "id": "metals.bar",
+      "section": "metals",
+      "name": "Individual bars",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The refiner, serial number, mass, fineness and condition."
+    },
+    {
+      "id": "metals.base",
+      "section": "metals",
+      "name": "Base metals",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The metal/alloy, grade and form."
+    },
+    {
+      "id": "metals.steel",
+      "section": "metals",
+      "name": "Steel, iron and ferroalloys",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/piece",
+      "identity": "The grade, standard, form and size."
+    },
+    {
+      "id": "metals.rare",
+      "section": "metals",
+      "name": "Rare metals and rare earth products",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The composition, purity and product form."
+    },
+    {
+      "id": "metals.ore",
+      "section": "metals",
+      "name": "Ores and concentrates",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The composition, quality class and the lot where it matters."
+    },
+    {
+      "id": "metals.stone",
+      "section": "metals",
+      "name": "Precious and industrial stones",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "piece/mass",
+      "identity": "The class characteristics or a specific specimen."
+    },
+    {
+      "id": "metals.aggregate",
+      "section": "metals",
+      "name": "Construction minerals",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The material, fraction, quality and measurement basis."
+    },
+    {
+      "id": "chem.crude",
+      "section": "chem",
+      "name": "Crude oil",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The grade, specification, measurement basis and delivered product."
+    },
+    {
+      "id": "chem.oil-product",
+      "section": "chem",
+      "name": "Petroleum products",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The type, standard and the reference temperature for volume measurement."
+    },
+    {
+      "id": "chem.gas",
+      "section": "chem",
+      "name": "Natural gas, LNG and LPG as a commodity",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "energy/mass/volume",
+      "identity": "The composition, form and measurement conditions."
+    },
+    {
+      "id": "chem.coal",
+      "section": "chem",
+      "name": "Coal, coke and peat",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The type, specification, moisture and size fraction."
+    },
+    {
+      "id": "chem.chemical",
+      "section": "chem",
+      "name": "Basic and specialty chemicals",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The substance/mixture, purity and concentration."
+    },
+    {
+      "id": "chem.polymer",
+      "section": "chem",
+      "name": "Polymers, resins and compounds",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The grade, composition and performance specification."
+    },
+    {
+      "id": "chem.fertilizer",
+      "section": "chem",
+      "name": "Fertilizers and reagents",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The composition, concentration, form and quality."
+    },
+    {
+      "id": "chem.industrial-gas",
+      "section": "chem",
+      "name": "Industrial gases, hydrogen and ammonia",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume/energy",
+      "identity": "The product, purity, state and measurement basis."
+    },
+    {
+      "id": "agro.grain",
+      "section": "agro",
+      "name": "Grains and pulses",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The crop, variety/class, quality and the harvest where it matters."
+    },
+    {
+      "id": "agro.oilseed",
+      "section": "agro",
+      "name": "Oilseeds and oils",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume",
+      "identity": "The product, variety, processing and quality."
+    },
+    {
+      "id": "agro.produce",
+      "section": "agro",
+      "name": "Vegetables, fruit and berries",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The kind, variety, class, condition, packaging and lot."
+    },
+    {
+      "id": "agro.coffee",
+      "section": "agro",
+      "name": "Coffee, tea, cocoa and spices",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The origin/grade, processing and specification."
+    },
+    {
+      "id": "agro.sugar",
+      "section": "agro",
+      "name": "Sugar, starches and ingredients",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass",
+      "identity": "The composition, purity and food specification."
+    },
+    {
+      "id": "agro.meat-fish",
+      "section": "agro",
+      "name": "Meat, fish and seafood",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The species, cut, condition, quality and traceability."
+    },
+    {
+      "id": "agro.dairy",
+      "section": "agro",
+      "name": "Dairy products and eggs",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/volume/piece",
+      "identity": "The composition, processing, packaging and shelf life."
+    },
+    {
+      "id": "agro.feed-food",
+      "section": "agro",
+      "name": "Feed and finished food products",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/package",
+      "identity": "The recipe/SKU, packaging and the lot where needed."
+    },
+    {
+      "id": "bio.timber",
+      "section": "bio",
+      "name": "Timber and lumber",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The species, grade, dimensions, moisture and origin."
+    },
+    {
+      "id": "bio.pulp-paper",
+      "section": "bio",
+      "name": "Pulp, paper and board",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/area/roll",
+      "identity": "The grade, grammage, format and specification."
+    },
+    {
+      "id": "bio.biomass",
+      "section": "bio",
+      "name": "Pellets and biomass",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/energy",
+      "identity": "The feedstock, quality and moisture."
+    },
+    {
+      "id": "bio.seed",
+      "section": "bio",
+      "name": "Seeds and planting material",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The species/variety, lot and conditions of use."
+    },
+    {
+      "id": "bio.livestock",
+      "section": "bio",
+      "name": "Farm animals",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "animal/batch",
+      "identity": "The class or an individual ID, condition and documents."
+    },
+    {
+      "id": "bio.aquaculture",
+      "section": "bio",
+      "name": "Aquaculture and live aquatic organisms",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The species, life stage, quality and lot."
+    },
+    {
+      "id": "bio.biomaterial",
+      "section": "bio",
+      "name": "Permitted breeding and biological materials",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The material, source, access regime and permitted transfer."
+    },
+    {
+      "id": "bio.natural-sample",
+      "section": "bio",
+      "name": "Natural samples and plant raw materials",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The species, origin, specimen/lot and restrictions."
+    },
+    {
+      "id": "parts.hardware",
+      "section": "parts",
+      "name": "Fasteners, pipes, profiles and parts",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "piece/length/mass",
+      "identity": "The standard, material, dimensions and finish."
+    },
+    {
+      "id": "parts.casting",
+      "section": "parts",
+      "name": "Castings, forgings and blanks",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The drawing/revision, material, tolerances and machining."
+    },
+    {
+      "id": "parts.cutting-tool",
+      "section": "parts",
+      "name": "Cutting tools and wear parts",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "piece/set",
+      "identity": "The part number/geometry, material, finish and compatibility."
+    },
+    {
+      "id": "parts.electronic",
+      "section": "parts",
+      "name": "Electronic and electrical components",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "piece",
+      "identity": "The manufacturer/agreed class, part number, package and revision."
+    },
+    {
+      "id": "parts.building",
+      "section": "parts",
+      "name": "Building products and prefabricated elements",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The design/standard, dimensions, material and finish."
+    },
+    {
+      "id": "parts.textile",
+      "section": "parts",
+      "name": "Fabrics, fibers and technical textiles",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "mass/length/area",
+      "identity": "The composition, structure, density and finishing."
+    },
+    {
+      "id": "parts.packaging",
+      "section": "parts",
+      "name": "Packaging and containers",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "piece",
+      "identity": "The type, material and size; an ID for a returnable item."
+    },
+    {
+      "id": "parts.medical",
+      "section": "parts",
+      "name": "Standardized medical devices",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model, version, lot/serial and permitted transfer regime."
+    },
+    {
+      "id": "machines.machine-tool",
+      "section": "machines",
+      "name": "Machine tools and industrial machines",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The model, serial number and essential configuration."
+    },
+    {
+      "id": "machines.line",
+      "section": "machines",
+      "name": "Production lines and plants",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The identified composition of a single transferable object."
+    },
+    {
+      "id": "machines.robot",
+      "section": "machines",
+      "name": "Robots and unmanned devices",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The exact class of a new product or a serial unit."
+    },
+    {
+      "id": "machines.vehicle",
+      "section": "machines",
+      "name": "Cars and road machinery",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The VIN/stable ID and the specific object."
+    },
+    {
+      "id": "machines.aircraft",
+      "section": "machines",
+      "name": "Aircraft and serial assemblies",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The registry/serial ID and the scope of the right."
+    },
+    {
+      "id": "machines.vessel",
+      "section": "machines",
+      "name": "Ships and floating structures",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The registry/builder's ID."
+    },
+    {
+      "id": "machines.rail",
+      "section": "machines",
+      "name": "Railway rolling stock",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "A standardized new class or an individual object."
+    },
+    {
+      "id": "machines.container",
+      "section": "machines",
+      "name": "Containers and tracked returnable packaging",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The unit ID, type and condition."
+    },
+    {
+      "id": "goods.watch",
+      "section": "goods",
+      "name": "Watches",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The reference and class specification; for Unique, the specimen, condition and set."
+    },
+    {
+      "id": "goods.jewelry",
+      "section": "goods",
+      "name": "Jewelry",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model/specimen, materials, stones and characteristics."
+    },
+    {
+      "id": "goods.art",
+      "section": "goods",
+      "name": "Original artworks",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The specific work and the item transferred."
+    },
+    {
+      "id": "goods.collectible",
+      "section": "goods",
+      "name": "Coins, cards and antiques",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The issue/grade, or the specimen and its condition."
+    },
+    {
+      "id": "goods.electronics",
+      "section": "goods",
+      "name": "Consumer electronics",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "An exact new SKU or a serial unit."
+    },
+    {
+      "id": "goods.furniture",
+      "section": "goods",
+      "name": "Furniture, musical instruments and interior items",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model/version or the specific item."
+    },
+    {
+      "id": "goods.fashion",
+      "section": "goods",
+      "name": "Bags, clothing, footwear and accessories",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model, size and version; a used item is individualized."
+    },
+    {
+      "id": "goods.spirits",
+      "section": "goods",
+      "name": "Collectible drinks and bottles",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The producer, release, vintage/batch and volume, or the specimen."
+    },
+    {
+      "id": "realty.land",
+      "section": "realty",
+      "name": "Land plots",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The registered object and the right transferred."
+    },
+    {
+      "id": "realty.building",
+      "section": "realty",
+      "name": "Buildings and structures",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "A stable identifier of the object and the right."
+    },
+    {
+      "id": "realty.premises",
+      "section": "realty",
+      "name": "Premises, apartments and separate units",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "A legally defined object."
+    },
+    {
+      "id": "realty.share",
+      "section": "realty",
+      "name": "Formalized real estate shares",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The object, kind of right and class/size of the share."
+    },
+    {
+      "id": "realty.lease",
+      "section": "realty",
+      "name": "Transferable lease rights",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The object, agreement, period, scope and assignment conditions."
+    },
+    {
+      "id": "realty.rent-claim",
+      "section": "realty",
+      "name": "Rent payment claims",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The agreement, obligor, period and amount of receipts."
+    },
+    {
+      "id": "realty.development",
+      "section": "realty",
+      "name": "Development and building rights",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The site, the content of the right and the permitted transfer regime."
+    },
+    {
+      "id": "realty.easement",
+      "section": "realty",
+      "name": "Easements and limited property rights",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The object, content, period and transferability of the specific right."
+    },
+    {
+      "id": "infra.warehouse",
+      "section": "infra",
+      "name": "Right to use warehouse space",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "slot/package",
+      "identity": "The facility, regime, period and service."
+    },
+    {
+      "id": "infra.berth",
+      "section": "infra",
+      "name": "Berths and port infrastructure",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "slot",
+      "identity": "The facility, period and admission parameters."
+    },
+    {
+      "id": "infra.terminal",
+      "section": "infra",
+      "name": "Terminal throughput",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "unit/slot",
+      "identity": "The terminal, cargo, period and terms."
+    },
+    {
+      "id": "infra.pipeline",
+      "section": "infra",
+      "name": "Pipeline capacity",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The points, product, period and contracted volume."
+    },
+    {
+      "id": "infra.fiber",
+      "section": "infra",
+      "name": "Fiber lines and telecom infrastructure",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The route/line, content of the right, term and quality."
+    },
+    {
+      "id": "infra.datacenter",
+      "section": "infra",
+      "name": "Data center racks and infrastructure",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The site, power, regime and period."
+    },
+    {
+      "id": "infra.water",
+      "section": "infra",
+      "name": "Water and process water supply",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "volume",
+      "identity": "The system/source, quality, point and period."
+    },
+    {
+      "id": "infra.waste",
+      "section": "infra",
+      "name": "Utility and waste processing capacity",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The operator, accepted material, volume and service."
+    },
+    {
+      "id": "energy.power",
+      "section": "energy",
+      "name": "Electricity delivery product",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "fixed energy unit",
+      "identity": "The point/zone, period, profile and contracted product."
+    },
+    {
+      "id": "energy.capacity",
+      "section": "energy",
+      "name": "Electrical capacity",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "capacity unit per period",
+      "identity": "The zone/facility, period and availability obligation."
+    },
+    {
+      "id": "energy.balancing",
+      "section": "energy",
+      "name": "Balancing and reserve services",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The exact product, zone, period and activation conditions."
+    },
+    {
+      "id": "energy.storage",
+      "section": "energy",
+      "name": "Energy storage as a service",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The facility, energy capacity, power, period and right."
+    },
+    {
+      "id": "energy.heat",
+      "section": "energy",
+      "name": "Heating and cooling",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "energy/package",
+      "identity": "The system, point, parameters and period."
+    },
+    {
+      "id": "energy.gas-supply",
+      "section": "energy",
+      "name": "Gas supply through a defined system",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "energy/volume",
+      "identity": "The product, point, period and metering basis."
+    },
+    {
+      "id": "energy.hydrogen-supply",
+      "section": "energy",
+      "name": "Contracted hydrogen and energy carrier supply",
+      "kinds": [
+        "Fungible"
+      ],
+      "identity": "The product, quality, point and period."
+    },
+    {
+      "id": "energy.ppa",
+      "section": "energy",
+      "name": "Transferable PPA or prepayment rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The agreement, content of the right, period and assignment conditions."
+    },
+    {
+      "id": "nuclear.fuel-material",
+      "section": "nuclear",
+      "name": "Permitted fuel cycle materials",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The exact licensed product, specification and lot."
+    },
+    {
+      "id": "nuclear.fuel-assembly",
+      "section": "nuclear",
+      "name": "Finished fuel products",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The product/lot and the approved item of transfer."
+    },
+    {
+      "id": "nuclear.equipment",
+      "section": "nuclear",
+      "name": "Qualified industry equipment",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model/unit, version and qualification."
+    },
+    {
+      "id": "nuclear.component",
+      "section": "nuclear",
+      "name": "Nuclear plant components",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The product, revision and qualified specification."
+    },
+    {
+      "id": "nuclear.engineering",
+      "section": "nuclear",
+      "name": "Engineering and service work",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The contractor, facility, scope, result and period."
+    },
+    {
+      "id": "nuclear.isotope",
+      "section": "nuclear",
+      "name": "Permitted isotope and radiopharmaceutical products",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The product, lot, time conditions and handling regime."
+    },
+    {
+      "id": "nuclear.handling",
+      "section": "nuclear",
+      "name": "Licensed storage and material handling",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The operator, accepted item, service and period."
+    },
+    {
+      "id": "nuclear.decommissioning",
+      "section": "nuclear",
+      "name": "Decommissioning and remediation",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The facility, result, scope of work and contractor."
+    },
+    {
+      "id": "eco.allowance",
+      "section": "eco",
+      "name": "Compliance emission allowances",
+      "kinds": [
+        "Fungible"
+      ],
+      "identity": "The scheme, instrument type, period/vintage and registry."
+    },
+    {
+      "id": "eco.carbon-credit",
+      "section": "eco",
+      "name": "Voluntary carbon credits and removals",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The registry, project, methodology, vintage and outcome."
+    },
+    {
+      "id": "eco.energy-certificate",
+      "section": "eco",
+      "name": "Energy attribute certificates",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The scheme, energy type, source, period and serial range."
+    },
+    {
+      "id": "eco.fuel-credit",
+      "section": "eco",
+      "name": "Low carbon fuel credits",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The scheme, category, period and unit."
+    },
+    {
+      "id": "eco.water-right",
+      "section": "eco",
+      "name": "Transferable water rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The zone/water body, period, volume and regime."
+    },
+    {
+      "id": "eco.fishing-quota",
+      "section": "eco",
+      "name": "Transferable fishing quotas",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The stock, zone, period, volume and conditions."
+    },
+    {
+      "id": "eco.recycling-credit",
+      "section": "eco",
+      "name": "Recycling and disposal units",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The scheme, material, verified operation and period."
+    },
+    {
+      "id": "eco.nature-credit",
+      "section": "eco",
+      "name": "Biodiversity, nutrient and conservation rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The scheme, site, outcome, methodology and period."
+    },
+    {
+      "id": "logistics.sea",
+      "section": "logistics",
+      "name": "Sea freight",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "container/mass/slot",
+      "identity": "The route, window, cargo class and service product."
+    },
+    {
+      "id": "logistics.air",
+      "section": "logistics",
+      "name": "Air freight",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The route, window, unit, cargo and terms."
+    },
+    {
+      "id": "logistics.rail",
+      "section": "logistics",
+      "name": "Rail freight",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The route, volume/wagon, period and terms."
+    },
+    {
+      "id": "logistics.road",
+      "section": "logistics",
+      "name": "Road freight",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The route, vehicle class, cargo and window."
+    },
+    {
+      "id": "logistics.courier",
+      "section": "logistics",
+      "name": "Postal and courier delivery",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "package",
+      "identity": "The exact tariff product, zone, weight/size and service standard."
+    },
+    {
+      "id": "logistics.storage",
+      "section": "logistics",
+      "name": "Standardized storage",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "pallet-day/package",
+      "identity": "The warehouse, space type, regime and period."
+    },
+    {
+      "id": "logistics.handling",
+      "section": "logistics",
+      "name": "Loading, unloading and handling",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "operation/unit",
+      "identity": "The site, cargo, operation and unit."
+    },
+    {
+      "id": "logistics.forwarding",
+      "section": "logistics",
+      "name": "Forwarding and documentation",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "package",
+      "identity": "A fixed scope of service, the operation and the result."
+    },
+    {
+      "id": "capacity.machine-time",
+      "section": "capacity",
+      "name": "Machine time",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "package/slot",
+      "identity": "The provider, equipment, operation, window and quality."
+    },
+    {
+      "id": "capacity.foundry",
+      "section": "capacity",
+      "name": "Foundry and heat treatment capacity",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The site, process, material, volume and window."
+    },
+    {
+      "id": "capacity.assembly",
+      "section": "capacity",
+      "name": "Assembly, welding and installation",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The process, result class, provider and period."
+    },
+    {
+      "id": "capacity.lab-test",
+      "section": "capacity",
+      "name": "Laboratory analysis and testing",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "test/package",
+      "identity": "The method, test object, laboratory and result."
+    },
+    {
+      "id": "capacity.instrument",
+      "section": "capacity",
+      "name": "Access to a scientific instrument",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "slot",
+      "identity": "The instrument/class, mode and period."
+    },
+    {
+      "id": "capacity.cleanroom",
+      "section": "capacity",
+      "name": "Cleanroom or special environment",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "slot",
+      "identity": "The site, regime, period and permitted operation."
+    },
+    {
+      "id": "capacity.bandwidth",
+      "section": "capacity",
+      "name": "Guaranteed bandwidth",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The points/zone, speed, quality, period and service."
+    },
+    {
+      "id": "capacity.space-slot",
+      "section": "capacity",
+      "name": "Space payload and slot",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The mission/service, admission conditions, period and agreement."
+    },
+    {
+      "id": "services.software",
+      "section": "services",
+      "name": "Software development",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "A defined result, scope, acceptance and rights."
+    },
+    {
+      "id": "services.engineering",
+      "section": "services",
+      "name": "Design and engineering",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The brief, result, requirements revision and rights."
+    },
+    {
+      "id": "services.advisory",
+      "section": "services",
+      "name": "Legal, accounting and advisory services",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The subject, a fixed package/time and terms."
+    },
+    {
+      "id": "services.translation",
+      "section": "services",
+      "name": "Translation, editing and content preparation",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The languages, result, unit and requirements."
+    },
+    {
+      "id": "services.training",
+      "section": "services",
+      "name": "Training and program seats",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The program, period, provider and transferability."
+    },
+    {
+      "id": "services.repair",
+      "section": "services",
+      "name": "Repair and maintenance",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The object/class, work, result and terms."
+    },
+    {
+      "id": "services.facility",
+      "section": "services",
+      "name": "Facility operation, cleaning and service",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The facility/class, package/area, period and standard."
+    },
+    {
+      "id": "services.research",
+      "section": "services",
+      "name": "Research work",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The specific stage/result, method and acceptance."
+    },
+    {
+      "id": "compute.cpu-gpu",
+      "section": "compute",
+      "name": "CPU and GPU computing",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "package/slot",
+      "identity": "The provider, configuration, region, period and SLA."
+    },
+    {
+      "id": "compute.storage",
+      "section": "compute",
+      "name": "Data storage",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "volume per period",
+      "identity": "The provider, class, region, period and terms."
+    },
+    {
+      "id": "compute.api",
+      "section": "compute",
+      "name": "API calls and network traffic",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "operation/package",
+      "identity": "The service, plan, operation, version and period."
+    },
+    {
+      "id": "compute.license",
+      "section": "compute",
+      "name": "Software licenses",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The product, edition, rights, term, seats and transferability."
+    },
+    {
+      "id": "compute.subscription",
+      "section": "compute",
+      "name": "Subscriptions and service packages",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The provider, plan, period and scope of the right."
+    },
+    {
+      "id": "compute.domain-name",
+      "section": "compute",
+      "name": "Domain names",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The registered name and the right transferred."
+    },
+    {
+      "id": "compute.game-item",
+      "section": "compute",
+      "name": "Game and virtual items",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The system, type/instance and the permitted transfer mechanism."
+    },
+    {
+      "id": "compute.network-resource",
+      "section": "compute",
+      "name": "Delegable network resources",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The registry/operator, resource, period and right of use."
+    },
+    {
+      "id": "data.dataset",
+      "section": "data",
+      "name": "Dataset release",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The exact version/contents and usage rights."
+    },
+    {
+      "id": "data.stream",
+      "section": "data",
+      "name": "Data stream for a period",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The source, schema, quality, frequency, period and rights."
+    },
+    {
+      "id": "data.model",
+      "section": "data",
+      "name": "AI model weights and license",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The model/version and the license limits."
+    },
+    {
+      "id": "data.inference",
+      "section": "data",
+      "name": "Inference credits",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "exact service unit",
+      "identity": "The provider, model/version, operation, unit and term."
+    },
+    {
+      "id": "data.training-job",
+      "section": "data",
+      "name": "Model training job",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "Fixed inputs, the task, the result and acceptance."
+    },
+    {
+      "id": "data.digital-twin",
+      "section": "data",
+      "name": "Digital twin and technical model",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The object, version, contents and rights."
+    },
+    {
+      "id": "data.result",
+      "section": "data",
+      "name": "Scientific results, simulations and measurements",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The result, version/method and access."
+    },
+    {
+      "id": "data.report",
+      "section": "data",
+      "name": "Report, audit or test as a deliverable",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The examiner, subject, method and content of the result."
+    },
+    {
+      "id": "ip.copyright",
+      "section": "ip",
+      "name": "Transfer of economic copyright",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The work, scope of rights, territory and term."
+    },
+    {
+      "id": "ip.license",
+      "section": "ip",
+      "name": "Non-exclusive license",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The subject matter, permitted uses, territory, term and restrictions."
+    },
+    {
+      "id": "ip.exclusive-license",
+      "section": "ip",
+      "name": "Exclusive license",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The subject matter and the limits of exclusivity."
+    },
+    {
+      "id": "ip.patent",
+      "section": "ip",
+      "name": "Patents and patent licenses",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The right/registry, territory, scope and term."
+    },
+    {
+      "id": "ip.trademark",
+      "section": "ip",
+      "name": "Trademarks and trademark licenses",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The right, classes/territory and what is transferred."
+    },
+    {
+      "id": "ip.design",
+      "section": "ip",
+      "name": "Industrial design rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The specific right and the limits of use."
+    },
+    {
+      "id": "ip.know-how",
+      "section": "ip",
+      "name": "Know-how and trade secrets",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "Defined knowledge and the conditions of access and use."
+    },
+    {
+      "id": "ip.special",
+      "section": "ip",
+      "name": "Plant variety and other special IP rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The right, territory, term and permitted uses."
+    },
+    {
+      "id": "access.seat",
+      "section": "access",
+      "name": "Ticket for a specific seat",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The event, date, seat and right of entry."
+    },
+    {
+      "id": "access.admission",
+      "section": "access",
+      "name": "General admission and standard passes",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The event/venue, period, class and transferability."
+    },
+    {
+      "id": "access.voucher",
+      "section": "access",
+      "name": "Travel, transport and hotel vouchers",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The provider, service, period, class and change of holder."
+    },
+    {
+      "id": "access.gift-points",
+      "section": "access",
+      "name": "Gift certificates and transferable points",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The issuer, program, unit, validity and rules."
+    },
+    {
+      "id": "access.membership",
+      "section": "access",
+      "name": "Transferable memberships and passes",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The organization, class, period and transfer regime."
+    },
+    {
+      "id": "access.spectrum",
+      "section": "access",
+      "name": "Permitted spectrum use rights",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The territory, band/resource, period and legal mechanism."
+    },
+    {
+      "id": "access.trade-quota",
+      "section": "access",
+      "name": "Transferable trade quotas",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The scheme, goods, direction, period and volume."
+    },
+    {
+      "id": "access.concession",
+      "section": "access",
+      "name": "Concessions and natural resource use",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The object/territory, content, term and transfer conditions."
+    },
+    {
+      "id": "other.kit",
+      "section": "other",
+      "name": "Standard kit of items",
+      "kinds": [
+        "Fungible"
+      ],
+      "unit": "kit",
+      "identity": "A fixed composition, quantities and unit specification."
+    },
+    {
+      "id": "other.lot",
+      "section": "other",
+      "name": "Individual composite lot",
+      "kinds": [
+        "Unique"
+      ],
+      "unit": "1",
+      "identity": "The full specific composition of a single item."
+    },
+    {
+      "id": "other.warehouse-receipt",
+      "section": "other",
+      "name": "Warehouse receipts and commodity titles",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "The document/issue, custodian, goods and content of the right."
+    },
+    {
+      "id": "other.transport-doc",
+      "section": "other",
+      "name": "Transferable transport documents",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The document, cargo, carrier and documentary right."
+    },
+    {
+      "id": "other.temporary-use",
+      "section": "other",
+      "name": "Temporary use of a unique item",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "unit": "slot",
+      "identity": "The item, period, scope of use and terms."
+    },
+    {
+      "id": "other.contract-position",
+      "section": "other",
+      "name": "Transferable contract positions",
+      "kinds": [
+        "Unique"
+      ],
+      "identity": "The exact agreement, rights/obligations and external consents."
+    },
+    {
+      "id": "other.space-product",
+      "section": "other",
+      "name": "Space equipment and products",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "Equipment/service/right; a declaration creates no title to a celestial body."
+    },
+    {
+      "id": "other.custom",
+      "section": "other",
+      "name": "New user-defined good, resource or right",
+      "kinds": [
+        "Fungible",
+        "Unique"
+      ],
+      "identity": "A finite exact definition, a unit and a real item of transfer."
+    }
+  ]
+}

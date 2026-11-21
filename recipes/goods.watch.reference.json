@@ -1,0 +1,48 @@
+{
+  "family": "goods.watch",
+  "name": "A watch model by reference",
+  "symbol": "WATCH",
+  "icon": "icons/recipes/watch.svg",
+  "kind": "Fungible",
+  "source": "spec:reference",
+  "unit": "item",
+  "instrument": "{brand}:{reference}",
+  "params": [
+    {
+      "id": "brand",
+      "name": "Brand",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Rolex"
+    },
+    {
+      "id": "reference",
+      "name": "Reference number",
+      "type": "text",
+      "max": 32,
+      "case": "upper",
+      "to": "instrument",
+      "example": "126610LN"
+    },
+    {
+      "id": "condition",
+      "name": "Condition",
+      "type": "choice",
+      "options": [
+        {
+          "id": "new",
+          "name": "New, unworn, full set"
+        },
+        {
+          "id": "pre-owned",
+          "name": "Pre-owned"
+        }
+      ],
+      "to": "term:condition",
+      "example": "new"
+    }
+  ],
+  "note": "A watch model by brand and the brand's reference number, new or pre-owned; a specific specimen is a unique item."
+}

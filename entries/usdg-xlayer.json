@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDG",
+  "aliases": [],
+  "name": "Global Dollar",
+  "decimals": 6,
+  "icon": "icons/usdg-xlayer.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:10d184acc81c686a253bb8be37631908e15c61b9a26bc713c77e94d23c9c6af9"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:196/erc20:0x4ae46a509f6b1d9056937ba4500cb143933d2dc8",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdg/mainnet (X Layer), retrieved 2026-11-01. Decimals 6: decimals() via rpc.xlayer.tech. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

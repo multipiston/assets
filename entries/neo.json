@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "NEO",
+  "aliases": [],
+  "name": "Neo",
+  "decimals": 0,
+  "icon": "icons/neo.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:49d003e577fbaec6dc618b1736196e72f1b04cf5843449d62f5274f16ef0156f"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "neo:860833102/slip44:888",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces neo/caip2.md (Neo N3). Decimals 0: https://neo.org/neogas. Coin type 888: SLIP-0044 (NEO). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/neo.svg, unmodified."
+}

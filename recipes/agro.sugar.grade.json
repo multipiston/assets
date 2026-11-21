@@ -1,0 +1,55 @@
+{
+  "family": "agro.sugar",
+  "name": "Sugar of a standard grade",
+  "symbol": "SUGAR",
+  "icon": "icons/recipes/sugar.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "ice-sugar-no11-raw-96-pol",
+          "name": "Raw centrifugal cane sugar, 96 degrees average polarization (ICE",
+          "short": "SB Raw 96",
+          "unit": "lb"
+        },
+        {
+          "id": "ice-white-sugar-icumsa-45",
+          "name": "Refined white sugar ICUMSA 45 (ICE White Sugar, London)",
+          "short": "White 45",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        }
+      ],
+      "to": "instrument",
+      "example": "ice-sugar-no11-raw-96-pol"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.ice.com/publicdocs/rulebooks/futures_us/11_Sugar_11.pdf"
+}

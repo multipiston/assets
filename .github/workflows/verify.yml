@@ -1,0 +1,35 @@
+# Every pull request and every push to main: tests, the source rules, and what the change does
+# to the last release. Nothing is merged automatically.
+# When the repository is created, pin each action to a commit SHA (Dependabot keeps them current).
+name: verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+      - name: Build the last release to compare with
+        id: base
+        run: |
+          tag=$(git tag --list 'v*' --sort=-v:refname | head -n 1)
+          if [ -n "$tag" ]; then
+            git worktree add "$RUNNER_TEMP/base" "$tag"
+            (cd "$RUNNER_TEMP/base" && npm ci && node scripts/build.mjs "$RUNNER_TEMP/base-out")
+            echo "args=--base $RUNNER_TEMP/base-out/catalog/catalog.json" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check the change
+        run: node scripts/verify.mjs ${{ steps.base.outputs.args }}
+      - name: Issuer domains list their tokens
+        run: node scripts/issuers.mjs

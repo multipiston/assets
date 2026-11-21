@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CHF",
+  "aliases": [],
+  "name": "Swiss Franc",
+  "decimals": 2,
+  "icon": "icons/chf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:80e9891c3b4f258db4df3c3e1aad1d7c48341850072f8c575e98926d5a64d847"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CHF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CHF (Swiss Franc), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ch.svg, unmodified."
+}

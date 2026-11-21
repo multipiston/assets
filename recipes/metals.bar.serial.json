@@ -1,0 +1,56 @@
+{
+  "family": "metals.bar",
+  "name": "One bar by refiner and serial number",
+  "symbol": "BAR",
+  "icon": "icons/recipes/gold.svg",
+  "kind": "Unique",
+  "source": "spec:bar-list",
+  "unit": "item",
+  "instrument": "{metal}",
+  "params": [
+    {
+      "id": "metal",
+      "name": "Metal",
+      "type": "choice",
+      "options": [
+        {
+          "id": "XAU",
+          "name": "Gold"
+        },
+        {
+          "id": "XAG",
+          "name": "Silver"
+        },
+        {
+          "id": "XPT",
+          "name": "Platinum"
+        },
+        {
+          "id": "XPD",
+          "name": "Palladium"
+        }
+      ],
+      "to": "instrument",
+      "example": "XAU"
+    },
+    {
+      "id": "refiner",
+      "name": "Refiner",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "term:refiner",
+      "example": "Valcambi SA"
+    },
+    {
+      "id": "serial",
+      "name": "Serial number on the bar",
+      "type": "text",
+      "max": 32,
+      "case": "upper",
+      "to": "object",
+      "example": "AB123456"
+    }
+  ],
+  "note": "A single bar: the metal by its ISO 4217 code, the refiner as named on the bar and its serial number (bar list)."
+}

@@ -1,0 +1,83 @@
+{
+  "family": "eco.carbon-credit",
+  "name": "A carbon credit of a registered project",
+  "symbol": "CARBON",
+  "icon": "icons/recipes/carbon-credit.svg",
+  "kind": "Fungible",
+  "source": "registry:carbon-credit",
+  "unit": "tco2e",
+  "instrument": "{registry}:{project}",
+  "params": [
+    {
+      "id": "registry",
+      "name": "Registry and unit",
+      "type": "choice",
+      "options": [
+        {
+          "id": "VCU",
+          "name": "Verra Verified Carbon Standard - Verified Carbon Unit",
+          "short": "Verra VCU"
+        },
+        {
+          "id": "GS-VER",
+          "name": "Gold Standard for the Global Goals - Verified Emission Reduction",
+          "short": "GS VER"
+        },
+        {
+          "id": "ERT",
+          "name": "ACR (American Carbon Registry) Emission Reduction Ton",
+          "short": "ACR ERT"
+        },
+        {
+          "id": "CRT",
+          "name": "Climate Action Reserve - Climate Reserve Tonne",
+          "short": "CAR CRT"
+        },
+        {
+          "id": "CORC",
+          "name": "Puro.earth CO2 Removal Certificate",
+          "short": "Puro CORC"
+        },
+        {
+          "id": "isometric",
+          "name": "Isometric Registry carbon removal certificate",
+          "short": "Isometric"
+        },
+        {
+          "id": "A6.4ER",
+          "name": "Paris Agreement Crediting Mechanism (Article 6.4) emission",
+          "short": "A6.4ER"
+        },
+        {
+          "id": "ACC",
+          "name": "Global Carbon Council Approved Carbon Credit",
+          "short": "GCC ACC"
+        }
+      ],
+      "to": "instrument",
+      "example": "VCU"
+    },
+    {
+      "id": "project",
+      "name": "Project id in the registry",
+      "type": "text",
+      "max": 32,
+      "case": "upper",
+      "to": "instrument",
+      "example": "VCS1477"
+    },
+    {
+      "id": "vintage",
+      "name": "Vintage year",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "year"
+      ],
+      "to": "period",
+      "example": "2024"
+    }
+  ],
+  "note": "A credit of one project in a crediting registry, by the registry's own project id, of a vintage year; one credit = one tonne CO2e reduced or removed. Sources: https://verra.org/programs/verified-carbon-standard/ https://goldstandard.org/impact-registry https://acrcarbon.org/wp-content/uploads/2022/08/Process-for-Registering-GHG-Projects.pdf https://climateactionreserve.org/how/program-resources/serial-number-guide/ https://puro.earth/faqs https://registry.isometric.com/"
+}

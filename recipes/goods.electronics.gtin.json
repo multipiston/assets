@@ -1,0 +1,21 @@
+{
+  "family": "goods.electronics",
+  "name": "Electronics by GTIN",
+  "symbol": "SKU",
+  "icon": "icons/recipes/barcode.svg",
+  "kind": "Fungible",
+  "source": "spec:gtin",
+  "unit": "item",
+  "instrument": "{gtin}",
+  "params": [
+    {
+      "id": "gtin",
+      "name": "GTIN (barcode number)",
+      "type": "code",
+      "check": "gtin",
+      "to": "instrument",
+      "example": "04006381333931"
+    }
+  ],
+  "note": "A new item of one exact product by its GS1 GTIN, check digit verified; written as GTIN-14. Product names are not taken from GS1 (licensed)."
+}

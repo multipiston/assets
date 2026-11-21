@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "AOA",
+  "aliases": [],
+  "name": "Angolan Kwanza",
+  "decimals": 2,
+  "icon": "icons/aoa.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:739697eca2e5b5e01d2883f2c11b6c4be7d256ff030c2d5cbd7e9ddb7d508fe9"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "AOA",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 AOA (Kwanza), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ao.svg, unmodified."
+}

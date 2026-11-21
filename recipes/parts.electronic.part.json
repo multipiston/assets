@@ -1,0 +1,31 @@
+{
+  "family": "parts.electronic",
+  "name": "Electronic component by part number",
+  "symbol": "PART",
+  "icon": "icons/recipes/gpu.svg",
+  "kind": "Fungible",
+  "source": "spec:mpn",
+  "unit": "item",
+  "instrument": "{manufacturer}:{part}",
+  "params": [
+    {
+      "id": "manufacturer",
+      "name": "Manufacturer",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Texas Instruments"
+    },
+    {
+      "id": "part",
+      "name": "Manufacturer part number",
+      "type": "text",
+      "max": 64,
+      "case": "upper",
+      "to": "instrument",
+      "example": "LM358DR"
+    }
+  ],
+  "note": "A new part by its manufacturer and the manufacturer's part number, as printed in the manufacturer's catalogue."
+}

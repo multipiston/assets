@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BSD",
+  "aliases": [],
+  "name": "Bahamian Dollar",
+  "decimals": 2,
+  "icon": "icons/bsd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:e57f9e9221c69a6a39ac65d98f00d8e28cf8ace52d58e45a637f0350407c37e6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BSD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BSD (Bahamian Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/bs.svg, unmodified."
+}

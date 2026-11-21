@@ -1,0 +1,68 @@
+{
+  "family": "compute.storage",
+  "name": "Cloud storage by class, region and month",
+  "symbol": "STORAGE",
+  "icon": "icons/recipes/storage.svg",
+  "kind": "Fungible",
+  "source": "spec:storage-class",
+  "unit": "GB",
+  "decimals": 3,
+  "display": "TB",
+  "instrument": "{class}",
+  "params": [
+    {
+      "id": "class",
+      "name": "Storage class",
+      "type": "choice",
+      "options": [
+        {
+          "id": "object-standard",
+          "name": "Object storage, standard"
+        },
+        {
+          "id": "object-infrequent",
+          "name": "Object storage, infrequent access"
+        },
+        {
+          "id": "object-archive",
+          "name": "Object storage, archive"
+        },
+        {
+          "id": "block-ssd",
+          "name": "Block storage, SSD"
+        },
+        {
+          "id": "block-hdd",
+          "name": "Block storage, HDD"
+        },
+        {
+          "id": "file",
+          "name": "File storage"
+        }
+      ],
+      "to": "instrument",
+      "example": "object-standard"
+    },
+    {
+      "id": "region",
+      "name": "Country of the data",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "DE"
+    },
+    {
+      "id": "month",
+      "name": "Month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "Gigabytes kept for one calendar month (UTC) in a storage class, the data held in one country. The provider is chosen by the deal, not by the asset."
+}

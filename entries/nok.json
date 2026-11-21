@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "NOK",
+  "aliases": [],
+  "name": "Norwegian Krone",
+  "decimals": 2,
+  "icon": "icons/nok.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:ae84035a406ea981a31804a37a9c5257a042b467a4337b7d2cba6b86900264ec"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "NOK",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 NOK (Norwegian Krone), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/no.svg, unmodified."
+}

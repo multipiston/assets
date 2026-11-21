@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "EURC",
+  "aliases": [],
+  "name": "EURC",
+  "decimals": 6,
+  "icon": "icons/eurc-solana.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:690a3609f18650475227ba2977b8b792ccae58c9f2092a9f7d0cd900b757f168"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/eurc-contract-addresses (Solana), retrieved 2026-11-01. Decimals 6: the issuer, and getTokenSupply via api.mainnet-beta.solana.com. Icon: web3icons 4.0.58 (MIT), tokens/branded/EURC.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

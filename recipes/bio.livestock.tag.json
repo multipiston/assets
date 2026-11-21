@@ -1,0 +1,30 @@
+{
+  "family": "bio.livestock",
+  "name": "One animal by its ISO 11784 tag",
+  "symbol": "ANIMAL",
+  "icon": "icons/recipes/form.svg",
+  "kind": "Unique",
+  "source": "spec:iso11784",
+  "unit": "item",
+  "instrument": "{species}",
+  "params": [
+    {
+      "id": "species",
+      "name": "Species",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Bos taurus"
+    },
+    {
+      "id": "tag",
+      "name": "ISO 11784 identification number",
+      "type": "code",
+      "check": "iso11784",
+      "to": "object",
+      "example": "643000123456789"
+    }
+  ],
+  "note": "A single animal: species by its scientific name and its ISO 11784 electronic identification number."
+}

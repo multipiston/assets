@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "STX",
+  "aliases": [],
+  "name": "Stacks",
+  "decimals": 6,
+  "icon": "icons/stx.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:9c7e0d71c0f8429110b8f62e94a234e019f85500a04e2fa050f9e73b64fda49c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "stacks:1/slip44:5757",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces stacks/caip2.md (Stacks). Decimals 6: https://docs.stacks.co/stacks.js/unit-conversion. Coin type 5757: SLIP-0044 (STX). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/stx.svg, unmodified."
+}

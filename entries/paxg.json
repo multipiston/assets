@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.backed-token",
+  "symbol": "PAXG",
+  "aliases": [],
+  "name": "PAX Gold",
+  "decimals": 18,
+  "icon": "icons/paxg.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:7ba97eef614c557c062013fcd0f103031141423878eb5f1d61341085e776bbb4"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0x45804880de22913dafe09f4980848ece6ecbaf78",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos Trust Company, NA, https://docs.paxos.com/guides/stablecoin/paxg/mainnet.md (Ethereum), retrieved 2026-11-01: | Ethereum Mainnet | [0x45804880De22913dAFE09f4980848ECE6EcbAf78](https://etherscan.io/token/0x45804880de22913dafe09f4980848ece6ecbaf78) |. Decimals 18: the issuer, and decimals() on the chain. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/paxg.svg, unmodified."
+}

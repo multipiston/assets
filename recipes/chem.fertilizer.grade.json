@@ -1,0 +1,84 @@
+{
+  "family": "chem.fertilizer",
+  "name": "A fertilizer of a standard grade",
+  "symbol": "FERT",
+  "icon": "icons/recipes/fertilizer.svg",
+  "kind": "Fungible",
+  "source": "spec:fertilizer-grade",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Product and nutrient content",
+      "type": "choice",
+      "options": [
+        {
+          "id": "urea-46-granular",
+          "name": "Urea 46% N, granular"
+        },
+        {
+          "id": "urea-46-prilled",
+          "name": "Urea 46% N, prilled"
+        },
+        {
+          "id": "dap-18-46-0",
+          "name": "DAP 18-46-0"
+        },
+        {
+          "id": "map-11-52-0",
+          "name": "MAP 11-52-0"
+        },
+        {
+          "id": "mop-60-standard",
+          "name": "MOP 60% K2O, standard"
+        },
+        {
+          "id": "mop-60-granular",
+          "name": "MOP 60% K2O, granular"
+        },
+        {
+          "id": "an-34-4",
+          "name": "Ammonium nitrate 34.4% N"
+        },
+        {
+          "id": "uan-32",
+          "name": "UAN 32% N solution"
+        },
+        {
+          "id": "as-21",
+          "name": "Ammonium sulphate 21% N"
+        },
+        {
+          "id": "tsp-46",
+          "name": "TSP 46% P2O5"
+        }
+      ],
+      "to": "instrument",
+      "example": "urea-46-granular"
+    },
+    {
+      "id": "port",
+      "name": "Delivery port (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "EGDAM"
+    },
+    {
+      "id": "month",
+      "name": "Shipment month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A fertilizer by its product and guaranteed nutrient content (the grade as traded internationally), at a port named by UN/LOCODE, in a month (UTC); the amount in kg, shown in tonnes."
+}

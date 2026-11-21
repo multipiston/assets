@@ -1,0 +1,88 @@
+# A signed tag vN on main → checked, repeatable build → signature (after the owner approves the
+# `release` environment) → GitHub Release with the catalog and the SDK (@multipiston/catalog as an
+# npm tarball) → pull request into the site repository: the public files and the vendored engine.
+# Secrets: MINISIGN_SECRET_KEY (the owner's key), SITE_TOKEN (may open pull requests in the site
+# repository). Variables: SITE_REPOSITORY (owner/name), SITE_PUBLIC_DIR (e.g. frontend/public),
+# SITE_ENGINE_DIR (e.g. frontend/src/vendor/multipiston-catalog), SITE_ORIGIN (e.g.
+# https://multipiston.example — the absolute addresses of the manual's sitemap).
+# When the repository is created, pin each action to a commit SHA.
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+      - name: The tag names the version of release.json
+        run: test "v$(node -p "require('./release.json').version")" = "$GITHUB_REF_NAME"
+      - name: Build the previous release to compare with
+        id: base
+        run: |
+          tag=$(git tag --list 'v*' --sort=-v:refname | grep -vx "$GITHUB_REF_NAME" | head -n 1)
+          if [ -n "$tag" ]; then
+            git worktree add "$RUNNER_TEMP/base" "$tag"
+            (cd "$RUNNER_TEMP/base" && npm ci && node scripts/build.mjs "$RUNNER_TEMP/base-out")
+            echo "args=--base $RUNNER_TEMP/base-out/catalog/catalog.json" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build twice and compare the bytes
+        env:
+          SITE_ORIGIN: ${{ vars.SITE_ORIGIN }}
+        run: |
+          site=${SITE_ORIGIN:+--site $SITE_ORIGIN}
+          node scripts/build.mjs dist ${{ steps.base.outputs.args }} $site
+          node scripts/build.mjs "$RUNNER_TEMP/again" ${{ steps.base.outputs.args }} $site
+          diff -r dist "$RUNNER_TEMP/again"
+      - name: Sign
+        env:
+          MINISIGN_SECRET_KEY: ${{ secrets.MINISIGN_SECRET_KEY }}
+        run: |
+          sudo apt-get install -y minisign
+          printf '%s\n' "$MINISIGN_SECRET_KEY" > "$RUNNER_TEMP/key"
+          v="$GITHUB_REF_NAME"
+          for f in dist/catalog/catalog.json "dist/catalog/$v/catalog.json"; do
+            minisign -S -s "$RUNNER_TEMP/key" -m "$f" -t "multipiston catalog $v" < /dev/null
+          done
+          rm "$RUNNER_TEMP/key"
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tar -czf "catalog-$GITHUB_REF_NAME.tar.gz" -C dist .
+          # The SDK: npm install <the release's address of this file>.
+          sdk=$(cd engine && npm pack --pack-destination "$GITHUB_WORKSPACE" --silent)
+          gh release create "$GITHUB_REF_NAME" "catalog-$GITHUB_REF_NAME.tar.gz" "$sdk" \
+            dist/catalog/catalog.json dist/catalog/catalog.json.sha256 dist/catalog/catalog.json.minisig \
+            --title "Catalog $GITHUB_REF_NAME" --notes-from-tag
+      - name: Pull request into the site
+        env:
+          GH_TOKEN: ${{ secrets.SITE_TOKEN }}
+          SITE: ${{ vars.SITE_REPOSITORY }}
+          PUBLIC: ${{ vars.SITE_PUBLIC_DIR }}
+          ENGINE: ${{ vars.SITE_ENGINE_DIR }}
+        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${SITE}.git" "$RUNNER_TEMP/site"
+          cd "$RUNNER_TEMP/site"
+          git switch -c "catalog-$GITHUB_REF_NAME"
+          # Earlier versions and icons stay in place: no --delete.
+          rsync -a "$GITHUB_WORKSPACE/dist/" "$PUBLIC/"
+          # The cabinet computes with the same engine the catalog was checked with.
+          node "$GITHUB_WORKSPACE/scripts/vendor-engine.mjs" "$ENGINE"
+          git add "$PUBLIC" "$ENGINE"
+          git -c user.name="catalog release" -c user.email="catalog@users.noreply.github.com" \
+            commit -m "Catalog $GITHUB_REF_NAME"
+          git push origin "catalog-$GITHUB_REF_NAME"
+          sum=$(cut -d' ' -f1 "$GITHUB_WORKSPACE/dist/catalog/catalog.json.sha256")
+          gh pr create --repo "$SITE" --head "catalog-$GITHUB_REF_NAME" --title "Catalog $GITHUB_REF_NAME" \
+            --body "Signed catalog release $GITHUB_REF_NAME, sha256 $sum. Built from the tag; do not edit these files by hand."

@@ -1,0 +1,27 @@
+{
+  "source": "MultiPiston reference vector",
+  "definition": {
+    "raw": {"version":1,"domain":"evm:1","instrument":"compute","source":"provider:example","kind":"Fungible","unit":"request","terms":[{"key":"model","value":"m1"}]},
+    "binary": "01000500000065766d3a3107000000636f6d707574651000000070726f76696465723a6578616d706c6500070000007265717565737401000000050000006d6f64656c020000006d31",
+    "token": "af1:e7943456d373f4f414279d1f6a50d155fa6294c315ab71a510002aab3add2776"
+  },
+  "typed_terms_valid": [
+    ["mp.place_authority", "urn:place"], ["mp.place_id", " Место "], ["mp.start_us", "0"], ["mp.end_us", "100"],
+    ["mp.start_window_from_us", "1"], ["mp.start_window_to_us", "99"], ["mp.provision_complete_by_us", "100"],
+    ["mp.capacity_unit", "cores"], ["mp.concurrent_units", "340282366920938463463374607431768211455"]
+  ],
+  "typed_terms_invalid": [
+    [["mp.place_authority", "x"]],
+    [["mp.place_authority", "x"], ["mp.place_id", ""]],
+    [["mp.origin_authority", "x"], ["mp.origin_id", "y"]],
+    [["mp.start_us", "01"], ["mp.end_us", "2"]],
+    [["mp.start_us", "2"], ["mp.end_us", "2"]],
+    [["mp.start_us", "0"], ["mp.end_us", "9223372036854775808"]],
+    [["mp.start_us", "0"], ["mp.end_us", "5"], ["mp.start_window_from_us", "4"], ["mp.start_window_to_us", "6"]],
+    [["mp.start_window_from_us", "4"], ["mp.start_window_to_us", "6"], ["mp.provision_complete_by_us", "4"]],
+    [["mp.start_us", "0"], ["mp.end_us", "5"], ["mp.provision_complete_by_us", "4"]],
+    [["mp.configuration_id", ""]],
+    [["mp.capacity_unit", "core"], ["mp.concurrent_units", "0"]],
+    [["mp.capacity_unit", "core"], ["mp.concurrent_units", "1e3"]]
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "family": "eco.energy-certificate",
+  "name": "An energy attribute certificate",
+  "symbol": "EAC",
+  "icon": "icons/recipes/certificate.svg",
+  "kind": "Fungible",
+  "source": "registry:energy-certificate",
+  "unit": "certificate",
+  "instrument": "{scheme}",
+  "params": [
+    {
+      "id": "scheme",
+      "name": "Scheme",
+      "type": "choice",
+      "options": [
+        {
+          "id": "EECS-GO-E",
+          "name": "EECS Guarantee of Origin - electricity (AIB European Energy",
+          "short": "EU GO"
+        },
+        {
+          "id": "EECS-GO-G",
+          "name": "EECS Guarantee of Origin - gas / hydrogen / heating",
+          "short": "EU gas GO"
+        },
+        {
+          "id": "REGO",
+          "name": "UK Renewable Energy Guarantee of Origin",
+          "short": "UK REGO"
+        },
+        {
+          "id": "I-REC(E)",
+          "name": "I-REC for Electricity (I-TRACK Foundation / International",
+          "short": "I-REC(E)"
+        },
+        {
+          "id": "PJM-GATS",
+          "name": "PJM Generation Attribute Tracking System",
+          "short": "PJM-GATS"
+        },
+        {
+          "id": "M-RETS",
+          "name": "Midwest Renewable Energy Tracking System",
+          "short": "M-RETS"
+        },
+        {
+          "id": "WREGIS",
+          "name": "Western Renewable Energy Generation Information System",
+          "short": "WREGIS"
+        },
+        {
+          "id": "ERCOT-REC",
+          "name": "ERCOT Renewable Energy Credit Trading Program",
+          "short": "ERCOT REC"
+        },
+        {
+          "id": "NEPOOL-GIS",
+          "name": "NEPOOL Generation Information System",
+          "short": "NEPOOL-GIS"
+        },
+        {
+          "id": "NYGATS",
+          "name": "New York Generation Attribute Tracking System",
+          "short": "NYGATS"
+        },
+        {
+          "id": "MIRECS",
+          "name": "Michigan Renewable Energy Certification System",
+          "short": "MIRECS"
+        },
+        {
+          "id": "NC-RETS",
+          "name": "North Carolina Renewable Energy Tracking System",
+          "short": "NC-RETS"
+        },
+        {
+          "id": "NAR",
+          "name": "North American Renewables Registry",
+          "short": "NAR"
+        }
+      ],
+      "to": "instrument",
+      "example": "EECS-GO-E"
+    },
+    {
+      "id": "country",
+      "name": "Country of production",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "NO"
+    },
+    {
+      "id": "production",
+      "name": "Production period",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026"
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "type": "choice",
+      "options": [
+        {
+          "id": "any-renewable",
+          "name": "Any renewable source"
+        },
+        {
+          "id": "solar",
+          "name": "Solar"
+        },
+        {
+          "id": "wind",
+          "name": "Wind"
+        },
+        {
+          "id": "hydro",
+          "name": "Hydro"
+        },
+        {
+          "id": "biomass",
+          "name": "Biomass"
+        },
+        {
+          "id": "geothermal",
+          "name": "Geothermal"
+        },
+        {
+          "id": "nuclear",
+          "name": "Nuclear"
+        }
+      ],
+      "to": "term:technology",
+      "example": "hydro"
+    }
+  ],
+  "note": "A certificate of one megawatt-hour of a scheme, produced in a country and period, from a technology; held in the scheme's registry. Sources: https://www.aib-net.org/sites/default/files/assets/eecs/facts-sheets/AIB-2026-EECSFS-17%20EECS%20Rules%20Fact%20Sheet%2017%20-%20EECS%20Scheme%20Members%20and%20EECS%20Products%20-%20Release%201.82.pdf https://www.ofgem.gov.uk/environmental-programmes/rego/about-rego-scheme/ https://www.trackingstandard.org/product-code/electricity/ https://www.epa.gov/green-power-markets/energy-attribute-tracking-systems https://mrets.org/solutions/renewable-electricity https://www.wecc.org/program-areas/wregis"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.wrapped",
+  "symbol": "WBTC",
+  "aliases": [],
+  "name": "Wrapped Bitcoin",
+  "decimals": 8,
+  "icon": "icons/wbtc.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:33591209a06e202e4459d31cb7ed4dccb37c7843f394d348d0abca98f7678c92"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: WBTC network, https://docs.wbtc.network/resources/contract-addresses (Ethereum), retrieved 2026-11-01: Ethereum | ERC-20 (Native) | 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599 | 8. Decimals 8: the issuer, and decimals() on the chain. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/wbtc.svg, unmodified."
+}

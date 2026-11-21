@@ -1,0 +1,121 @@
+{
+  "family": "chem.oil-product",
+  "name": "A refined oil product of a standard grade",
+  "symbol": "OIL",
+  "icon": "icons/recipes/oil-product.svg",
+  "kind": "Fungible",
+  "source": "spec:oil-product",
+  "instrument": "{product}",
+  "params": [
+    {
+      "id": "product",
+      "name": "Product and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "ulsd-en590-10ppm",
+          "name": "Ultra-low sulphur diesel EN 590, 10 mg/kg (ICE Low Sulphur",
+          "short": "ULSD EN590",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "ulsd-astm-d975-2d-s15",
+          "name": "US ultra-low sulfur diesel, ASTM D975 Grade No. 2-D S15 (NY",
+          "short": "ULSD NYH",
+          "unit": "gal"
+        },
+        {
+          "id": "jet-a1",
+          "name": "Aviation turbine fuel Jet A-1",
+          "short": "Jet A-1",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "eurobob-oxy-en228",
+          "name": "Eurobob oxy gasoline blendstock (finished grade EN 228)",
+          "short": "Eurobob",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "rbob-nyh",
+          "name": "RBOB gasoline (Reformulated Blendstock for Oxygenate Blending)",
+          "short": "RBOB",
+          "unit": "gal"
+        },
+        {
+          "id": "vlsfo-0-5-rmg380",
+          "name": "Very low sulphur fuel oil 0.50% S, ISO 8217 RMG 380 (category",
+          "short": "VLSFO 0.5%",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "hsfo-3-5-rmg380",
+          "name": "High sulphur fuel oil 3.5% S, ISO 8217 RMG 380",
+          "short": "HSFO 380 3.5%",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "mgo-0-1-dma",
+          "name": "Marine gasoil 0.10% S, ISO 8217 DMA",
+          "short": "MGO 0.1%",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "naphtha-open-spec",
+          "name": "Naphtha, open-spec (paraffinic petrochemical feed)",
+          "short": "Naphtha",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "propane",
+          "name": "Propane (LPG)",
+          "short": "Propane",
+          "unit": "gal"
+        },
+        {
+          "id": "butane",
+          "name": "Butane (LPG)",
+          "short": "Butane",
+          "unit": "gal"
+        }
+      ],
+      "to": "instrument",
+      "example": "ulsd-en590-10ppm"
+    },
+    {
+      "id": "port",
+      "name": "Delivery port (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "NLRTM"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A refined product by its standard, delivered at a port named by UN/LOCODE in a month (UTC); the amount in the product's unit of trade (tonnes in kg, US gallons). Sources: https://www.ice.com/api/productguide/spec/34361119/pdf https://www.eia.gov/dnav/pet/tbldefs/pet_pri_fut_tbldef2.asp https://www.jig.org/documents/defstan-91-091-issue-19/ https://en.wikipedia.org/wiki/Gasoline https://www.imo.org/en/MediaCentre/HotTopics/Pages/Sulphur-2020.aspx https://en.wikipedia.org/wiki/Liquefied_petroleum_gas"
+}

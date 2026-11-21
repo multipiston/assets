@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "FJD",
+  "aliases": [],
+  "name": "Fijian Dollar",
+  "decimals": 2,
+  "icon": "icons/fjd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:12f57756616154ea5053e7148eece77ffc437ef3e97d34ae00444c93414f39cb"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "FJD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 FJD (Fiji Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/fj.svg, unmodified."
+}

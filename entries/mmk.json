@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "MMK",
+  "aliases": [],
+  "name": "Myanmar Kyat",
+  "decimals": 2,
+  "icon": "icons/mmk.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:2b4451c4d6860056e4ddc0fb824273a8d2c2aa33c814377ba68feb52abe82154"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "MMK",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 MMK (Kyat), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/mm.svg, unmodified."
+}

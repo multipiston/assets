@@ -1,0 +1,22 @@
+{
+  "family": "parts.hardware",
+  "name": "Hardware by standard designation",
+  "symbol": "HW",
+  "icon": "icons/recipes/steel.svg",
+  "kind": "Fungible",
+  "source": "spec:standard-designation",
+  "unit": "item",
+  "instrument": "{designation}",
+  "params": [
+    {
+      "id": "designation",
+      "name": "Standard designation",
+      "type": "text",
+      "max": 128,
+      "case": "keep",
+      "to": "instrument",
+      "example": "ISO 4017 M10x40 8.8 ZN"
+    }
+  ],
+  "note": "A standardised part by its full designation in the standard (ISO, EN, DIN, ASTM, GOST): standard, size, property class, finish."
+}

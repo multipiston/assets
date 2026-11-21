@@ -1,0 +1,29 @@
+{
+  "family": "ip.license",
+  "name": "Licence to a recording by ISRC",
+  "symbol": "WORK",
+  "icon": "icons/recipes/copyright.svg",
+  "kind": "Unique",
+  "source": "spec:iso3901",
+  "unit": "item",
+  "instrument": "{work}",
+  "params": [
+    {
+      "id": "work",
+      "name": "ISRC",
+      "type": "code",
+      "check": "isrc",
+      "to": "instrument",
+      "example": "USS1Z9900001"
+    },
+    {
+      "id": "territory",
+      "name": "Territory (country)",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "US"
+    }
+  ],
+  "note": "The work by its ISRC, the territory by ISO 3166; term and scope as the asset's family requires are agreed in the deal."
+}

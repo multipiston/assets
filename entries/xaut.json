@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.backed-token",
+  "symbol": "XAUT",
+  "aliases": [],
+  "name": "Tether Gold",
+  "decimals": 6,
+  "icon": "icons/xaut.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:550f5531867f966245d8da2afa2c3c8fc89d08c28e777c921ea8bed1fcb0d18d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0x68749665ff8d2d112fa859aa293f07a622782f38",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Tether, https://tether.to/en/supported-protocols/ (Ethereum), retrieved 2026-11-01: Ethereum Network ... XAUT contract address: https://etherscan.io/token/0x68749665FF8D2d112Fa859AA293F07A622782F38. Decimals 6: the issuer, and decimals() on the chain. Icon: web3icons 4.0.58 (MIT), tokens/branded/XAUT.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

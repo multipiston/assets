@@ -1,0 +1,21 @@
+{
+  "family": "crypto.token",
+  "name": "Any fungible token by its CAIP-19 id",
+  "symbol": "TOKEN",
+  "icon": "icons/recipes/token.svg",
+  "kind": "Fungible",
+  "source": "spec:caip19",
+  "unit": "atom",
+  "instrument": "{asset}",
+  "params": [
+    {
+      "id": "asset",
+      "name": "CAIP-19 id",
+      "type": "code",
+      "check": "caip19",
+      "to": "instrument",
+      "example": "eip155:1/erc20:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    }
+  ],
+  "note": "The network and contract by CAIP-19 (namespaces.chainagnostic.org), an EVM address in lower case; the amount in the chain's smallest unit. A catalog entry, when there is one, names the token."
+}

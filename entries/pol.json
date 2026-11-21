@@ -1,0 +1,26 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "POL",
+  "aliases": [
+    "MATIC"
+  ],
+  "name": "POL",
+  "decimals": 18,
+  "icon": "icons/pol.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:878d25d9b7e7fbfb07980b939531ca97ddc36d33c12054fb530afec2ed2be8f2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:137/slip44:966",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 137: ethereum-lists/chains (chainid.network, 2026-11-01), native POL, 18 decimals; 1 atom = 10^-18 POL. Coin type 966: SLIP-0044 (MATIC). Polygon renamed MATIC to POL; SLIP-0044 keeps MATIC. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/matic.svg, unmodified."
+}

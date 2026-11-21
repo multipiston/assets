@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "OMR",
+  "aliases": [],
+  "name": "Omani Rial",
+  "decimals": 3,
+  "icon": "icons/omr.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:f40889f2d94b00329e17f412b513d54bf88ff230c86f1b80c3418dc37ea9da26"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "OMR",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 OMR (Rial Omani), minor unit 10^-3 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/om.svg, unmodified."
+}

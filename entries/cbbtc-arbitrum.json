@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.wrapped",
+  "symbol": "cbBTC",
+  "aliases": [],
+  "name": "Coinbase Wrapped BTC",
+  "decimals": 8,
+  "icon": "icons/cbbtc-arbitrum.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:b290c602593be0ca681a46c34a3eea2980babd4d619951bf1352ec589f147577"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:42161/erc20:0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Coinbase, https://www.coinbase.com/cbbtc (Arbitrum One), retrieved 2026-11-01: cbBTC | Arbitrum | 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf | https://arbiscan.io/token/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf. Decimals 8: the issuer, and decimals() on the chain. Icon drawn for this catalog (no open icon of the token)."
+}

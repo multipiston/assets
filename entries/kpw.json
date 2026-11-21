@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "KPW",
+  "aliases": [],
+  "name": "North Korean Won",
+  "decimals": 2,
+  "icon": "icons/kpw.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:482183e8fab1a0f5faa8287613e072e6ebeeed772df176579e0f595e3e9bbea6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "KPW",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 KPW (North Korean Won), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/kp.svg, unmodified."
+}

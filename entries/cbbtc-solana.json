@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.wrapped",
+  "symbol": "cbBTC",
+  "aliases": [],
+  "name": "Coinbase Wrapped BTC",
+  "decimals": 8,
+  "icon": "icons/cbbtc-solana.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:d6a6ba27ffc56b054ef8a053119aa2bbff276ad227fba06403796c03f52ed94c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Coinbase, https://www.coinbase.com/cbbtc (Solana), retrieved 2026-11-01: cbBTC | Solana | cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij | https://explorer.solana.com/address/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij. Decimals 8: the issuer, and decimals() on the chain. Icon drawn for this catalog (no open icon of the token)."
+}

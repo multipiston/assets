@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDT",
+  "aliases": [],
+  "name": "Tether USD",
+  "decimals": 6,
+  "icon": "icons/usdt-kava.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:f6f58f92879c3cbc59b66a14c0b616026a56c1506b3e72d154caea0e6dab634a"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:2222/erc20:0x919c1c267bc06a7039e03fcc2ef738525769109c",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Tether, https://tether.to/en/supported-protocols/ (Kava), retrieved 2026-11-01. Decimals 6: decimals() via evm.kava.io. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdt.svg, unmodified."
+}

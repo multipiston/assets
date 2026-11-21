@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "EGLD",
+  "aliases": [],
+  "name": "eGold",
+  "decimals": 18,
+  "icon": "icons/egld.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:18652a41b152053d0b3f4e9a790cdd244310a9aaf5c60cb707e1eabecf3831f3"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "mvx:1/slip44:508",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces mvx/caip2.md (MultiversX). Decimals 18: https://docs.multiversx.com/welcome/terminology/. Coin type 508: SLIP-0044 (EGLD). Icon: web3icons 4.0.58 (MIT), tokens/branded/EGLD.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

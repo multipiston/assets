@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "WST",
+  "aliases": [],
+  "name": "Samoan Tala",
+  "decimals": 2,
+  "icon": "icons/wst.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:6dc084c8160a6bcd4aad273202ccfd2bd6cf56a6cbbea28f5e74dc4f0b6d1783"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "WST",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 WST (Tala), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ws.svg, unmodified."
+}

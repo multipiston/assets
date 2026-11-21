@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "USD",
+  "aliases": [],
+  "name": "US Dollar",
+  "decimals": 2,
+  "icon": "icons/usd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:a81a7bb31bda60be66f68dce559ea7bedd4d1e7c9b4ea40020f62f9c92bd7daa"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "USD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 USD (US Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/us.svg, unmodified."
+}

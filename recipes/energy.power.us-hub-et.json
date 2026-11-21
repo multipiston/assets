@@ -1,0 +1,108 @@
+{
+  "family": "energy.power",
+  "name": "Electricity at a US hub (Eastern time)",
+  "symbol": "POWER",
+  "icon": "icons/recipes/power.svg",
+  "kind": "Fungible",
+  "source": "spec:us-power-hub-et",
+  "unit": "kWh",
+  "decimals": 3,
+  "display": "MWh",
+  "instrument": "{hub}",
+  "params": [
+    {
+      "id": "hub",
+      "name": "Hub",
+      "type": "choice",
+      "options": [
+        {
+          "id": "pjm-western-hub",
+          "name": "PJM Western Hub",
+          "short": "PJM West"
+        },
+        {
+          "id": "pjm-aep-dayton-hub",
+          "name": "PJM AEP-Dayton Hub",
+          "short": "AD Hub"
+        },
+        {
+          "id": "pjm-n-illinois-hub",
+          "name": "PJM Northern Illinois Hub",
+          "short": "NI Hub"
+        },
+        {
+          "id": "pjm-eastern-hub",
+          "name": "PJM Eastern Hub",
+          "short": "PJM East"
+        },
+        {
+          "id": "pjm-dominion-hub",
+          "name": "PJM Dominion Hub",
+          "short": "Dom Hub"
+        },
+        {
+          "id": "pjm-new-jersey-hub",
+          "name": "PJM New Jersey Hub",
+          "short": "NJ Hub"
+        },
+        {
+          "id": "nyiso-zone-a",
+          "name": "NYISO Zone A (West)",
+          "short": "NYISO A"
+        },
+        {
+          "id": "nyiso-zone-g",
+          "name": "NYISO Zone G (Hudson Valley)",
+          "short": "NYISO G"
+        },
+        {
+          "id": "nyiso-zone-j",
+          "name": "NYISO Zone J (New York City)",
+          "short": "NYISO J"
+        },
+        {
+          "id": "isone-internal-hub",
+          "name": "ISO New England Internal Hub (Mass Hub)",
+          "short": "Mass Hub"
+        }
+      ],
+      "to": "instrument",
+      "example": "pjm-western-hub"
+    },
+    {
+      "id": "period",
+      "name": "Delivery period",
+      "type": "period",
+      "clock": "ET",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    },
+    {
+      "id": "profile",
+      "name": "Load profile",
+      "type": "choice",
+      "options": [
+        {
+          "id": "base",
+          "name": "Baseload (7x24)"
+        },
+        {
+          "id": "peak",
+          "name": "Peak (5x16, hours ending 08-23, Monday to Friday)"
+        }
+      ],
+      "to": "term:profile",
+      "example": "base"
+    }
+  ],
+  "note": "Delivery at a US trading hub as its ISO names it, the day in the hub's market time (prevailing local time). The amount in kWh, shown in MWh. Sources: https://cmegroup.com/markets/energy/electricity/pjm-western-hub-peak-calendar-month-real-time-lmp.contractSpecs.html https://energyonline.com/Data/GenericData.aspx?DataId=25 https://mis.nyiso.com/public/pdf/rtlbmp/20260125rtlbmp_zone.pdf https://www.iso-ne.com/participate/support/web-services-data"
+}

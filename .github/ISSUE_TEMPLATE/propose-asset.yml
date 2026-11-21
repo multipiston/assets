@@ -1,0 +1,68 @@
+name: Propose an asset
+description: A new catalog entry — a symbol and a name for one exact asset.
+title: "Asset: "
+labels: ["proposal", "new-asset"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The catalog is a dictionary, not a permission: an asset is used in intents right away, without this form — by a recipe or by its own definition.
+        The form gives one exact asset a symbol and a name, so that everyone describes it the same way. A bot checks it by the rules of a pull request (CONTRIBUTING.md) and, when nothing is wrong, opens a draft pull request; a maintainer lists the entry. The catalog is English only.
+  - type: input
+    id: family
+    attributes:
+      label: Family
+      description: An id from families.json, for example parts.cutting-tool. Nothing fits — other.custom.
+      placeholder: parts.cutting-tool
+    validations:
+      required: true
+  - type: input
+    id: symbol
+    attributes:
+      label: Symbol
+      description: 2–8 Latin letters and digits.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: In English, up to 64 characters. A token on several networks keeps one name on each (USD Coin); the network is a field of its own.
+    validations:
+      required: true
+  - type: textarea
+    id: asset
+    attributes:
+      label: Exact asset
+      description: |
+        The definition as JSON: { version, domain, instrument, source, kind, unit, terms }. The catalog's Build an asset page (/catalog/build.html) fills it in; catalog/describe.html explains each field. domain and version may be left out — the family sets the domain.
+        Crypto asset: its CAIP-19 id in instrument with source spec:caip19 and unit atom. National currency: its ISO 4217 code with source spec:iso4217.
+      render: json
+    validations:
+      required: true
+  - type: input
+    id: decimals
+    attributes:
+      label: Display decimals
+      description: How many decimals the display unit shows; 0 when left empty.
+      placeholder: "0"
+  - type: textarea
+    id: who
+    attributes:
+      label: Who will trade it
+    validations:
+      required: true
+  - type: textarea
+    id: icon
+    attributes:
+      label: Icon
+      description: SVG with a square viewBox, up to 16 KB, no text, scripts or external references. Without an icon the section icon is shown.
+      render: xml
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The icon is my own work, or I own the brand, or I have its permission, or it comes from an openly licensed set (name the set and license)
+        - label: No keys, passwords, payment details or personal data
+          required: true

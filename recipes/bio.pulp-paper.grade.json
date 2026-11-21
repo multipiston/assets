@@ -1,0 +1,54 @@
+{
+  "family": "bio.pulp-paper",
+  "name": "Market pulp of a standard grade",
+  "symbol": "PULP",
+  "icon": "icons/recipes/pulp.svg",
+  "kind": "Fungible",
+  "source": "spec:bio-grade",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade",
+      "type": "choice",
+      "options": [
+        {
+          "id": "pix-pulp-nbsk-europe",
+          "name": "Northern Bleached Softwood Kraft pulp, Europe delivered",
+          "short": "NBSK"
+        },
+        {
+          "id": "pix-pulp-bhkp-europe",
+          "name": "Bleached Hardwood Kraft pulp (eucalyptus BEK or birch), Europe",
+          "short": "BHKP/BEK"
+        }
+      ],
+      "to": "instrument",
+      "example": "pix-pulp-nbsk-europe"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "FIHEL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A grade by its standard (pulp: air-dry tonnes; pellets: ENplus or ISO 17225-2 class), at a place named by UN/LOCODE, in a month (UTC); the amount in kg, shown in tonnes. Sources: https://www.fastmarkets.com/uploads/2026/08/PIX_Pulp_Europe_Methodology_Aug2026.pdf"
+}

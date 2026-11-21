@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDG",
+  "aliases": [],
+  "name": "Global Dollar",
+  "decimals": 6,
+  "icon": "icons/usdg-solana.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:da880695283abcf743271ddb384643d2cc3b75aa7b36cc5f22eaae3341a3a06e"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdg/mainnet (Solana), retrieved 2026-11-01. Decimals 6: getTokenSupply via api.mainnet-beta.solana.com. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "SOL",
+  "aliases": [],
+  "name": "Solana",
+  "decimals": 9,
+  "icon": "icons/sol.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:4748a9a1a9bcdf79a7ab09408bf8d1fbf42550e14127186a70f7d966cb5800aa"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/slip44:501",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces solana/caip2.md (mainnet genesis hash, first 32 characters); coin type 501: SLIP-0044. 1 atom = 1 lamport. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/sol.svg, unmodified."
+}

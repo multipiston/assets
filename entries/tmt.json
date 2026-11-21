@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "TMT",
+  "aliases": [],
+  "name": "Turkmenistani Manat",
+  "decimals": 2,
+  "icon": "icons/tmt.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:92f2b674d01db270fb2192a856b12eb6a158faab85d83139a07578062308866b"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "TMT",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 TMT (Turkmenistan New Manat), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/tm.svg, unmodified."
+}

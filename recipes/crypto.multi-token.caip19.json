@@ -1,0 +1,21 @@
+{
+  "family": "crypto.multi-token",
+  "name": "One multi-token type by its CAIP-19 id and type id",
+  "symbol": "MTOKEN",
+  "icon": "icons/recipes/token.svg",
+  "kind": "Fungible",
+  "source": "spec:caip19",
+  "unit": "atom",
+  "instrument": "{item}",
+  "params": [
+    {
+      "id": "item",
+      "name": "CAIP-19 id with the type id",
+      "type": "code",
+      "check": "caip19item",
+      "to": "instrument",
+      "example": "eip155:1/erc1155:0x76be3b62873462d2142405439777e971754e8e77/10064"
+    }
+  ],
+  "note": "An ERC-1155 type id is one fungible asset; a single item is the amount 1."
+}

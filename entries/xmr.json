@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "XMR",
+  "aliases": [],
+  "name": "Monero",
+  "decimals": 12,
+  "icon": "icons/xmr.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:ebda36419f687f42a09c71e6f433b2db23498188a0d76d06f95dc2d7414d25ff"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "monero:418015bb9ae982a1975da7d79277c270/slip44:128",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces monero/caip2.md (Monero). Decimals 12: https://www.getmonero.org/resources/moneropedia/denominations.html. Coin type 128: SLIP-0044 (XMR). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/xmr.svg, unmodified."
+}

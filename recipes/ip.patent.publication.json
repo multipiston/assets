@@ -1,0 +1,21 @@
+{
+  "family": "ip.patent",
+  "name": "A patent by publication number",
+  "symbol": "PATENT",
+  "icon": "icons/recipes/patent.svg",
+  "kind": "Unique",
+  "source": "spec:wipo-st16",
+  "unit": "item",
+  "instrument": "{number}",
+  "params": [
+    {
+      "id": "number",
+      "name": "Publication number with kind code",
+      "type": "code",
+      "check": "patent",
+      "to": "instrument",
+      "example": "US10000000B2"
+    }
+  ],
+  "note": "The patent by office (WIPO ST.3), number and kind code (WIPO ST.16); the right transferred is the patent itself, in that office's territory."
+}

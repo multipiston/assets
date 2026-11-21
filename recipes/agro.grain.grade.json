@@ -1,0 +1,95 @@
+{
+  "family": "agro.grain",
+  "name": "Grain of a standard grade",
+  "symbol": "GRAIN",
+  "icon": "icons/recipes/grain.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "cbot-wheat-no2-srw",
+          "name": "US No. 2 Soft Red Winter wheat (CBOT Wheat)",
+          "short": "SRW #2",
+          "unit": "bushel"
+        },
+        {
+          "id": "kc-hrw-wheat-no2",
+          "name": "US No. 2 Hard Red Winter wheat (KC HRW Wheat)",
+          "short": "HRW #2",
+          "unit": "bushel"
+        },
+        {
+          "id": "miax-hrs-wheat-ns-dns-13-5",
+          "name": "US No. 2 or better Northern / Dark Northern Spring wheat, 13.5%",
+          "short": "HRS 13.5",
+          "unit": "bushel"
+        },
+        {
+          "id": "euronext-milling-wheat-ebm",
+          "name": "EU Milling Wheat No. 2 (Euronext Paris)",
+          "short": "EBM",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "black-sea-wheat-12-5-fob",
+          "name": "Russian milling wheat 12.5% protein FOB Black Sea deep water",
+          "short": "BS Wheat 12.5",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "asx-apw1-eastern-australia-wheat",
+          "name": "Australian Prime White APW1 wheat, 10.5% protein (ASX Eastern",
+          "short": "APW1",
+          "unit": "kg",
+          "decimals": 3,
+          "display": "t"
+        },
+        {
+          "id": "cbot-corn-no2-yellow",
+          "name": "US No. 2 Yellow corn (CBOT Corn)",
+          "short": "Corn #2Y",
+          "unit": "bushel"
+        },
+        {
+          "id": "cbot-rough-rice-no2-long-grain",
+          "name": "US No. 2 or better long grain rough rice (CBOT Rough Rice)",
+          "short": "Rough rice",
+          "unit": "cwt"
+        }
+      ],
+      "to": "instrument",
+      "example": "cbot-wheat-no2-srw"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.cmegroup.com/content/dam/cmegroup/rulebook/CBOT/II/14/14.pdf https://cmegroup.com/trading/agricultural/grain-and-oilseed/kc-wheat_contractSpecs_futures.html https://miaxglobal.com/miax_futures_hrsw_futures_contract_specifications.pdf https://live.euronext.com/en/product/commodities-futures/EBM-DPAR/contract-specification https://www.cmegroup.com/bsw https://asx.com.au/content/dam/asx/markets/trade-our-derivatives-market/derivatives-market-overview/grains-derivatives/fact-sheet-australian-grains.pdf"
+}

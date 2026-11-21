@@ -1,0 +1,43 @@
+{
+  "family": "contingent.future",
+  "name": "Exchange-listed futures contract",
+  "symbol": "FUT",
+  "icon": "icons/recipes/future.svg",
+  "kind": "Fungible",
+  "source": "spec:iso10383",
+  "unit": "contract",
+  "instrument": "{venue}:{product}",
+  "params": [
+    {
+      "id": "venue",
+      "name": "Exchange (ISO 10383 MIC)",
+      "type": "code",
+      "check": "mic",
+      "to": "instrument",
+      "example": "XCME"
+    },
+    {
+      "id": "product",
+      "name": "Contract code on the exchange",
+      "type": "text",
+      "max": 16,
+      "case": "upper",
+      "to": "instrument",
+      "example": "CL"
+    },
+    {
+      "id": "expiry",
+      "name": "Contract month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "regulated": true,
+  "note": "The exchange by its ISO 10383 market identifier code, the product by the exchange's contract code, the contract month in UTC. A transferable position is as the exchange's rules allow."
+}

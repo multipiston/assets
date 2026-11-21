@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "GHS",
+  "aliases": [],
+  "name": "Ghanaian Cedi",
+  "decimals": 2,
+  "icon": "icons/ghs.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:46bb53a461082c3e2ce2e534ab6829558f45332b9711afbf692427f4d71e6619"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "GHS",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 GHS (Ghana Cedi), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/gh.svg, unmodified."
+}

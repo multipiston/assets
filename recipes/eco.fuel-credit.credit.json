@@ -1,0 +1,94 @@
+{
+  "family": "eco.fuel-credit",
+  "name": "A low-carbon fuel credit",
+  "symbol": "FUELCR",
+  "icon": "icons/recipes/fuel-credit.svg",
+  "kind": "Fungible",
+  "source": "registry:fuel-credit",
+  "instrument": "{credit}",
+  "params": [
+    {
+      "id": "credit",
+      "name": "Programme and credit type",
+      "type": "choice",
+      "options": [
+        {
+          "id": "D3",
+          "name": "RFS RIN D3 - cellulosic biofuel",
+          "short": "D3 RIN",
+          "unit": "credit"
+        },
+        {
+          "id": "D4",
+          "name": "RFS RIN D4 - biomass-based diesel",
+          "short": "D4 RIN",
+          "unit": "credit"
+        },
+        {
+          "id": "D5",
+          "name": "RFS RIN D5 - advanced biofuel",
+          "short": "D5 RIN",
+          "unit": "credit"
+        },
+        {
+          "id": "D6",
+          "name": "RFS RIN D6 - renewable fuel (conventional)",
+          "short": "D6 RIN",
+          "unit": "credit"
+        },
+        {
+          "id": "D7",
+          "name": "RFS RIN D7 - cellulosic diesel",
+          "short": "D7 RIN",
+          "unit": "credit"
+        },
+        {
+          "id": "ca-lcfs",
+          "name": "California Low Carbon Fuel Standard credit",
+          "short": "CA LCFS",
+          "unit": "tco2e"
+        },
+        {
+          "id": "or-cfp",
+          "name": "Oregon Clean Fuels Program credit",
+          "short": "OR CFP",
+          "unit": "tco2e"
+        },
+        {
+          "id": "wa-cfs",
+          "name": "Washington Clean Fuel Standard credit",
+          "short": "WA CFS",
+          "unit": "tco2e"
+        },
+        {
+          "id": "ca-cfr",
+          "name": "Canada Clean Fuel Regulations compliance credit",
+          "short": "CFR credit",
+          "unit": "tco2e"
+        },
+        {
+          "id": "bc-lcfs",
+          "name": "British Columbia Low Carbon Fuel Standard credit",
+          "short": "BC LCFS",
+          "unit": "tco2e"
+        }
+      ],
+      "to": "instrument",
+      "example": "D6"
+    },
+    {
+      "id": "vintage",
+      "name": "Vintage year",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "year"
+      ],
+      "to": "period",
+      "example": "2026"
+    }
+  ],
+  "regulated": true,
+  "note": "A credit of a low-carbon fuel programme of a vintage year: a US RFS RIN (one ethanol-equivalent gallon) or a clean-fuel credit (one tonne CO2e). Sources: https://www.law.cornell.edu/cfr/text/40/80.1425 https://ww2.arb.ca.gov/our-work/programs/low-carbon-fuel-standard/about https://oregon.public.law/oar_340-253-0040 https://lawfilesext.leg.wa.gov/law/RCWPDF/RCW%20%2070A%20TITLE/RCW%20%2070A.535%20%20CHAPTER/RCW%20%2070A.535%20%20COMBINEDCHAPTER.pdf https://www.canada.ca/en/environment-climate-change/services/managing-pollution/energy-production/fuel-regulations/clean-fuel-regulations/compliance.html https://www.ieta.org/uploads/wp-content/2025/09/IETA_Business_Brief-BC-Low-Carbon-Fuel-Standard-September_2025.pdf"
+}

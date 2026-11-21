@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.wrapped",
+  "symbol": "cbBTC",
+  "aliases": [],
+  "name": "Coinbase Wrapped BTC",
+  "decimals": 8,
+  "icon": "icons/cbbtc-base.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:37bdc07c60f654328efcc138519c1dbc39794d0642351f194ef243ae046390e6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:8453/erc20:0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Coinbase, https://www.coinbase.com/cbbtc (Base), retrieved 2026-11-01: cbBTC | Base | 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf | https://basescan.org/token/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf. Decimals 8: the issuer, and decimals() on the chain. Icon drawn for this catalog (no open icon of the token)."
+}

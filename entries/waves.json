@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "WAVES",
+  "aliases": [],
+  "name": "Waves",
+  "decimals": 8,
+  "icon": "icons/waves.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:b0b236e95f2db12e6ec969c74607a3c3efc01e6eaf7b314b95ad94992347f35f"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "waves:087/slip44:5741564",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces waves/caip2.md (Waves). Decimals 8: https://docs.waves.tech/en/blockchain/token/waves. Coin type 5741564: SLIP-0044 (WAVES). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/waves.svg, unmodified."
+}

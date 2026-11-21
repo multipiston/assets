@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "DYDX",
+  "aliases": [],
+  "name": "dYdX",
+  "decimals": 18,
+  "icon": "icons/dydx.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:24c26d512f476d96fce23afb78a550b354f173f2259175a6fbf5ccdc3eab988b"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "cosmos:dydx-mainnet-1/slip44:22000118",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain dydx-mainnet-1: the node_info network of the chain (the check of namespaces cosmos/caip2.md) via dydx-rest.publicnode.com on 2026-11-01. Decimals 18: the chain's denom metadata, adydx exponent 0, dydx exponent 18; 1 atom = 1 adydx. Coin type 22000118: SLIP-0044 (DYDX). Icon: web3icons 4.0.58 (MIT), tokens/branded/DYDX.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

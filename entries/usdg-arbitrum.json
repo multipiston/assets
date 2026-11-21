@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDG",
+  "aliases": [],
+  "name": "Global Dollar",
+  "decimals": 6,
+  "icon": "icons/usdg-arbitrum.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:62dba6331cad12bd88bef731dfa400ea430814a41086c0e587d17aeeb400a358"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:42161/erc20:0x004b506865409877c9fa29bfb1eba929984b9bbc",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdg/mainnet (Arbitrum One), retrieved 2026-11-01. Decimals 6: decimals() via arb1.arbitrum.io. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

@@ -1,0 +1,22 @@
+{
+  "family": "equity.reit",
+  "name": "Real estate fund units by ISIN",
+  "symbol": "SHARE",
+  "icon": "icons/recipes/fund.svg",
+  "kind": "Fungible",
+  "source": "spec:iso6166",
+  "unit": "fund-unit",
+  "instrument": "{isin}",
+  "params": [
+    {
+      "id": "isin",
+      "name": "ISIN",
+      "type": "code",
+      "check": "isin",
+      "to": "instrument",
+      "example": "US7561091049"
+    }
+  ],
+  "regulated": true,
+  "note": "The example shows the spelling only (an all-zero ISIN is a placeholder). The security by its ISIN (ISO 6166, check digit verified); the name comes from an open registry such as OpenFIGI or GLEIF. A regulated instrument: only where the parties may trade it."
+}

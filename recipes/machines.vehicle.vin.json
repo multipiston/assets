@@ -1,0 +1,21 @@
+{
+  "family": "machines.vehicle",
+  "name": "One vehicle by VIN",
+  "symbol": "VEHICLE",
+  "icon": "icons/recipes/car.svg",
+  "kind": "Unique",
+  "source": "spec:iso3779",
+  "unit": "item",
+  "instrument": "{vin}",
+  "params": [
+    {
+      "id": "vin",
+      "name": "Vehicle identification number",
+      "type": "code",
+      "check": "vin",
+      "to": "instrument",
+      "example": "1HGCM82633A004352"
+    }
+  ],
+  "note": "A single vehicle by its ISO 3779 VIN."
+}

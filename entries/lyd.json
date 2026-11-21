@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "LYD",
+  "aliases": [],
+  "name": "Libyan Dinar",
+  "decimals": 3,
+  "icon": "icons/lyd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:bf0fe8c1532d5f258a30672719ea93d27aaf2572a6f0629f0ac77e30792e1f9f"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "LYD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 LYD (Libyan Dinar), minor unit 10^-3 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ly.svg, unmodified."
+}

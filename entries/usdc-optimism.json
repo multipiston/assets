@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDC",
+  "aliases": [],
+  "name": "USD Coin",
+  "decimals": 6,
+  "icon": "icons/usdc-optimism.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:3f7e8f01fd6a319a7998e63c0b936a24a682e2f5d49d90cc633e24f3b174b96c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:10/erc20:0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/usdc-contract-addresses (OP Mainnet), retrieved 2026-11-01. Decimals 6: the issuer, and decimals() via mainnet.optimism.io. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdc.svg, unmodified."
+}

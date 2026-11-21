@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "FIL",
+  "aliases": [],
+  "name": "Filecoin",
+  "decimals": 18,
+  "icon": "icons/fil.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:c880f8d59c652e3843aa40c07fa09204ce0801ea8a1980c7c5ed7e37b795142c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "fil:f/slip44:461",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces fil/caip2.md (Filecoin). Decimals 18: https://docs.filecoin.io/basics/assets/the-fil-token. Coin type 461: SLIP-0044 (FIL). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/fil.svg, unmodified."
+}

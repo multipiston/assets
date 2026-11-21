@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDP",
+  "aliases": [],
+  "name": "Pax Dollar",
+  "decimals": 6,
+  "icon": "icons/usdp-solana.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:e969a12c899b3838b40f34d398bfe43dde9dc2908af6a46b09b86e5808e128d2"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:HVbpJAQGNpkgBaYBZQBR1t7yFdvaYVp2vCQQfKKEN4tM",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdp/mainnet (Solana), retrieved 2026-11-01. Decimals 6: getTokenSupply via api.mainnet-beta.solana.com. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

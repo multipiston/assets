@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "UGX",
+  "aliases": [],
+  "name": "Ugandan Shilling",
+  "decimals": 0,
+  "icon": "icons/ugx.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:45a7d583cadb2ab306ee5459b4e0510c1928c1fb8612cc15199e7bdc31f25f56"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "UGX",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 UGX (Uganda Shilling), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ug.svg, unmodified."
+}

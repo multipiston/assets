@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "ETH",
+  "aliases": [],
+  "name": "Ether",
+  "decimals": 18,
+  "icon": "icons/eth.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:a4bece30f7578756c10cd6c5db132415c25ac44956cc2167fdad88c34daade41"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:1/slip44:60",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Id verbatim in CAIP-20 test cases; chain 1: ethereum-lists/chains. 1 atom = 1 wei. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/eth.svg, unmodified."
+}

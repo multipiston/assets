@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDG",
+  "aliases": [],
+  "name": "Global Dollar",
+  "decimals": 6,
+  "icon": "icons/usdg-mantle.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:097068710054a5e9da3f3968a1b8a636d068b4c23d709ec1334ffac0d7058e30"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:5000/erc20:0x063c1d1ef6e9099ce3e8e9ad5c6173d12c49c086",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdg/mainnet (Mantle), retrieved 2026-11-01. Decimals 6: decimals() via rpc.mantle.xyz. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

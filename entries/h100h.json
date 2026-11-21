@@ -1,0 +1,29 @@
+{
+  "status": "draft",
+  "family": "compute.cpu-gpu",
+  "symbol": "H100H",
+  "aliases": [],
+  "name": "GPU hour, H100 SXM 80 GB",
+  "decimals": 0,
+  "icon": null,
+  "ref": {
+    "chain": "compute.cpu-gpu",
+    "token": "af1:23aebac6011e95fe33fc689a512a1366cd412ce626d94da796afc542caa4c9a7"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "compute.cpu-gpu",
+    "instrument": "gpu-hour",
+    "source": "spec:multipiston",
+    "kind": "Fungible",
+    "unit": "hour",
+    "terms": [
+      {
+        "key": "gpu",
+        "value": "nvidia-h100-sxm-80gb"
+      }
+    ]
+  },
+  "replaced_by": null,
+  "note": "Draft. One hour of one GPU of this model; whoever gives it provides the access."
+}

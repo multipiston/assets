@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How to describe any asset
+    url: https://github.com/multipiston/assets/blob/main/RECIPES.md
+    about: Recipes and the rule for any asset. An asset is used right away — no form is needed for that.

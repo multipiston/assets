@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "ETC",
+  "aliases": [],
+  "name": "Ether Classic",
+  "decimals": 18,
+  "icon": "icons/etc.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:956ca0af0cfce3264e78ad7dfa28a312345d2b9683993ed39a61c02f8ddd8e7d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:61/slip44:61",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 61: ethereum-lists/chains (chainid.network, 2026-11-01), native ETC, 18 decimals; 1 atom = 10^-18 ETC. Coin type 61: SLIP-0044 (ETC). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/etc.svg, unmodified."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "LRD",
+  "aliases": [],
+  "name": "Liberian Dollar",
+  "decimals": 2,
+  "icon": "icons/lrd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:d68db76b9c497285020ab48a2e6024e93245676e1a294eeb77e808c3c8875b6d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "LRD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 LRD (Liberian Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/lr.svg, unmodified."
+}

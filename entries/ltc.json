@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "LTC",
+  "aliases": [],
+  "name": "Litecoin",
+  "decimals": 8,
+  "icon": "icons/ltc.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:cddaaede813376d2c26ee4b82d1e9b66d4d9d081f3eea446dab149820a7adf2d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "bip122:12a765e31ffd4059bada1e25190f6e98/slip44:2",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Id verbatim in CAIP-20 test cases; chain in namespaces bip122/caip2.md. 1 atom = 1 litoshi. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/ltc.svg, unmodified."
+}

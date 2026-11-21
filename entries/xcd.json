@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "XCD",
+  "aliases": [],
+  "name": "East Caribbean Dollar",
+  "decimals": 2,
+  "icon": "icons/xcd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:ebd8b726890abab39ccd068ac5dd5de4ca269bff4f379d006e730921788af3b8"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "XCD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 XCD (East Caribbean Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon drawn for this catalog: the dollar sign."
+}

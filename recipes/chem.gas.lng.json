@@ -1,0 +1,49 @@
+{
+  "family": "chem.gas",
+  "name": "LNG on a standard delivery basis",
+  "symbol": "LNG",
+  "icon": "icons/recipes/lng.svg",
+  "kind": "Fungible",
+  "source": "spec:lng-delivery",
+  "unit": "MMBtu",
+  "instrument": "{basis}",
+  "params": [
+    {
+      "id": "basis",
+      "name": "Delivery basis",
+      "type": "choice",
+      "options": [
+        {
+          "id": "lng-des-nwe",
+          "name": "LNG delivered ex-ship, Northwest Europe",
+          "short": "LNG DES NWE"
+        },
+        {
+          "id": "lng-des-japan-korea",
+          "name": "LNG delivered ex-ship, Japan / South Korea (North-East Asia",
+          "short": "LNG DES JK"
+        },
+        {
+          "id": "lng-fob-us-gulf-coast",
+          "name": "LNG free on board, US Gulf Coast liquefaction terminals",
+          "short": "LNG FOB USGC"
+        }
+      ],
+      "to": "instrument",
+      "example": "lng-des-nwe"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-01"
+    }
+  ],
+  "note": "Liquefied natural gas on a standard basis (DES or FOB area), in a month (UTC); the amount in MMBtu. Delivery areas, not index names. Sources: https://en.wikipedia.org/wiki/Liquefied_natural_gas"
+}

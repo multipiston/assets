@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "ZMW",
+  "aliases": [],
+  "name": "Zambian Kwacha",
+  "decimals": 2,
+  "icon": "icons/zmw.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:32db8d6b0e24e4454f2be1303705b261e5e75cfa0deb07f7a740b336a09f8372"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "ZMW",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 ZMW (Zambian Kwacha), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/zm.svg, unmodified."
+}

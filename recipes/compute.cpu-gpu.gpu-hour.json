@@ -1,0 +1,160 @@
+{
+  "family": "compute.cpu-gpu",
+  "name": "GPU time by model, country and period",
+  "symbol": "GPU",
+  "icon": "icons/recipes/gpu.svg",
+  "kind": "Fungible",
+  "source": "spec:gpu-model",
+  "unit": "gpu-hour",
+  "instrument": "{gpu}",
+  "params": [
+    {
+      "id": "gpu",
+      "name": "GPU model",
+      "type": "choice",
+      "options": [
+        {
+          "id": "nvidia-h100-sxm-80gb",
+          "name": "NVIDIA H100 SXM",
+          "short": "H100 SXM"
+        },
+        {
+          "id": "nvidia-h100-pcie-80gb",
+          "name": "NVIDIA H100 PCIe GPU",
+          "short": "H100 PCIe"
+        },
+        {
+          "id": "nvidia-h100-nvl-94gb",
+          "name": "NVIDIA H100 NVL",
+          "short": "H100 NVL"
+        },
+        {
+          "id": "nvidia-h200-sxm-141gb",
+          "name": "NVIDIA H200 SXM",
+          "short": "H200 SXM"
+        },
+        {
+          "id": "nvidia-h200-nvl-141gb",
+          "name": "NVIDIA H200 NVL",
+          "short": "H200 NVL"
+        },
+        {
+          "id": "nvidia-b200-sxm-180gb",
+          "name": "NVIDIA B200 (Blackwell SXM, HGX/DGX B200)",
+          "short": "B200"
+        },
+        {
+          "id": "nvidia-b300-sxm-288gb",
+          "name": "NVIDIA B300 (Blackwell Ultra SXM, HGX/DGX B300)",
+          "short": "B300"
+        },
+        {
+          "id": "nvidia-gb200-186gb",
+          "name": "NVIDIA GB200 Grace Blackwell Superchip (per Blackwell GPU)",
+          "short": "GB200 (per GPU)"
+        },
+        {
+          "id": "nvidia-a100-sxm4-80gb",
+          "name": "NVIDIA A100 80GB SXM",
+          "short": "A100 SXM 80GB"
+        },
+        {
+          "id": "nvidia-a100-sxm4-40gb",
+          "name": "NVIDIA A100 40GB SXM",
+          "short": "A100 SXM 40GB"
+        },
+        {
+          "id": "nvidia-a100-pcie-40gb",
+          "name": "NVIDIA A100 40GB PCIe",
+          "short": "A100 PCIe 40GB"
+        },
+        {
+          "id": "nvidia-a100-pcie-80gb",
+          "name": "NVIDIA A100 80GB PCIe",
+          "short": "A100 PCIe 80GB"
+        },
+        {
+          "id": "nvidia-l40s-48gb",
+          "name": "NVIDIA L40S",
+          "short": "L40S"
+        },
+        {
+          "id": "nvidia-l4-24gb",
+          "name": "NVIDIA L4",
+          "short": "L4"
+        },
+        {
+          "id": "nvidia-a10-24gb",
+          "name": "NVIDIA A10 Tensor Core GPU",
+          "short": "A10"
+        },
+        {
+          "id": "nvidia-rtx-6000-ada-48gb",
+          "name": "NVIDIA RTX 6000 Ada Generation",
+          "short": "RTX 6000 Ada"
+        },
+        {
+          "id": "nvidia-rtx-pro-6000-blackwell-96gb",
+          "name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "short": "RTX PRO 6000"
+        },
+        {
+          "id": "nvidia-geforce-rtx-4090-24gb",
+          "name": "NVIDIA GeForce RTX 4090",
+          "short": "RTX 4090"
+        },
+        {
+          "id": "nvidia-geforce-rtx-5090-32gb",
+          "name": "NVIDIA GeForce RTX 5090",
+          "short": "RTX 5090"
+        },
+        {
+          "id": "amd-instinct-mi300x-192gb",
+          "name": "AMD Instinct MI300X",
+          "short": "MI300X"
+        },
+        {
+          "id": "amd-instinct-mi325x-256gb",
+          "name": "AMD Instinct MI325X",
+          "short": "MI325X"
+        },
+        {
+          "id": "amd-instinct-mi355x-288gb",
+          "name": "AMD Instinct MI355X",
+          "short": "MI355X"
+        },
+        {
+          "id": "intel-gaudi3-128gb",
+          "name": "Intel Gaudi 3 AI Accelerator",
+          "short": "Gaudi 3"
+        }
+      ],
+      "to": "instrument",
+      "example": "nvidia-h100-sxm-80gb"
+    },
+    {
+      "id": "region",
+      "name": "Country of the data centre",
+      "type": "place",
+      "authority": "iso3166",
+      "to": "place",
+      "example": "US"
+    },
+    {
+      "id": "period",
+      "name": "Period (UTC)",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "Hours of one dedicated GPU of a model, in a data centre in a country, within a period (UTC); the amount in GPU-hours. Memory as the vendor states it for the model. Sources: https://www.nvidia.com/en-us/data-center/h100/ https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs22/data-center/h100/PB-11133-001_v01.pdf https://www.nvidia.com/en-us/data-center/h200/ https://www.nvidia.com/en-us/data-center/dgx-b200/ https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/ https://www.nvidia.com/en-us/data-center/gb200-nvl72/"
+}

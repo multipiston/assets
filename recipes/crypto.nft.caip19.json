@@ -1,0 +1,21 @@
+{
+  "family": "crypto.nft",
+  "name": "One NFT by its CAIP-19 id and token id",
+  "symbol": "NFT",
+  "icon": "icons/recipes/token.svg",
+  "kind": "Unique",
+  "source": "spec:caip19",
+  "unit": "atom",
+  "instrument": "{item}",
+  "params": [
+    {
+      "id": "item",
+      "name": "CAIP-19 id with the token id",
+      "type": "code",
+      "check": "caip19item",
+      "to": "instrument",
+      "example": "eip155:1/erc721:0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/42"
+    }
+  ],
+  "note": "An ERC-721 or other single token: CAIP-19 id, then the token id in decimal without leading zeros."
+}

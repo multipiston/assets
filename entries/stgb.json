@@ -1,0 +1,24 @@
+{
+  "status": "draft",
+  "family": "compute.storage",
+  "symbol": "STGB",
+  "aliases": [],
+  "name": "Object storage, GB-month",
+  "decimals": 0,
+  "icon": null,
+  "ref": {
+    "chain": "compute.storage",
+    "token": "af1:2cb582dcb16b33ccd5fa5c8ea9e619c7af393d7a45d2e07e7c840cccd59d44fa"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "compute.storage",
+    "instrument": "object-storage",
+    "source": "spec:multipiston",
+    "kind": "Fungible",
+    "unit": "gb-month",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Draft. One gigabyte for one calendar month."
+}

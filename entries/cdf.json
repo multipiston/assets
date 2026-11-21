@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CDF",
+  "aliases": [],
+  "name": "Congolese Franc",
+  "decimals": 2,
+  "icon": "icons/cdf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:cbd0822c3e7da58f8c9bdfff4fc946c1fb86603b4ebee0b9b0ab9c9d1dc03b47"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CDF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CDF (Congolese Franc), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/cd.svg, unmodified."
+}

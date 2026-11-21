@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "YER",
+  "aliases": [],
+  "name": "Yemeni Rial",
+  "decimals": 2,
+  "icon": "icons/yer.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:c4f60616bc05dc653d82c6e5973870a9d19b220100845d1127e7ca9c2f6237e6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "YER",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 YER (Yemeni Rial), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ye.svg, unmodified."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "HUF",
+  "aliases": [],
+  "name": "Hungarian Forint",
+  "decimals": 2,
+  "icon": "icons/huf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:3534f434aa2e708066aff58c9a43dafd7d788344af9ee666e66583541d57e468"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "HUF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 HUF (Forint), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/hu.svg, unmodified."
+}

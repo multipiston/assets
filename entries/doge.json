@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "DOGE",
+  "aliases": [],
+  "name": "Dogecoin",
+  "decimals": 8,
+  "icon": "icons/doge.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:9f34d2dbd2e15a4d94e557d5c9c67b55e8548927e410d154c85ea26a691b1faf"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "bip122:1a91e3dace36e2be3bf030a65679fe82/slip44:3",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces bip122/caip2.md (Dogecoin mainnet); coin type 3: SLIP-0044. 1 atom = 1 koinu. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/doge.svg, unmodified."
+}

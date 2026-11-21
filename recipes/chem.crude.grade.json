@@ -1,0 +1,184 @@
+{
+  "family": "chem.crude",
+  "name": "Crude oil of a named grade",
+  "symbol": "CRUDE",
+  "icon": "icons/recipes/crude.svg",
+  "kind": "Fungible",
+  "source": "spec:crude-grade",
+  "unit": "bbl",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and delivery basis",
+      "type": "choice",
+      "options": [
+        {
+          "id": "dated-brent-basket",
+          "name": "Dated Brent, FOB North Sea terminals for BFOET. WTI Midland is",
+          "short": "Dated Brent"
+        },
+        {
+          "id": "brent-blend",
+          "name": "Brent, FOB Sullom Voe",
+          "short": "Brent"
+        },
+        {
+          "id": "forties",
+          "name": "Forties, FOB Hound Point",
+          "short": "Forties"
+        },
+        {
+          "id": "oseberg",
+          "name": "Oseberg, FOB Sture terminal",
+          "short": "Oseberg"
+        },
+        {
+          "id": "ekofisk",
+          "name": "Ekofisk, FOB Teesside",
+          "short": "Ekofisk"
+        },
+        {
+          "id": "troll",
+          "name": "Troll, FOB Mongstad",
+          "short": "Troll"
+        },
+        {
+          "id": "johan-sverdrup",
+          "name": "J. Sverdrup, FOB Mongstad (Sture is also used)",
+          "short": "J. Sverdrup"
+        },
+        {
+          "id": "wti-cushing",
+          "name": "WTI Cushing, FOB any pipeline or storage facility at Cushing, OK",
+          "short": "WTI Cushing"
+        },
+        {
+          "id": "wti-midland",
+          "name": "WTI Midland, Pipeline at Midland, TX (Permian). Also traded CIF",
+          "short": "WTI Midland"
+        },
+        {
+          "id": "mars",
+          "name": "Mars, Delivered at the LOOP Clovelly hub, Louisiana",
+          "short": "Mars"
+        },
+        {
+          "id": "lls",
+          "name": "LLS, Pipeline/terminal at St. James, Louisiana (Capline",
+          "short": "LLS"
+        },
+        {
+          "id": "wcs",
+          "name": "WCS, Hardisty, Alberta (pipeline terminal)",
+          "short": "WCS"
+        },
+        {
+          "id": "dubai",
+          "name": "Dubai, FOB Fateh terminal (offshore Dubai). As a benchmark",
+          "short": "Dubai"
+        },
+        {
+          "id": "oman",
+          "name": "Oman, FOB Mina Al Fahal terminal, Muscat, and/or floating",
+          "short": "Oman"
+        },
+        {
+          "id": "murban",
+          "name": "Murban, FOB Fujairah (ADNOC) loading terminal (IFAD Murban",
+          "short": "Murban"
+        },
+        {
+          "id": "upper-zakum",
+          "name": "Upper Zakum, FOB Zirku Island",
+          "short": "Upper Zakum"
+        },
+        {
+          "id": "arab-light",
+          "name": "Arab Light, FOB Ras Tanura / Ju'aymah (Arabian Gulf) or FOB",
+          "short": "Arab Light"
+        },
+        {
+          "id": "arab-medium",
+          "name": "Arab Medium, FOB Ras Tanura / Ju'aymah",
+          "short": "Arab Medium"
+        },
+        {
+          "id": "basrah-medium",
+          "name": "Basrah Medium, FOB Basrah Oil Terminal / Basrah SPMs (SOMO term",
+          "short": "Basrah Medium"
+        },
+        {
+          "id": "basrah-heavy",
+          "name": "Basrah Heavy, FOB Basrah Oil Terminal",
+          "short": "Basrah Heavy"
+        },
+        {
+          "id": "kirkuk",
+          "name": "Kirkuk, FOB Ceyhan (BOTAŞ marine terminal, Iraq-Türkiye",
+          "short": "Kirkuk"
+        },
+        {
+          "id": "urals",
+          "name": "Urals, FOB Primorsk / Ust-Luga (Baltic) or FOB Novorossiysk",
+          "short": "Urals"
+        },
+        {
+          "id": "espo",
+          "name": "ESPO, FOB Kozmino",
+          "short": "ESPO"
+        },
+        {
+          "id": "cpc-blend",
+          "name": "CPC, FOB CPC marine terminal near Novorossiysk (Yuzhnaya",
+          "short": "CPC"
+        },
+        {
+          "id": "azeri-btc",
+          "name": "Azeri BTC, FOB Ceyhan (BTC terminal)",
+          "short": "Azeri BTC"
+        },
+        {
+          "id": "bonny-light",
+          "name": "Bonny Light, FOB Bonny terminal",
+          "short": "Bonny Light"
+        },
+        {
+          "id": "qua-iboe",
+          "name": "Qua Iboe, FOB Qua Iboe terminal",
+          "short": "Qua Iboe"
+        },
+        {
+          "id": "es-sider",
+          "name": "Es Sider, FOB Es Sider terminal",
+          "short": "Es Sider"
+        },
+        {
+          "id": "tapis",
+          "name": "Tapis, FOB Tapis terminal (Terengganu)",
+          "short": "Tapis"
+        },
+        {
+          "id": "maya",
+          "name": "Maya, FOB Cayo Arcas or Dos Bocas (Gulf of Mexico), or Salina",
+          "short": "Maya"
+        }
+      ],
+      "to": "instrument",
+      "example": "forties"
+    },
+    {
+      "id": "month",
+      "name": "Loading month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A crude grade on its standard delivery basis (FOB terminal or pipeline point), loading month in UTC. The amount in barrels. Sanctioned grades trade only where the parties may. Sources: https://www.ice.com/api/productguide/spec/219/pdf https://trading.totalenergies.com/en/business-customers/oil/crude-assays/ https://www.ineos.com/businesses/ineos-fps/business/forties-blend-quality/forties-blend https://www.equinor.com/energy/crude-oil-assays https://www.eia.gov/dnav/pet/tbldefs/pet_pri_fut_tbldef2.asp https://spglobal.com/commodity-insights/en/pricing-benchmarks/our-methodology/subscriber-notes/080620-platts-implements-comprehensive-platts-wti-midland-specifications"
+}

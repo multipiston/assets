@@ -1,0 +1,171 @@
+{
+  "family": "energy.gas-supply",
+  "name": "Gas at a European hub",
+  "symbol": "GAS",
+  "icon": "icons/recipes/gas.svg",
+  "kind": "Fungible",
+  "source": "spec:eu-gas-hub",
+  "instrument": "{hub}",
+  "params": [
+    {
+      "id": "hub",
+      "name": "Hub",
+      "type": "choice",
+      "options": [
+        {
+          "id": "TTF",
+          "name": "Title Transfer Facility",
+          "short": "TTF",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "THE",
+          "name": "Trading Hub Europe",
+          "short": "THE",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "NBP",
+          "name": "National Balancing Point",
+          "short": "NBP",
+          "unit": "therm"
+        },
+        {
+          "id": "PEG",
+          "name": "Point d'Echange de Gaz",
+          "short": "PEG",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "PSV",
+          "name": "Punto di Scambio Virtuale",
+          "short": "PSV",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "PVB",
+          "name": "Punto Virtual de Balance (Spain)",
+          "short": "PVB-ES",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "VTP-PT",
+          "name": "Virtual Trading Point Portugal",
+          "short": "VTP-PT",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "ZTP",
+          "name": "Zeebrugge Trading Point",
+          "short": "ZTP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "CEGH-VTP",
+          "name": "Central European Gas Hub Virtual Trading Point (Austria)",
+          "short": "CEGH VTP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "ETF",
+          "name": "Exchange Transfer Facility (Denmark)",
+          "short": "ETF",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "CZ-VTP",
+          "name": "Czech Virtual Trading Point",
+          "short": "CZ VTP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "PL-VTP",
+          "name": "Polish Virtual Trading Point (Wirtualny Punkt Obrotu)",
+          "short": "PL VTP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "MGP",
+          "name": "Hungarian Gas Trading Point (Magyar Gaz Pont)",
+          "short": "MGP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "GR-VTP",
+          "name": "Greek Virtual Trading Point (HEnEx Natural Gas Trading Platform)",
+          "short": "GR VTP",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "FIN",
+          "name": "Finnish gas market area",
+          "short": "FIN",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "LTU",
+          "name": "Lithuanian gas market area",
+          "short": "LTU",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        },
+        {
+          "id": "LVA-EST",
+          "name": "Latvian-Estonian common gas market area",
+          "short": "LVA-EST",
+          "unit": "kWh",
+          "decimals": 3,
+          "display": "MWh"
+        }
+      ],
+      "to": "instrument",
+      "example": "TTF"
+    },
+    {
+      "id": "period",
+      "name": "Gas days",
+      "type": "period",
+      "clock": "CET",
+      "day_start": 6,
+      "grains": [
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2027-01"
+    }
+  ],
+  "note": "Gas delivered at a virtual trading point, over gas days of 06:00-06:00 CET (05:00 UK time, 07:00 EET: the same instant everywhere in Europe). The amount in kWh shown in MWh; at NBP in therms, as it trades. Sources: https://www.ice.com/products/27996665 https://www.eex.com/en/markets/natural-gas https://www.ice.com/products/910/UK-NBP-Natural-Gas-Futures https://www.mibgas.es/en https://www.ice.com/products/71523204/Austrian-CEGH-VTP-Natural-Gas-Futures https://tge.pl/gas-dam"
+}

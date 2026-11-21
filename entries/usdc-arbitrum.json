@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDC",
+  "aliases": [],
+  "name": "USD Coin",
+  "decimals": 6,
+  "icon": "icons/usdc-arbitrum.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:d1d7b3258bfc5cf5a5d7bff8b38cdd4588d3bdc32e2114b53ef134d0ac672526"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:42161/erc20:0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Contract: Circle, https://developers.circle.com/stablecoins/usdc-contract-addresses (Arbitrum); chain 42161: ethereum-lists/chains; decimals() = 6. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdc.svg, unmodified."
+}

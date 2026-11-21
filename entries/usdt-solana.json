@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDT",
+  "aliases": [],
+  "name": "Tether USD",
+  "decimals": 6,
+  "icon": "icons/usdt-solana.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:a2d876df839b8a7614709fa0d22bc139336def3e72fd5c0624b1774fad807a6c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Mint: Tether, https://tether.to/en/supported-protocols/ (Solana); mint decimals 6. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/usdt.svg, unmodified."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "SEI",
+  "aliases": [],
+  "name": "Sei",
+  "decimals": 18,
+  "icon": "icons/sei.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:1b1c0985f8493af042264e14449402c6916ab96ce1944ebbae17eca92f4bb510"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:1329/slip44:19000118",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 1329: ethereum-lists/chains (chainid.network, 2026-11-01), native SEI, 18 decimals; 1 atom = 10^-18 SEI. Coin type 19000118: SLIP-0044 (SEI). Icon: web3icons 4.0.58 (MIT), tokens/branded/SEI.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

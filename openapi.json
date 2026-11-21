@@ -1,0 +1,1640 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MultiPiston API for programs",
+    "version": "2026-11-21",
+    "description": "Publish and withdraw intents, read your intents and tickets, and follow events of your key. Authenticate calls with Authorization: Bearer <MULTIPISTON_API_KEY> (mpk1…, 130 characters); do not combine a key with DPoP. Instructions: /agents.html. Asset catalog: /catalog/catalog.json. Responses can contain other fields; use the fields documented here. Every error code is one of the closed lists of NodeError, CentralError and AdmissionRefusal."
+  },
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "paths": {
+    "/api/v1/submit-offer": {
+      "servers": [
+        {
+          "url": "{node_url}",
+          "variables": {
+            "node_url": {
+              "default": "https://node.example",
+              "description": "MULTIPISTON_NODE_URL"
+            }
+          }
+        }
+      ],
+      "post": {
+        "operationId": "submitOffer",
+        "parameters": [
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "description": "Unique per request, [A-Za-z0-9._-]{1,128}. Two concurrent requests with one id: the second gets 409 rpc_correlation_conflict.",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]{1,128}$"
+            }
+          }
+        ],
+        "summary": "Publish an intent: one request; the reply is the outcome.",
+        "description": "One step on the node: the node relays the persona's proof to central and answers with the publication. A lost reply: read GET /central/offers before sending again; the same intent while its publication lives is refused (intent_live).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitReply"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "400: fix the request. 401: check the key. 403: check access and plan limits. 409: read the current publication or use a distinct x-request-id for concurrent calls. 429: retry later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "central_unavailable: fate unknown — read GET /central/offers before sending again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/withdraw-offer": {
+      "servers": [
+        {
+          "url": "{node_url}",
+          "variables": {
+            "node_url": {
+              "default": "https://node.example",
+              "description": "MULTIPISTON_NODE_URL"
+            }
+          }
+        }
+      ],
+      "post": {
+        "operationId": "withdrawOffer",
+        "parameters": [
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "description": "Unique per request, [A-Za-z0-9._-]{1,128}. Two concurrent requests with one id: the second gets 409 rpc_correlation_conflict.",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]{1,128}$"
+            }
+          }
+        ],
+        "summary": "Withdraw your published intent (on the node that published it).",
+        "description": "An unknown outcome is 503 central_unavailable: repeat the same withdrawal or read your offers.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WithdrawRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Withdrawn, or superseded by a newer publication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WithdrawReply"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "400: fix the request. 401: check the key. 403: check access and plan limits. 409: read the current publication or use a distinct x-request-id for concurrent calls. 429: retry later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "central_unavailable: fate unknown.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/status": {
+      "servers": [
+        {
+          "url": "{node_url}",
+          "variables": {
+            "node_url": {
+              "default": "https://node.example",
+              "description": "MULTIPISTON_NODE_URL"
+            }
+          }
+        }
+      ],
+      "get": {
+        "operationId": "nodeStatus",
+        "security": [],
+        "summary": "central_url of this node.",
+        "responses": {
+          "200": {
+            "description": "Status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/central/offers": {
+      "servers": [
+        {
+          "url": "{central_url}",
+          "variables": {
+            "central_url": {
+              "default": "https://central.example",
+              "description": "central_url from GET {node}/api/v1/status"
+            }
+          }
+        }
+      ],
+      "get": {
+        "operationId": "listOwnOffers",
+        "summary": "Your intents, by issue number, paged.",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 64
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/OfferSeq"
+            },
+            "description": "next_cursor of the previous page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OffersPage"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/central/offers/{offer_seq}": {
+      "servers": [
+        {
+          "url": "{central_url}",
+          "variables": {
+            "central_url": {
+              "default": "https://central.example",
+              "description": "central_url from GET {node}/api/v1/status"
+            }
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getOwnOffer",
+        "summary": "One of your intents, by its issue number.",
+        "parameters": [
+          {
+            "name": "offer_seq",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/OfferSeq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The intent: published, or not in the book (lease_state null).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfferDetail"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not yours or unknown.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (on 429 and 503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Error: 400, 401, 403, 429 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (on 429 and 503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Retry after Retry-After.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (on 429 and 503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/central/execs": {
+      "servers": [
+        {
+          "url": "{central_url}",
+          "variables": {
+            "central_url": {
+              "default": "https://central.example",
+              "description": "central_url from GET {node}/api/v1/status"
+            }
+          }
+        }
+      ],
+      "get": {
+        "operationId": "listOwnTickets",
+        "summary": "Your tickets, newest first, paged; or only those after a head.",
+        "parameters": [
+          {
+            "name": "limit_u16",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 256
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Position"
+            },
+            "description": "continuation.cursor of the previous page."
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Position"
+            },
+            "description": "A head you saved: only tickets written after it. Page on with cursor and the same since."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecsPage"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/central/execs/{exec_id_hex}": {
+      "servers": [
+        {
+          "url": "{central_url}",
+          "variables": {
+            "central_url": {
+              "default": "https://central.example",
+              "description": "central_url from GET {node}/api/v1/status"
+            }
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getOwnOutgoing",
+        "summary": "What you send in this ticket and to whom.",
+        "parameters": [
+          {
+            "name": "exec_id_hex",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ExecId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The assets and amounts you send, with the recipients and their payment details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Outgoing"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The ticket is unavailable to this key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Error: 400, 401, 403, 404, 429 (Retry-After), 503 (Retry-After).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (central GET routes on 429/503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ws/ticket": {
+      "servers": [
+        {
+          "url": "{central_url}",
+          "variables": {
+            "central_url": {
+              "default": "https://central.example",
+              "description": "central_url from GET {node}/api/v1/status"
+            }
+          }
+        }
+      ],
+      "post": {
+        "summary": "A ticket for the event socket of your key.",
+        "description": "Connect wss://<central host>/ws with Sec-WebSocket-Protocol: metaphora-v2, <ticket> within expires_in_ms, with an Origin header equal to one of the deployment's allowed addresses (the cabinet's address); without it the upgrade is refused 403. Frames: {\"type\":\"batch\",\"items\":[{\"c\":<position>,\"e\":<event>}],…}; events: FinancialViewsChanged {exec_id_hex} — read your tickets with since=<head>; ApiAccessChanged {generation} — your key changed. The socket of a key does not resynchronise: it closes 4001 — take a new ticket, reconnect and read your tickets with since; 4003 key_revoked — the key was replaced or disabled. Other closes: 1013 — wait and reconnect; 1011 — retry later. The body is empty; no query.",
+        "responses": {
+          "200": {
+            "description": "The ticket.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WsTicket"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "More than 10 tickets in 60 s for this participant: wait retryAfterMs (the Retry-After header, in seconds, comes first).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WsTicketLimit"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Error: 400, 401.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (on 429 and 503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "central_unavailable or session_capacity: retry later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentralError"
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds (on 429 and 503).",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "mpk1",
+        "description": "The account's one API key from the cabinet. Never in a URL."
+      }
+    },
+    "schemas": {
+      "PersonaId": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{32}$",
+        "description": "The participant from your connection settings. Must match the API key's participant, otherwise 403 not_allowed."
+      },
+      "Intent": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{128}$",
+        "description": "Intent reference returned by the API. Save and send it unchanged when reading, replacing or withdrawing the intent."
+      },
+      "PublicationRef": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{48}$",
+        "description": "Publication reference returned by the API. Save and send it unchanged as expected_publication_ref_hex when replacing or withdrawing."
+      },
+      "ExecId": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$",
+        "description": "Ticket (execution) number."
+      },
+      "Atoms": {
+        "type": "string",
+        "pattern": "^[1-9][0-9]{0,38}$",
+        "description": "Whole units of the asset's unit, decimal, > 0, ≤ 2^128−1. A Unique asset: \"1\"."
+      },
+      "MarketScope": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "const": "global"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "market_id_hex"
+            ],
+            "properties": {
+              "kind": {
+                "const": "private"
+              },
+              "market_id_hex": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        ]
+      },
+      "AssetRef": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "chain",
+          "token"
+        ],
+        "properties": {
+          "chain": {
+            "type": "string",
+            "pattern": "^[a-z0-9._:-]{1,32}$"
+          },
+          "token": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Use the af1:/au1: reference supplied by the catalog or asset builder. Include its definition when publishing. Other reference formats cannot be used for a completed trade."
+          }
+        }
+      },
+      "AssetDefinition1": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "domain",
+          "instrument",
+          "source",
+          "kind",
+          "unit",
+          "terms"
+        ],
+        "description": "The asset description from the catalog or asset builder. Send it unchanged in asset_definitions. To describe a new asset, follow /catalog/describe.html.",
+        "properties": {
+          "version": {
+            "const": 1
+          },
+          "domain": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._:-]{1,32}$"
+          },
+          "instrument": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "Fungible",
+              "Unique"
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "terms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "value"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Distinct keys, sorted as the asset builder returns them. Typed mp.* keys go in complete groups for place, route, period, start window and capacity. A deadline and each exact identifier may stand alone. Identifiers and units are not empty. Times are UTC POSIX microseconds up to 2^63−1: start < end, a start window lies inside the period, and the deadline is at or after the period end and after the window start. concurrent_units is positive. Use the catalog or builder for these fields; reserve mp. for the documented terms."
+          }
+        }
+      },
+      "ReceiveRoute": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "chain",
+          "token",
+          "destination"
+        ],
+        "description": "Where you receive a wanted asset (want or one of want_any_of); only the sender of that leg reads it. chain in lower case; token af1:/au1: only.",
+        "properties": {
+          "chain": {
+            "type": "string",
+            "pattern": "^[a-z0-9._:-]{1,32}$"
+          },
+          "token": {
+            "type": "string",
+            "pattern": "^(af1|au1):[0-9a-f]{64}$"
+          },
+          "destination": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "profile",
+              "text"
+            ],
+            "properties": {
+              "profile": {
+                "const": "OpaqueUtf8"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "OfferAsset": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "chain",
+          "token",
+          "amount"
+        ],
+        "properties": {
+          "type": {
+            "const": "Asset"
+          },
+          "chain": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/Atoms"
+          }
+        }
+      },
+      "Offer": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "fdl_schema",
+          "have",
+          "want"
+        ],
+        "description": "The JSON object sent as a string in offer_fdl (up to 32 KiB). Do not add an expiry field; renew an intent by publishing it again.",
+        "properties": {
+          "type": {
+            "const": "Formula/Offer"
+          },
+          "fdl_schema": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "schema:agnostic"
+            ],
+            "description": "Send schema:agnostic."
+          },
+          "have": {
+            "$ref": "#/components/schemas/OfferAsset"
+          },
+          "want": {
+            "$ref": "#/components/schemas/OfferAsset"
+          },
+          "genome": {
+            "type": "array",
+            "maxItems": 32,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9:_-]{1,64}$"
+            }
+          },
+          "constraints": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "min_fill_ppm": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000,
+                "description": "Minimum fill share in ppm. Send 50000–1000000 in steps of 50000; 1000000 = 100 %. If omitted, the default is 1."
+              },
+              "slippage_ppm": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000,
+                "description": "Allowed rate deviation in ppm, from 0 to 1000000. Default: 0."
+              },
+              "want_any_of": {
+                "type": "array",
+                "maxItems": 64,
+                "items": {
+                  "$ref": "#/components/schemas/OfferAsset"
+                },
+                "description": "Additional acceptable assets, each with its own amount. Supply a receive route and definition for each asset."
+              }
+            }
+          }
+        }
+      },
+      "PublicationReceipt": {
+        "type": "object",
+        "required": [
+          "intent",
+          "persona_id",
+          "market_scope",
+          "node_id",
+          "instance_id",
+          "publication_ref_hex",
+          "submit_digest_hex",
+          "accepted_epoch",
+          "accepted_context_hex"
+        ],
+        "properties": {
+          "intent": {
+            "$ref": "#/components/schemas/Intent"
+          },
+          "persona_id": {
+            "$ref": "#/components/schemas/PersonaId"
+          },
+          "market_scope": {
+            "$ref": "#/components/schemas/MarketScope"
+          },
+          "node_id": {
+            "type": "string"
+          },
+          "instance_id": {
+            "type": "string"
+          },
+          "publication_ref_hex": {
+            "$ref": "#/components/schemas/PublicationRef"
+          },
+          "requested_instance_id": {
+            "type": "string"
+          },
+          "submit_digest_hex": {
+            "type": "string"
+          },
+          "accepted_epoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accepted_context_hex": {
+            "$ref": "#/components/schemas/Intent"
+          }
+        },
+        "description": "Keep publication_ref_hex: a withdrawal names it.",
+        "additionalProperties": false
+      },
+      "AdmissionRefusal": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "cause"
+        ],
+        "properties": {
+          "cause": {
+            "enum": [
+              "node_rpc_pending_capacity",
+              "node_rpc_target_mailbox_full",
+              "node_rpc_command_credit_capacity",
+              "node_rpc_allocation_pressure",
+              "node_rpc_target_resolution_incomplete",
+              "node_strategist_admission_capacity",
+              "node_submit_owner_capacity",
+              "root_offer_limit_exceeded",
+              "segment_registry_domain_capacity",
+              "segment_registry_resident_bytes_capacity",
+              "segment_registry_allocation_pressure",
+              "node_withdraw_owner_capacity",
+              "session_auth_mailbox_full",
+              "dpop_lookup_mailbox_full",
+              "dpop_lookup_key_capacity",
+              "dpop_lookup_waiter_capacity",
+              "dpop_lookup_total_waiter_capacity",
+              "target_publication_pending",
+              "cell_row_allocation_pressure",
+              "owner_binding_conflict",
+              "target_in_plan",
+              "intent_live",
+              "market_closed"
+            ],
+            "description": "Why this request was refused. The HTTP status and error decide what to do next; the cause only details it."
+          },
+          "resource": {
+            "type": "object",
+            "required": [
+              "kind",
+              "units"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "mailbox_word",
+                  "command_credit",
+                  "pending_rpc",
+                  "submit_owner",
+                  "resident_bytes",
+                  "domain_row"
+                ]
+              },
+              "units": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "description": "A refusal of this request does not settle the outcome of an earlier request. 403: check permissions and plan limits. 409: read the current publication. 429: retry later with the same request."
+      },
+      "SubmitReply": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "offer_intent",
+          "lookup_key",
+          "context_key",
+          "publication_receipt"
+        ],
+        "properties": {
+          "ok": {
+            "const": true
+          },
+          "offer_intent": {
+            "$ref": "#/components/schemas/Intent"
+          },
+          "lookup_key": {
+            "type": "string"
+          },
+          "context_key": {
+            "type": "string"
+          },
+          "publication_receipt": {
+            "$ref": "#/components/schemas/PublicationReceipt"
+          }
+        }
+      },
+      "NodeError": {
+        "type": "object",
+        "required": [
+          "ok",
+          "error"
+        ],
+        "properties": {
+          "ok": {
+            "const": false
+          },
+          "error": {
+            "enum": [
+              "busy",
+              "central_unavailable",
+              "conflict",
+              "not_found",
+              "invalid_request",
+              "unsupported_client",
+              "unauthorized",
+              "not_allowed",
+              "storage_full",
+              "resident_capacity",
+              "root_capacity",
+              "market_member_capacity",
+              "billing_capacity",
+              "device_key_capacity",
+              "session_capacity",
+              "login_replay_quota",
+              "login_rate_limited",
+              "ws_ticket_rate_limited",
+              "rpc_correlation_conflict",
+              "invalid_relay_response",
+              "node_unavailable",
+              "fdl_canon_error"
+            ],
+            "description": "400: fix the request. 401: obtain a valid key. 403: check access and plan limits. 409: read the current publication, or use a distinct x-request-id for concurrent requests. 429: retry later. 502 or 503: the outcome is unknown — read your intents before repeating."
+          },
+          "admission_refusal": {
+            "$ref": "#/components/schemas/AdmissionRefusal"
+          }
+        },
+        "description": "A refusal before effect. 503 central_unavailable: the fate is unknown — read your offers before repeating.",
+        "additionalProperties": true
+      },
+      "WithdrawRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "intent",
+          "persona_id",
+          "market_scope",
+          "expected_publication_ref_hex"
+        ],
+        "properties": {
+          "intent": {
+            "$ref": "#/components/schemas/Intent"
+          },
+          "persona_id": {
+            "$ref": "#/components/schemas/PersonaId"
+          },
+          "market_scope": {
+            "$ref": "#/components/schemas/MarketScope"
+          },
+          "expected_publication_ref_hex": {
+            "$ref": "#/components/schemas/PublicationRef"
+          }
+        }
+      },
+      "WithdrawReply": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "withdraw"
+        ],
+        "properties": {
+          "ok": {
+            "const": true
+          },
+          "withdraw": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "fate"
+                ],
+                "properties": {
+                  "fate": {
+                    "const": "removed"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "fate",
+                  "current"
+                ],
+                "properties": {
+                  "fate": {
+                    "const": "superseded"
+                  },
+                  "current": {
+                    "$ref": "#/components/schemas/PublicationRef"
+                  }
+                }
+              }
+            ],
+            "description": "removed: the publication is withdrawn. superseded: a newer publication of the intent is current — read it before withdrawing it."
+          }
+        }
+      },
+      "Status": {
+        "type": "object",
+        "required": [
+          "central_url"
+        ],
+        "properties": {
+          "central_url": {
+            "type": "string",
+            "description": "Base address for your intents and tickets."
+          }
+        },
+        "additionalProperties": true
+      },
+      "OfferView": {
+        "type": "object",
+        "required": [
+          "have",
+          "want",
+          "min_fill_ppm",
+          "has_alternatives",
+          "constraints"
+        ],
+        "properties": {
+          "have": {
+            "type": "object",
+            "properties": {
+              "chain": {
+                "type": "string"
+              },
+              "token": {
+                "type": "string"
+              },
+              "amount": {
+                "$ref": "#/components/schemas/Atoms"
+              }
+            },
+            "additionalProperties": true
+          },
+          "want": {
+            "type": "object",
+            "properties": {
+              "chain": {
+                "type": "string"
+              },
+              "token": {
+                "type": "string"
+              },
+              "amount": {
+                "$ref": "#/components/schemas/Atoms"
+              }
+            },
+            "additionalProperties": true
+          },
+          "min_fill_ppm": {
+            "type": "integer"
+          },
+          "has_alternatives": {
+            "type": "boolean"
+          },
+          "constraints": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "slippage_ppm",
+                  "want_any_of"
+                ],
+                "properties": {
+                  "slippage_ppm": {
+                    "type": "integer"
+                  },
+                  "want_any_of": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "additionalProperties": true
+              }
+            ]
+          }
+        },
+        "additionalProperties": true
+      },
+      "OffersPage": {
+        "type": "object",
+        "required": [
+          "items",
+          "next_cursor"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfferRow"
+            }
+          },
+          "next_cursor": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/OfferSeq"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The cursor of the next page; null at the end."
+          }
+        },
+        "additionalProperties": true
+      },
+      "OfferDetail": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "offer_seq",
+              "intent",
+              "market_scope",
+              "publication_ref_hex",
+              "definitions",
+              "offer_view",
+              "lease_state",
+              "lease_until",
+              "market_clock",
+              "lease_span"
+            ],
+            "properties": {
+              "offer_seq": {
+                "$ref": "#/components/schemas/OfferSeq"
+              },
+              "intent": {
+                "$ref": "#/components/schemas/Intent"
+              },
+              "market_scope": {
+                "$ref": "#/components/schemas/MarketScope"
+              },
+              "publication_ref_hex": {
+                "$ref": "#/components/schemas/PublicationRef"
+              },
+              "definitions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AssetDefinition1"
+                },
+                "description": "Asset descriptions for this intent."
+              },
+              "offer_view": {
+                "$ref": "#/components/schemas/OfferView"
+              },
+              "lease_state": {
+                "const": "Active"
+              },
+              "lease_until": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$",
+                "description": "When the publication ends, on the market's clock."
+              },
+              "market_clock": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$",
+                "description": "The market's clock at this reply: lease_until − market_clock is what is left."
+              },
+              "lease_span": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$",
+                "description": "The whole length of the publication, on the market's clock."
+              }
+            },
+            "additionalProperties": true,
+            "description": "A published intent."
+          },
+          {
+            "type": "object",
+            "required": [
+              "offer_seq",
+              "intent",
+              "market_scope",
+              "lease_state"
+            ],
+            "properties": {
+              "offer_seq": {
+                "$ref": "#/components/schemas/OfferSeq"
+              },
+              "intent": {
+                "$ref": "#/components/schemas/Intent"
+              },
+              "market_scope": {
+                "$ref": "#/components/schemas/MarketScope"
+              },
+              "lease_state": {
+                "type": "null"
+              }
+            },
+            "additionalProperties": true,
+            "description": "An intent not in the book: on its way in or out. Read it again later."
+          }
+        ]
+      },
+      "ExecsPage": {
+        "type": "object",
+        "required": [
+          "execs",
+          "continuation"
+        ],
+        "properties": {
+          "execs": {
+            "type": "array",
+            "maxItems": 256,
+            "items": {
+              "type": "object",
+              "required": [
+                "exec_id_hex"
+              ],
+              "properties": {
+                "exec_id_hex": {
+                  "$ref": "#/components/schemas/ExecId"
+                }
+              },
+              "additionalProperties": true
+            },
+            "description": "Newest first."
+          },
+          "continuation": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "state",
+                  "cursor"
+                ],
+                "properties": {
+                  "state": {
+                    "const": "more"
+                  },
+                  "cursor": {
+                    "$ref": "#/components/schemas/Position"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "required": [
+                  "state"
+                ],
+                "properties": {
+                  "state": {
+                    "const": "range_exhausted"
+                  }
+                },
+                "additionalProperties": true
+              }
+            ]
+          },
+          "head": {
+            "$ref": "#/components/schemas/Position",
+            "description": "Only on a first page (no cursor): the newest position. Send it as since later to get only newer tickets."
+          }
+        },
+        "additionalProperties": true
+      },
+      "Outgoing": {
+        "type": "object",
+        "required": [
+          "schema",
+          "exec_id_hex",
+          "outgoing"
+        ],
+        "description": "Legs you send in this ticket and where to.",
+        "properties": {
+          "schema": {
+            "const": "outgoing.v1"
+          },
+          "exec_id_hex": {
+            "$ref": "#/components/schemas/ExecId"
+          },
+          "outgoing": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "leg_index",
+                "asset",
+                "amount_atoms",
+                "recipient_pid_hex",
+                "destination",
+                "definition"
+              ],
+              "properties": {
+                "leg_index": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 11
+                },
+                "asset": {
+                  "$ref": "#/components/schemas/AssetRef"
+                },
+                "amount_atoms": {
+                  "$ref": "#/components/schemas/Atoms"
+                },
+                "recipient_pid_hex": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{32}$"
+                },
+                "destination": {
+                  "type": "object",
+                  "properties": {
+                    "profile": {
+                      "const": "OpaqueUtf8"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                },
+                "definition": {
+                  "$ref": "#/components/schemas/AssetDefinition1"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "CentralError": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "enum": [
+              "busy",
+              "central_unavailable",
+              "conflict",
+              "not_found",
+              "invalid_request",
+              "unsupported_client",
+              "unauthorized",
+              "not_allowed",
+              "storage_full",
+              "resident_capacity",
+              "root_capacity",
+              "market_member_capacity",
+              "billing_capacity",
+              "device_key_capacity",
+              "session_capacity",
+              "login_replay_quota",
+              "login_rate_limited",
+              "ws_ticket_rate_limited",
+              "invalid_limit",
+              "invalid_cursor",
+              "invalid_since",
+              "invalid_exec_id_hex",
+              "exec_not_found",
+              "exec_binding_invalid",
+              "fcap_unsupported_version"
+            ],
+            "description": "400: fix the request (on invalid_cursor or invalid_since, start again from a first page). 401: check the key. 403: check access. 404: the item is unavailable to this key. 409 fcap_unsupported_version: the ticket record is of another version. 429 or 503: wait as Retry-After directs and retry."
+          }
+        },
+        "additionalProperties": true
+      },
+      "SubmitRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offer_fdl",
+          "persona_id",
+          "market_scope",
+          "receive_routes",
+          "asset_definitions"
+        ],
+        "description": "Exactly these fields (deny_unknown_fields). There is no replacement or renewal: withdraw, then publish again.",
+        "properties": {
+          "offer_fdl": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32768,
+            "contentMediaType": "application/json",
+            "contentSchema": {
+              "$ref": "#/components/schemas/Offer"
+            }
+          },
+          "persona_id": {
+            "$ref": "#/components/schemas/PersonaId"
+          },
+          "market_scope": {
+            "$ref": "#/components/schemas/MarketScope"
+          },
+          "receive_routes": {
+            "type": "array",
+            "maxItems": 65,
+            "items": {
+              "$ref": "#/components/schemas/ReceiveRoute"
+            }
+          },
+          "asset_definitions": {
+            "type": "array",
+            "maxItems": 66,
+            "items": {
+              "$ref": "#/components/schemas/AssetDefinition1"
+            },
+            "description": "Exactly one per af1:/au1: asset of have, want and want_any_of (a network ref takes none); no extra ones. Every af1:/au1: token in the offer and the routes must equal the token of its definition here."
+          }
+        }
+      },
+      "OfferSeq": {
+        "type": "string",
+        "pattern": "^(0|[1-9][0-9]{0,19})$",
+        "description": "The intent's issue number in your list, decimal. Read an intent by it."
+      },
+      "Position": {
+        "type": "string",
+        "pattern": "^(?:[0-9a-f]{16})+$",
+        "maxLength": 4096,
+        "description": "A position in your ticket journal. Save it and send it back unchanged."
+      },
+      "OfferRow": {
+        "type": "object",
+        "required": [
+          "offer_seq",
+          "intent",
+          "market_scope"
+        ],
+        "properties": {
+          "offer_seq": {
+            "$ref": "#/components/schemas/OfferSeq"
+          },
+          "intent": {
+            "$ref": "#/components/schemas/Intent"
+          },
+          "market_scope": {
+            "$ref": "#/components/schemas/MarketScope"
+          }
+        },
+        "additionalProperties": true
+      },
+      "WsTicket": {
+        "type": "object",
+        "required": [
+          "ticket",
+          "expires_in_ms"
+        ],
+        "properties": {
+          "ticket": {
+            "type": "string",
+            "description": "One connection of the event socket, 43 characters."
+          },
+          "expires_in_ms": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "WsTicketLimit": {
+        "type": "object",
+        "required": [
+          "error",
+          "retryAfterMs"
+        ],
+        "properties": {
+          "error": {
+            "const": "ws_ticket_rate_limited"
+          },
+          "retryAfterMs": {
+            "type": "integer",
+            "minimum": 1000
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

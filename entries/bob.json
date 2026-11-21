@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BOB",
+  "aliases": [],
+  "name": "Bolivian Boliviano",
+  "decimals": 2,
+  "icon": "icons/bob.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:6432123a9783125954e2965df82fa75f9783ca6f69f3fd7c30edc3ee2c08b23d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BOB",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BOB (Boliviano), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/bo.svg, unmodified."
+}

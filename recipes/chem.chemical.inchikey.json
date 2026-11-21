@@ -1,0 +1,56 @@
+{
+  "family": "chem.chemical",
+  "name": "A substance by InChIKey and grade",
+  "symbol": "CHEM",
+  "icon": "icons/recipes/chemical.svg",
+  "kind": "Fungible",
+  "source": "spec:inchikey",
+  "unit": "mg",
+  "decimals": 6,
+  "display": "kg",
+  "instrument": "{substance}",
+  "params": [
+    {
+      "id": "substance",
+      "name": "InChIKey",
+      "type": "code",
+      "check": "inchikey",
+      "to": "instrument",
+      "example": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N"
+    },
+    {
+      "id": "grade",
+      "name": "Grade",
+      "type": "choice",
+      "options": [
+        {
+          "id": "technical",
+          "name": "Technical grade"
+        },
+        {
+          "id": "reagent",
+          "name": "Reagent grade (ACS)"
+        },
+        {
+          "id": "pharmacopoeia",
+          "name": "Pharmacopoeia grade (USP, Ph. Eur.)"
+        },
+        {
+          "id": "food",
+          "name": "Food grade (FCC)"
+        },
+        {
+          "id": "electronic",
+          "name": "Electronic grade"
+        },
+        {
+          "id": "analytical",
+          "name": "Analytical standard"
+        }
+      ],
+      "to": "term:grade",
+      "example": "technical"
+    }
+  ],
+  "note": "The substance by its IUPAC InChIKey (open), the purity by grade; the amount in milligrams, shown in kilograms. CAS numbers are not used: the registry is licensed."
+}

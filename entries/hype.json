@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "HYPE",
+  "aliases": [],
+  "name": "Hyperliquid",
+  "decimals": 18,
+  "icon": "icons/hype.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:52281c20d919ab167667946416530138bb09379dbe99c63cafc5292af0c755e1"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:999/slip44:2457",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 999: Hyperliquid docs, https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/hyperevm (Mainnet, Chain ID: 999; HYPE is the native gas token, 18 decimals), and eth_chainId via rpc.hyperliquid.xyz/evm returned 0x3e7 on 2026-11-01; ethereum-lists/chains gives 999 to Wanchain Testnet (scripts/network-evidence.mjs). 1 atom = 10^-18 HYPE. Coin type 2457: SLIP-0044 (HYPE). Icon: web3icons 4.0.58 (MIT), networks/branded/hyper-evm.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

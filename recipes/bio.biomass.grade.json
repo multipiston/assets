@@ -1,0 +1,74 @@
+{
+  "family": "bio.biomass",
+  "name": "Wood pellets of a certified class",
+  "symbol": "PELLETS",
+  "icon": "icons/recipes/pellets.svg",
+  "kind": "Fungible",
+  "source": "spec:bio-grade",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade",
+      "type": "choice",
+      "options": [
+        {
+          "id": "enplus-a1",
+          "name": "ENplus A1 wood pellets",
+          "short": "ENplus A1"
+        },
+        {
+          "id": "enplus-a2",
+          "name": "ENplus A2 wood pellets",
+          "short": "ENplus A2"
+        },
+        {
+          "id": "enplus-b",
+          "name": "ENplus B wood pellets",
+          "short": "ENplus B"
+        },
+        {
+          "id": "iso-17225-2-i2",
+          "name": "Industrial wood pellets, ISO 17225-2 class I2",
+          "short": "I2 pellets"
+        },
+        {
+          "id": "iso-17225-2-i3",
+          "name": "Industrial wood pellets, ISO 17225-2 class I3",
+          "short": "I3 pellets"
+        },
+        {
+          "id": "iso-17225-2-i1",
+          "name": "Industrial wood pellets, ISO 17225-2 class I1",
+          "short": "I1 pellets"
+        }
+      ],
+      "to": "instrument",
+      "example": "enplus-a1"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "NLRTM"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    }
+  ],
+  "note": "A grade by its standard (pulp: air-dry tonnes; pellets: ENplus or ISO 17225-2 class), at a place named by UN/LOCODE, in a month (UTC); the amount in kg, shown in tonnes. Sources: https://enplus-pellets.eu/wp-content/uploads/Documents/ENplus%C2%AE-ST-1001-ENplus%C2%AE-wood-pellets-%E2%80%93-Requirements-for-companies.pdf https://www.iso.org/standard/76088.html"
+}

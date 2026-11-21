@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.backed-token",
+  "symbol": "XAUT",
+  "aliases": [],
+  "name": "Tether Gold",
+  "decimals": 6,
+  "icon": "icons/xaut-bnb.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:b88a87813276de4d5bb3c61ae3172231d652998ece4fbc7e5761e16c7239e606"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:56/erc20:0x21caef8a43163eea865baee23b9c2e327696a3bf",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Tether, https://tether.to/en/supported-protocols/ (BNB Smart Chain), retrieved 2026-11-01: BNB Smart Chain Support for TETHER tokens in your project can be added with the following contract addresses: XAUT contract address: https://bscscan.com/token/0x21cAef8A43163Eea865baeE23b9C2E327696A3b. Decimals 6: the issuer, and decimals() on the chain. Icon: web3icons 4.0.58 (MIT), tokens/branded/XAUT.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

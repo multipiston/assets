@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "XRP",
+  "aliases": [],
+  "name": "XRP",
+  "decimals": 6,
+  "icon": "icons/xrp.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:9b5d1057b33bc83718fa3486e9e8578d396365a9eda8f6cf8ccfba8668f1df8c"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "xrpl:0/slip44:144",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Id verbatim in namespaces xrpl/caip19.md (native XRP on livenet). 1 atom = 1 drop. Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/xrp.svg, unmodified."
+}

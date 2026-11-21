@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "AED",
+  "aliases": [],
+  "name": "United Arab Emirates Dirham",
+  "decimals": 2,
+  "icon": "icons/aed.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:b3bb3a018d9deb77f7e25e6ace28ba27f38c938e25807bc346f60f498c1d17f7"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "AED",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 AED (UAE Dirham), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ae.svg, unmodified."
+}

@@ -1,0 +1,288 @@
+{
+  "family": "energy.power",
+  "name": "Electricity in a European bidding zone",
+  "symbol": "POWER",
+  "icon": "icons/recipes/power.svg",
+  "kind": "Fungible",
+  "source": "spec:entsoe-eic",
+  "unit": "kWh",
+  "decimals": 3,
+  "display": "MWh",
+  "instrument": "{zone}",
+  "params": [
+    {
+      "id": "zone",
+      "name": "Bidding zone",
+      "type": "choice",
+      "options": [
+        {
+          "id": "10Y1001A1001A82H",
+          "name": "Germany-Luxembourg bidding zone",
+          "short": "DE-LU"
+        },
+        {
+          "id": "10YAT-APG------L",
+          "name": "Austria",
+          "short": "AT"
+        },
+        {
+          "id": "10YBE----------2",
+          "name": "Belgium",
+          "short": "BE"
+        },
+        {
+          "id": "10YNL----------L",
+          "name": "Netherlands",
+          "short": "NL"
+        },
+        {
+          "id": "10YFR-RTE------C",
+          "name": "France",
+          "short": "FR"
+        },
+        {
+          "id": "10YCZ-CEPS-----N",
+          "name": "Czech Republic",
+          "short": "CZ"
+        },
+        {
+          "id": "10YSK-SEPS-----K",
+          "name": "Slovak Republic",
+          "short": "SK"
+        },
+        {
+          "id": "10YHU-MAVIR----U",
+          "name": "Hungary",
+          "short": "HU"
+        },
+        {
+          "id": "10YPL-AREA-----S",
+          "name": "Poland",
+          "short": "PL"
+        },
+        {
+          "id": "10YSI-ELES-----O",
+          "name": "Slovenia",
+          "short": "SI"
+        },
+        {
+          "id": "10YHR-HEP------M",
+          "name": "Croatia",
+          "short": "HR"
+        },
+        {
+          "id": "10YRO-TEL------P",
+          "name": "Romania",
+          "short": "RO"
+        },
+        {
+          "id": "10YCA-BULGARIA-R",
+          "name": "Bulgaria",
+          "short": "BG"
+        },
+        {
+          "id": "10YGR-HTSO-----Y",
+          "name": "Greece",
+          "short": "GR"
+        },
+        {
+          "id": "10YES-REE------0",
+          "name": "Spain",
+          "short": "ES"
+        },
+        {
+          "id": "10YPT-REN------W",
+          "name": "Portugal",
+          "short": "PT"
+        },
+        {
+          "id": "10YDK-1--------W",
+          "name": "Denmark DK1 (West)",
+          "short": "DK1"
+        },
+        {
+          "id": "10YDK-2--------M",
+          "name": "Denmark DK2 (East)",
+          "short": "DK2"
+        },
+        {
+          "id": "10YNO-1--------2",
+          "name": "Norwegian Area Elspot Area 1",
+          "short": "NO1"
+        },
+        {
+          "id": "10YNO-2--------T",
+          "name": "Norwegian Area Elspot Area 2",
+          "short": "NO2"
+        },
+        {
+          "id": "10YNO-3--------J",
+          "name": "Norwegian Area Elspot Area 3",
+          "short": "NO3"
+        },
+        {
+          "id": "10YNO-4--------9",
+          "name": "Norwegian Area Elspot Area 4",
+          "short": "NO4"
+        },
+        {
+          "id": "10Y1001A1001A48H",
+          "name": "Norwegian Area Elspot Area 5",
+          "short": "NO5"
+        },
+        {
+          "id": "10Y1001A1001A44P",
+          "name": "Swedish Elspot Area 1",
+          "short": "SE1"
+        },
+        {
+          "id": "10Y1001A1001A45N",
+          "name": "Swedish Elspot Area 2",
+          "short": "SE2"
+        },
+        {
+          "id": "10Y1001A1001A46L",
+          "name": "Swedish Elspot Area 3",
+          "short": "SE3"
+        },
+        {
+          "id": "10Y1001A1001A47J",
+          "name": "Swedish Elspot Area 4",
+          "short": "SE4"
+        },
+        {
+          "id": "10YFI-1--------U",
+          "name": "Finland",
+          "short": "FI"
+        },
+        {
+          "id": "10Y1001A1001A39I",
+          "name": "Estonia",
+          "short": "EE"
+        },
+        {
+          "id": "10YLV-1001A00074",
+          "name": "Latvia",
+          "short": "LV"
+        },
+        {
+          "id": "10YLT-1001A0008Q",
+          "name": "Lithuania",
+          "short": "LT"
+        },
+        {
+          "id": "10Y1001A1001A73I",
+          "name": "Italy North",
+          "short": "IT-NORD"
+        },
+        {
+          "id": "10Y1001A1001A70O",
+          "name": "Italy Centre-North",
+          "short": "IT-CNOR"
+        },
+        {
+          "id": "10Y1001A1001A71M",
+          "name": "Italy Centre-South",
+          "short": "IT-CSUD"
+        },
+        {
+          "id": "10Y1001A1001A788",
+          "name": "Italy South",
+          "short": "IT-SUD"
+        },
+        {
+          "id": "10Y1001C--00096J",
+          "name": "Italy Calabria",
+          "short": "IT-CALA"
+        },
+        {
+          "id": "10Y1001A1001A75E",
+          "name": "Italy Sicily",
+          "short": "IT-SICI"
+        },
+        {
+          "id": "10Y1001A1001A74G",
+          "name": "Italy Sardinia",
+          "short": "IT-SARD"
+        },
+        {
+          "id": "10YGB----------A",
+          "name": "Great Britain",
+          "short": "GB"
+        },
+        {
+          "id": "10YCH-SWISSGRIDZ",
+          "name": "Switzerland",
+          "short": "CH"
+        },
+        {
+          "id": "10Y1001A1001A59C",
+          "name": "Ireland and Northern Ireland (Single Electricity Market)",
+          "short": "IE-SEM"
+        },
+        {
+          "id": "10YCS-SERBIATSOV",
+          "name": "Serbia",
+          "short": "RS"
+        },
+        {
+          "id": "10YCS-CG-TSO---S",
+          "name": "Montenegro",
+          "short": "ME"
+        },
+        {
+          "id": "10YMK-MEPSO----8",
+          "name": "North Macedonia",
+          "short": "MK"
+        },
+        {
+          "id": "10YAL-KESH-----5",
+          "name": "Albania",
+          "short": "AL"
+        },
+        {
+          "id": "10Y1001C--00100H",
+          "name": "Kosovo* (control area / bidding zone)",
+          "short": "XK"
+        }
+      ],
+      "to": "instrument",
+      "example": "10Y1001A1001A82H"
+    },
+    {
+      "id": "period",
+      "name": "Delivery period",
+      "type": "period",
+      "clock": "CET",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    },
+    {
+      "id": "profile",
+      "name": "Load profile",
+      "type": "choice",
+      "options": [
+        {
+          "id": "base",
+          "name": "Baseload: every hour of the period"
+        },
+        {
+          "id": "peak",
+          "name": "Peakload: 08:00-20:00, Monday to Friday"
+        }
+      ],
+      "to": "term:profile",
+      "example": "base"
+    }
+  ],
+  "note": "Delivery in a bidding zone named by its ENTSO-E EIC code (check character verified), over a period of the coupled market day in CET: Great Britain and Ireland included, whose day-ahead day starts 23:00 UK time. Peakload as the exchanges define it in CET. The amount in kWh, shown in MWh (a quarter-hour of 1 MW is 250 kWh). Sources: https://eepublicdownloads.blob.core.windows.net/cio-lio/csv/Y_eicCodes.csv"
+}

@@ -1,0 +1,131 @@
+{
+  "family": "ip.design",
+  "name": "An industrial design registration",
+  "symbol": "DESIGN",
+  "icon": "icons/recipes/design.svg",
+  "kind": "Unique",
+  "source": "registry:design",
+  "unit": "item",
+  "instrument": "{office}:{number}",
+  "params": [
+    {
+      "id": "office",
+      "name": "Office (WIPO ST.3)",
+      "type": "choice",
+      "options": [
+        {
+          "id": "US",
+          "name": "United States Patent and Trademark Office",
+          "short": "USPTO"
+        },
+        {
+          "id": "EP",
+          "name": "European Patent Office",
+          "short": "EPO"
+        },
+        {
+          "id": "EM",
+          "name": "European Union Intellectual Property Office",
+          "short": "EUIPO"
+        },
+        {
+          "id": "WO",
+          "name": "World Intellectual Property Organization (International Bureau)",
+          "short": "WIPO"
+        },
+        {
+          "id": "CN",
+          "name": "China National Intellectual Property Administration",
+          "short": "CNIPA"
+        },
+        {
+          "id": "JP",
+          "name": "Japan Patent Office",
+          "short": "JPO"
+        },
+        {
+          "id": "KR",
+          "name": "Korean Intellectual Property Office",
+          "short": "KIPO"
+        },
+        {
+          "id": "RU",
+          "name": "Federal Service for Intellectual Property (Rospatent)",
+          "short": "Rospatent"
+        },
+        {
+          "id": "GB",
+          "name": "UK Intellectual Property Office (operating name of The Patent",
+          "short": "UKIPO"
+        },
+        {
+          "id": "DE",
+          "name": "German Patent and Trade Mark Office",
+          "short": "DPMA"
+        },
+        {
+          "id": "FR",
+          "name": "Institut national de la propriété industrielle (France)",
+          "short": "INPI (FR)"
+        },
+        {
+          "id": "IN",
+          "name": "Office of the Controller General of Patents, Designs and Trade",
+          "short": "CGPDTM"
+        },
+        {
+          "id": "BR",
+          "name": "Instituto Nacional da Propriedade Industrial (Brazil)",
+          "short": "INPI (BR)"
+        },
+        {
+          "id": "CA",
+          "name": "Canadian Intellectual Property Office",
+          "short": "CIPO"
+        },
+        {
+          "id": "AU",
+          "name": "IP Australia",
+          "short": "IP Australia"
+        },
+        {
+          "id": "EA",
+          "name": "Eurasian Patent Office (Eurasian Patent Organization)",
+          "short": "EAPO"
+        },
+        {
+          "id": "CH",
+          "name": "Swiss Federal Institute of Intellectual Property",
+          "short": "IPI"
+        },
+        {
+          "id": "IT",
+          "name": "Ufficio Italiano Brevetti e Marchi",
+          "short": "UIBM"
+        },
+        {
+          "id": "ES",
+          "name": "Oficina Española de Patentes y Marcas",
+          "short": "OEPM"
+        },
+        {
+          "id": "MX",
+          "name": "Instituto Mexicano de la Propiedad Industrial",
+          "short": "IMPI"
+        }
+      ],
+      "to": "instrument",
+      "example": "EM"
+    },
+    {
+      "id": "number",
+      "name": "Registration number",
+      "type": "text",
+      "max": 32,
+      "case": "upper",
+      "to": "instrument",
+      "example": "008000001-0001"
+    }
+  ],
+  "note": "The design by office code (WIPO ST.3) and the office's registration number."
+}

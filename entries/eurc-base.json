@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "EURC",
+  "aliases": [],
+  "name": "EURC",
+  "decimals": 6,
+  "icon": "icons/eurc-base.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:c190e85d9066ad79bcc4ce8065bf736c967c11acfb2bc9eaf2af0c15953f126b"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:8453/erc20:0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/eurc-contract-addresses (Base), retrieved 2026-11-01. Decimals 6: the issuer, and decimals() via mainnet.base.org. Icon: web3icons 4.0.58 (MIT), tokens/branded/EURC.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

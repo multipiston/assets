@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "XOF",
+  "aliases": [],
+  "name": "West African CFA Franc",
+  "decimals": 0,
+  "icon": "icons/xof.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:08e749d55b2e47c0656b02b34d660ad5178b892795b5796738257f625390593d"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "XOF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 XOF (CFA Franc BCEAO), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon drawn for this catalog: the franc sign."
+}

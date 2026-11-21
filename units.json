@@ -1,0 +1,320 @@
+{
+  "atom": {
+    "symbol": "atom",
+    "name": "the smallest unit the network counts (wei, satoshi, lamport)",
+    "quantity": "on-chain"
+  },
+  "minor-unit": {
+    "symbol": "minor unit",
+    "name": "the ISO 4217 minor unit of the currency (cent, penny, kopeck)",
+    "quantity": "money"
+  },
+  "nominal": {
+    "symbol": "nominal",
+    "name": "one unit of the issue currency at face value",
+    "quantity": "money",
+    "base": "nominal",
+    "exp": 0
+  },
+  "share": {
+    "symbol": "share",
+    "name": "share",
+    "quantity": "count",
+    "base": "share",
+    "exp": 0
+  },
+  "fund-unit": {
+    "symbol": "fund unit",
+    "name": "fund unit",
+    "quantity": "count",
+    "base": "fund-unit",
+    "exp": 0
+  },
+  "receipt": {
+    "symbol": "receipt",
+    "name": "depositary receipt",
+    "quantity": "count",
+    "base": "receipt",
+    "exp": 0
+  },
+  "contract": {
+    "symbol": "contract",
+    "name": "contract",
+    "quantity": "count",
+    "base": "contract",
+    "exp": 0
+  },
+  "item": {
+    "symbol": "item",
+    "name": "item",
+    "quantity": "count",
+    "base": "item",
+    "exp": 0
+  },
+  "license": {
+    "symbol": "licence",
+    "name": "licence",
+    "quantity": "count",
+    "base": "license",
+    "exp": 0
+  },
+  "container": {
+    "symbol": "container",
+    "name": "container",
+    "quantity": "count",
+    "base": "container",
+    "exp": 0
+  },
+  "allowance": {
+    "symbol": "allowance",
+    "name": "allowance (1 t CO2e)",
+    "quantity": "count",
+    "base": "allowance",
+    "exp": 0
+  },
+  "tco2e": {
+    "symbol": "t CO₂e",
+    "name": "tonne of CO2 equivalent",
+    "quantity": "emissions",
+    "base": "tco2e",
+    "exp": 0
+  },
+  "certificate": {
+    "symbol": "certificate",
+    "name": "certificate (1 MWh)",
+    "quantity": "count",
+    "base": "certificate",
+    "exp": 0
+  },
+  "credit": {
+    "symbol": "credit",
+    "name": "credit",
+    "quantity": "count",
+    "base": "credit",
+    "exp": 0
+  },
+  "token": {
+    "symbol": "token",
+    "name": "model token",
+    "quantity": "count",
+    "base": "token",
+    "exp": 0
+  },
+  "million-tokens": {
+    "symbol": "M tokens",
+    "name": "million model tokens",
+    "quantity": "count",
+    "base": "token",
+    "exp": 6
+  },
+  "gpu-hour": {
+    "symbol": "GPU-h",
+    "name": "GPU-hour",
+    "quantity": "time",
+    "base": "gpu-hour",
+    "exp": 0
+  },
+  "hour": {
+    "symbol": "h",
+    "name": "hour of the resource",
+    "quantity": "time",
+    "base": "hour",
+    "exp": 0
+  },
+  "mg": {
+    "symbol": "mg",
+    "name": "milligram",
+    "quantity": "mass",
+    "base": "g",
+    "exp": -3
+  },
+  "g": {
+    "symbol": "g",
+    "name": "gram",
+    "quantity": "mass",
+    "base": "g",
+    "exp": 0
+  },
+  "kg": {
+    "symbol": "kg",
+    "name": "kilogram",
+    "quantity": "mass",
+    "base": "g",
+    "exp": 3
+  },
+  "t": {
+    "symbol": "t",
+    "name": "tonne",
+    "quantity": "mass",
+    "base": "g",
+    "exp": 6
+  },
+  "milli-troy-ounce": {
+    "symbol": "0.001 troy oz",
+    "name": "0.001 fine troy ounce",
+    "quantity": "mass",
+    "base": "troy-ounce",
+    "exp": -3
+  },
+  "troy-ounce": {
+    "symbol": "troy oz",
+    "name": "fine troy ounce",
+    "quantity": "mass",
+    "base": "troy-ounce",
+    "exp": 0
+  },
+  "Wh": {
+    "symbol": "Wh",
+    "name": "watt-hour",
+    "quantity": "energy",
+    "base": "Wh",
+    "exp": 0
+  },
+  "kWh": {
+    "symbol": "kWh",
+    "name": "kilowatt-hour",
+    "quantity": "energy",
+    "base": "Wh",
+    "exp": 3
+  },
+  "MWh": {
+    "symbol": "MWh",
+    "name": "megawatt-hour",
+    "quantity": "energy",
+    "base": "Wh",
+    "exp": 6
+  },
+  "GWh": {
+    "symbol": "GWh",
+    "name": "gigawatt-hour",
+    "quantity": "energy",
+    "base": "Wh",
+    "exp": 9
+  },
+  "milli-therm": {
+    "symbol": "0.001 therm",
+    "name": "0.001 therm",
+    "quantity": "energy",
+    "base": "therm",
+    "exp": -3
+  },
+  "therm": {
+    "symbol": "therm",
+    "name": "therm",
+    "quantity": "energy",
+    "base": "therm",
+    "exp": 0
+  },
+  "kBtu": {
+    "symbol": "kBtu",
+    "name": "thousand British thermal units",
+    "quantity": "energy",
+    "base": "Btu",
+    "exp": 3
+  },
+  "MMBtu": {
+    "symbol": "MMBtu",
+    "name": "million British thermal units",
+    "quantity": "energy",
+    "base": "Btu",
+    "exp": 6
+  },
+  "ml": {
+    "symbol": "ml",
+    "name": "millilitre",
+    "quantity": "volume",
+    "base": "l",
+    "exp": -3
+  },
+  "l": {
+    "symbol": "l",
+    "name": "litre",
+    "quantity": "volume",
+    "base": "l",
+    "exp": 0
+  },
+  "m3": {
+    "symbol": "m³",
+    "name": "cubic metre",
+    "quantity": "volume",
+    "base": "l",
+    "exp": 3
+  },
+  "bbl": {
+    "symbol": "bbl",
+    "name": "barrel (42 US gallons)",
+    "quantity": "volume",
+    "base": "bbl",
+    "exp": 0
+  },
+  "MB": {
+    "symbol": "MB",
+    "name": "megabyte",
+    "quantity": "data",
+    "base": "byte",
+    "exp": 6
+  },
+  "GB": {
+    "symbol": "GB",
+    "name": "gigabyte",
+    "quantity": "data",
+    "base": "byte",
+    "exp": 9
+  },
+  "TB": {
+    "symbol": "TB",
+    "name": "terabyte",
+    "quantity": "data",
+    "base": "byte",
+    "exp": 12
+  },
+  "m2": {
+    "symbol": "m²",
+    "name": "square metre",
+    "quantity": "area",
+    "base": "m2",
+    "exp": 0
+  },
+  "ha": {
+    "symbol": "ha",
+    "name": "hectare",
+    "quantity": "area",
+    "base": "m2",
+    "exp": 4
+  },
+  "gal": {
+    "symbol": "gal",
+    "name": "US gallon",
+    "quantity": "volume",
+    "base": "gal",
+    "exp": 0
+  },
+  "lb": {
+    "symbol": "lb",
+    "name": "pound (avoirdupois)",
+    "quantity": "mass",
+    "base": "lb",
+    "exp": 0
+  },
+  "bushel": {
+    "symbol": "bu",
+    "name": "US bushel (as the grain's exchange standard weighs it)",
+    "quantity": "volume",
+    "base": "bushel",
+    "exp": 0
+  },
+  "short-ton": {
+    "symbol": "short ton",
+    "name": "short ton (2000 lb)",
+    "quantity": "mass",
+    "base": "short-ton",
+    "exp": 0
+  },
+  "cwt": {
+    "symbol": "cwt",
+    "name": "US hundredweight (100 lb)",
+    "quantity": "mass",
+    "base": "cwt",
+    "exp": 0
+  }
+}

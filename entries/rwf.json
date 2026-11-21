@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "RWF",
+  "aliases": [],
+  "name": "Rwandan Franc",
+  "decimals": 0,
+  "icon": "icons/rwf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:07cf4af1298700ae3a8a930c6d54d320485aeccaecda905df889b7dd2400c487"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "RWF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 RWF (Rwanda Franc), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/rw.svg, unmodified."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "XCG",
+  "aliases": [],
+  "name": "Caribbean Guilder",
+  "decimals": 2,
+  "icon": "icons/xcg.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:a3536cc30da560e324a4f61172021ffbf020029b095ce049999034ed1752d096"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "XCG",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 XCG (Caribbean Guilder), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0, capitalised. Paid to the details in the receiver's receive route. Icon drawn for this catalog: the guilder sign."
+}

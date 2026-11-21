@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "SCR",
+  "aliases": [],
+  "name": "Seychellois Rupee",
+  "decimals": 2,
+  "icon": "icons/scr.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:6d2ff066cdf6c9ccc6bdc223c9d1fe4c9a4d1962c809e4aefb4ed5a44468ac01"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "SCR",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 SCR (Seychelles Rupee), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/sc.svg, unmodified."
+}

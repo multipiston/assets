@@ -1,0 +1,104 @@
+{
+  "family": "data.dataset",
+  "name": "A dataset release by DOI",
+  "symbol": "DATA",
+  "icon": "icons/recipes/dataset.svg",
+  "kind": "Fungible",
+  "source": "spec:doi",
+  "unit": "license",
+  "instrument": "{doi}",
+  "params": [
+    {
+      "id": "doi",
+      "name": "DOI",
+      "type": "code",
+      "check": "doi",
+      "to": "instrument",
+      "example": "10.5281/zenodo.3243233"
+    },
+    {
+      "id": "license",
+      "name": "Licence (SPDX)",
+      "type": "choice",
+      "options": [
+        {
+          "id": "CC0-1.0",
+          "name": "Creative Commons Zero v1.0 Universal",
+          "short": "CC0"
+        },
+        {
+          "id": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "short": "CC BY 4.0"
+        },
+        {
+          "id": "CC-BY-SA-4.0",
+          "name": "Creative Commons Attribution Share Alike 4.0 International",
+          "short": "CC BY-SA 4.0"
+        },
+        {
+          "id": "CC-BY-NC-4.0",
+          "name": "Creative Commons Attribution Non Commercial 4.0 International",
+          "short": "CC BY-NC 4.0"
+        },
+        {
+          "id": "CC-BY-NC-SA-4.0",
+          "name": "Creative Commons Attribution Non Commercial Share Alike 4.0",
+          "short": "CC BY-NC-SA 4.0"
+        },
+        {
+          "id": "ODbL-1.0",
+          "name": "Open Data Commons Open Database License v1.0",
+          "short": "ODbL"
+        },
+        {
+          "id": "ODC-By-1.0",
+          "name": "Open Data Commons Attribution License v1.0",
+          "short": "ODC-By"
+        },
+        {
+          "id": "PDDL-1.0",
+          "name": "Open Data Commons Public Domain Dedication & License 1.0",
+          "short": "PDDL"
+        },
+        {
+          "id": "CDLA-Permissive-2.0",
+          "name": "Community Data License Agreement Permissive 2.0",
+          "short": "CDLA-Permissive-2.0"
+        },
+        {
+          "id": "CDLA-Permissive-1.0",
+          "name": "Community Data License Agreement Permissive 1.0",
+          "short": "CDLA-Permissive-1.0"
+        },
+        {
+          "id": "CDLA-Sharing-1.0",
+          "name": "Community Data License Agreement Sharing 1.0",
+          "short": "CDLA-Sharing-1.0"
+        },
+        {
+          "id": "C-UDA-1.0",
+          "name": "Computational Use of Data Agreement v1.0",
+          "short": "C-UDA"
+        },
+        {
+          "id": "MIT",
+          "name": "MIT License",
+          "short": "MIT"
+        },
+        {
+          "id": "Apache-2.0",
+          "name": "Apache License 2.0",
+          "short": "Apache-2.0"
+        },
+        {
+          "id": "LicenseRef-proprietary",
+          "name": "Proprietary licence of the seller"
+        }
+      ],
+      "to": "term:license",
+      "example": "CC-BY-4.0"
+    }
+  ],
+  "note": "One licence to the exact release a DOI names; the licence by its SPDX identifier."
+}

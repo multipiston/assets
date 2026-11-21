@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "KAIA",
+  "aliases": [],
+  "name": "Kaia",
+  "decimals": 18,
+  "icon": "icons/kaia.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:47060a80cb4666cf5db345d3c0a7fb5571df42ee5d288b926c79a933652cc34b"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "eip155:8217/slip44:8217",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain 8217: ethereum-lists/chains (chainid.network, 2026-11-01), native KAIA, 18 decimals; 1 atom = 10^-18 KAIA. Coin type 8217: SLIP-0044 (KAIA). Icon: web3icons 4.0.58 (MIT), networks/branded/kaia.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

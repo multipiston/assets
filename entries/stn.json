@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "STN",
+  "aliases": [],
+  "name": "São Tomé & Príncipe Dobra",
+  "decimals": 2,
+  "icon": "icons/stn.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:2e3e639bf5d8beb299b220207dc9e04b9996498fdd408963da221872b1f87f7e"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "STN",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 STN (Dobra), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/st.svg, unmodified."
+}

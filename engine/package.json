@@ -1,0 +1,22 @@
+{
+  "name": "@multipiston/catalog",
+  "version": "1.0.0",
+  "description": "MultiPiston asset SDK: catalog entries, recipes, asset definitions, references and amounts for API requests.",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": ["*.js", "index.d.ts", "README.md"],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.8.0"
+  }
+}

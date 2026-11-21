@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "THB",
+  "aliases": [],
+  "name": "Thai Baht",
+  "decimals": 2,
+  "icon": "icons/thb.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:316ca5d89d3b91c2004aa2d0dea447529e7ff024d3ca89bb2f9f89cbab134cdd"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "THB",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 THB (Baht), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/th.svg, unmodified."
+}

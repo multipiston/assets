@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "MUR",
+  "aliases": [],
+  "name": "Mauritian Rupee",
+  "decimals": 2,
+  "icon": "icons/mur.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:aeb4b107db12a661b20d17fc228b3762251a987e8000909b904feab115bd8023"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "MUR",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 MUR (Mauritius Rupee), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/mu.svg, unmodified."
+}

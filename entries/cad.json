@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "CAD",
+  "aliases": [],
+  "name": "Canadian Dollar",
+  "decimals": 2,
+  "icon": "icons/cad.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:e58717d704f9376aa0e415ffe32375faca7e7b000523610a001170a40ebfbe15"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "CAD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 CAD (Canadian Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ca.svg, unmodified."
+}

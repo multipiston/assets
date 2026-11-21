@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "SSP",
+  "aliases": [],
+  "name": "South Sudanese Pound",
+  "decimals": 2,
+  "icon": "icons/ssp.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:487d10c510f2c9f4811503c99aaabcb6abd42709aba7b6eb7cc8f073610d1129"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "SSP",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 SSP (South Sudanese Pound), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/ss.svg, unmodified."
+}

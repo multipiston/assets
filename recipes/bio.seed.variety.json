@@ -1,0 +1,54 @@
+{
+  "family": "bio.seed",
+  "name": "Seed of a registered variety",
+  "symbol": "SEED",
+  "icon": "icons/recipes/grain.svg",
+  "kind": "Fungible",
+  "source": "spec:upov",
+  "unit": "kg",
+  "decimals": 3,
+  "display": "t",
+  "instrument": "{species}:{variety}",
+  "params": [
+    {
+      "id": "species",
+      "name": "Species",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Triticum aestivum"
+    },
+    {
+      "id": "variety",
+      "name": "Variety denomination",
+      "type": "text",
+      "max": 64,
+      "case": "keep",
+      "to": "instrument",
+      "example": "Skagen"
+    },
+    {
+      "id": "category",
+      "name": "Seed category",
+      "type": "choice",
+      "options": [
+        {
+          "id": "basic",
+          "name": "Basic seed"
+        },
+        {
+          "id": "certified-1",
+          "name": "Certified seed, first generation"
+        },
+        {
+          "id": "certified-2",
+          "name": "Certified seed, second generation"
+        }
+      ],
+      "to": "term:category",
+      "example": "certified-1"
+    }
+  ],
+  "note": "The species by scientific name and the variety by its registered denomination (UPOV); the seed category per the OECD seed schemes."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "BMD",
+  "aliases": [],
+  "name": "Bermudan Dollar",
+  "decimals": 2,
+  "icon": "icons/bmd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:a9a756c9e7dc8b56abab71b5ee6749cb196b06828523661fbab13eb7ce14c5ef"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "BMD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 BMD (Bermudian Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/bm.svg, unmodified."
+}

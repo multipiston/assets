@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "ALGO",
+  "aliases": [],
+  "name": "Algo",
+  "decimals": 6,
+  "icon": "icons/algo.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:8b00206fdf9888af2d87ddfb27a838c8135f0966d908734d4858898f9c3cbac6"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73k/slip44:283",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces algorand/caip2.md (Algorand). Decimals 6: https://dev.algorand.co/concepts/transactions/uri-scheme/. Coin type 283: SLIP-0044 (ALGO). Icon: cryptocurrency-icons 0.18.1 (CC0-1.0), svg/color/algo.svg, unmodified."
+}

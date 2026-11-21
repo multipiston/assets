@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "SGD",
+  "aliases": [],
+  "name": "Singapore Dollar",
+  "decimals": 2,
+  "icon": "icons/sgd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:b739308b22bb5f971da71089c8f4f45aeb290fc77191ead83df61d4f9328c2f5"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "SGD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 SGD (Singapore Dollar), minor unit 10^-2 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/sg.svg, unmodified."
+}

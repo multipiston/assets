@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "EURC",
+  "aliases": [],
+  "name": "EURC",
+  "decimals": 6,
+  "icon": "icons/eurc-avalanche.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:7bb072c2eea400094ba08120849eb4115cfc523ed042c6bda0c1d59523f42d03"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:43114/erc20:0xc891eb4cbdeff6e073e859e987815ed1505c2acd",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Circle, https://developers.circle.com/stablecoins/eurc-contract-addresses (Avalanche C-Chain), retrieved 2026-11-01. Decimals 6: the issuer, and decimals() via api.avax.network. Icon: web3icons 4.0.58 (MIT), tokens/branded/EURC.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}

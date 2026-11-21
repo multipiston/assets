@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "DJF",
+  "aliases": [],
+  "name": "Djiboutian Franc",
+  "decimals": 0,
+  "icon": "icons/djf.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:2b1114631dd6692ec8755f9636f72d665963bef218d6f674595fb5a337e8c8bc"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "DJF",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 DJF (Djibouti Franc), minor unit 10^-0 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/dj.svg, unmodified."
+}

@@ -1,0 +1,47 @@
+{
+  "family": "agro.feed-food",
+  "name": "Feed of a standard grade",
+  "symbol": "FEED",
+  "icon": "icons/recipes/grain.svg",
+  "kind": "Fungible",
+  "source": "spec:agri-grade",
+  "instrument": "{grade}",
+  "params": [
+    {
+      "id": "grade",
+      "name": "Grade and standard",
+      "type": "choice",
+      "options": [
+        {
+          "id": "cbot-soybean-meal-47-5",
+          "name": "Soybean meal 47.5% protein (CBOT Soybean Meal)",
+          "short": "SBM 47.5",
+          "unit": "short-ton"
+        }
+      ],
+      "to": "instrument",
+      "example": "cbot-soybean-meal-47-5"
+    },
+    {
+      "id": "port",
+      "name": "Delivery place (UN/LOCODE)",
+      "type": "place",
+      "authority": "unlocode",
+      "to": "place",
+      "example": "USNOL"
+    },
+    {
+      "id": "month",
+      "name": "Delivery month",
+      "type": "period",
+      "clock": "UTC",
+      "day_start": 0,
+      "grains": [
+        "month"
+      ],
+      "to": "period",
+      "example": "2027-03"
+    }
+  ],
+  "note": "A grade as its standard or exchange rulebook defines it, delivered at a place named by UN/LOCODE in a month (UTC); the amount in the grade's own unit of trade (bushels, pounds, short tons, or tonnes in kg). Sources: https://www.cmegroup.com/notices/ser/2016/11/SER-7800R.pdf"
+}

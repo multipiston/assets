@@ -1,0 +1,83 @@
+{
+  "family": "energy.power",
+  "name": "Electricity at a US hub (Pacific time)",
+  "symbol": "POWER",
+  "icon": "icons/recipes/power.svg",
+  "kind": "Fungible",
+  "source": "spec:us-power-hub-pt",
+  "unit": "kWh",
+  "decimals": 3,
+  "display": "MWh",
+  "instrument": "{hub}",
+  "params": [
+    {
+      "id": "hub",
+      "name": "Hub",
+      "type": "choice",
+      "options": [
+        {
+          "id": "caiso-sp15",
+          "name": "CAISO SP15 Trading Hub",
+          "short": "SP15"
+        },
+        {
+          "id": "caiso-np15",
+          "name": "CAISO NP15 Trading Hub",
+          "short": "NP15"
+        },
+        {
+          "id": "caiso-zp26",
+          "name": "CAISO ZP26 Trading Hub",
+          "short": "ZP26"
+        },
+        {
+          "id": "mid-c",
+          "name": "Mid-Columbia (bilateral, non-ISO)",
+          "short": "Mid-C"
+        },
+        {
+          "id": "palo-verde",
+          "name": "Palo Verde (bilateral, non-ISO)",
+          "short": "Palo Verde"
+        }
+      ],
+      "to": "instrument",
+      "example": "caiso-sp15"
+    },
+    {
+      "id": "period",
+      "name": "Delivery period",
+      "type": "period",
+      "clock": "PT",
+      "day_start": 0,
+      "grains": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "to": "period",
+      "example": "2026-12"
+    },
+    {
+      "id": "profile",
+      "name": "Load profile",
+      "type": "choice",
+      "options": [
+        {
+          "id": "base",
+          "name": "Baseload (7x24)"
+        },
+        {
+          "id": "peak",
+          "name": "Peak (5x16, hours ending 08-23, Monday to Friday)"
+        }
+      ],
+      "to": "term:profile",
+      "example": "base"
+    }
+  ],
+  "note": "Delivery at a US trading hub as its ISO names it, the day in the hub's market time (prevailing local time). The amount in kWh, shown in MWh. Sources: https://opensource.gridstatus.io/en/v0.29.1/autoapi/gridstatus/caiso/index.html https://www.eia.gov/electricity/wholesale/"
+}

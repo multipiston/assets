@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "money.bank-transfer",
+  "symbol": "IQD",
+  "aliases": [],
+  "name": "Iraqi Dinar",
+  "decimals": 3,
+  "icon": "icons/iqd.svg",
+  "ref": {
+    "chain": "money.bank-transfer",
+    "token": "af1:08c09ece2aac38d1e8bb6921b25b53886174bfa0a59631f0a9b8f4fd77f81c7b"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "money.bank-transfer",
+    "instrument": "IQD",
+    "source": "spec:iso4217",
+    "kind": "Fungible",
+    "unit": "minor-unit",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "ISO 4217 IQD (Iraqi Dinar), minor unit 10^-3 (List One of 2026-09-17). Name: Unicode CLDR 47.0. Paid to the details in the receiver's receive route. Icon: circle-flags 2.8.3 (MIT), flags/iq.svg, unmodified."
+}

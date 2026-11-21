@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDG",
+  "aliases": [],
+  "name": "Global Dollar",
+  "decimals": 6,
+  "icon": "icons/usdg-robinhood.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:74162d7888880d918223fa5c175a9b6d1090c403fb3a44981d84caa8dfa05331"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:4663/erc20:0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Paxos, https://docs.paxos.com/guides/stablecoin/usdg/mainnet (Robinhood Chain), retrieved 2026-11-01. Decimals 6: decimals() via rpc.mainnet.chain.robinhood.com. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.stablecoin",
+  "symbol": "USDS",
+  "aliases": [],
+  "name": "USDS",
+  "decimals": 18,
+  "icon": "icons/usds.svg",
+  "ref": {
+    "chain": "crypto.token",
+    "token": "af1:6bc14994a230f80f68a309fa5e9e53b5c5281197808af96d17a18801070244c3"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.token",
+    "instrument": "eip155:1/erc20:0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Address: Sky (formerly MakerDAO), https://chainlog.skyeco.com/api/mainnet/active.json (Ethereum), retrieved 2026-11-01. Decimals 18: decimals() via ethereum-rpc.publicnode.com. Icon drawn for this catalog: the dollar sign (no open icon of the token)."
+}

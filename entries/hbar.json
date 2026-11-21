@@ -1,0 +1,24 @@
+{
+  "status": "listed",
+  "family": "crypto.coin",
+  "symbol": "HBAR",
+  "aliases": [],
+  "name": "Hbar",
+  "decimals": 8,
+  "icon": "icons/hbar.svg",
+  "ref": {
+    "chain": "crypto.coin",
+    "token": "af1:64919a95cd15aa9be72784b4a9726a78be1d04984803e8afbe4809b9cb44de7f"
+  },
+  "definition": {
+    "version": 1,
+    "domain": "crypto.coin",
+    "instrument": "hedera:mainnet/slip44:3030",
+    "source": "spec:caip19",
+    "kind": "Fungible",
+    "unit": "atom",
+    "terms": []
+  },
+  "replaced_by": null,
+  "note": "Chain: namespaces hedera/caip2.md (Hedera). Decimals 8: https://docs.hedera.com/hedera/sdks-and-apis/sdks/hbars. Coin type 3030: SLIP-0044 (HBAR). Icon: web3icons 4.0.58 (MIT), tokens/branded/HBAR.svg, class and style attributes removed, placed on the catalog disc (scripts/icon-disc.mjs)."
+}
