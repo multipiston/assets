@@ -1,4 +1,4 @@
-// @multipiston/catalog — types of the MultiPiston asset rules (index.js).
+// @multipiston/catalog — types of the Multipiston asset rules (index.js).
 
 export type AssetTerm = { readonly key: string; readonly value: string };
 // An inline asset: its identity is the exact ref of these fields.

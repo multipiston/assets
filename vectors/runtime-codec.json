@@ -1,5 +1,5 @@
 {
-  "source": "MultiPiston reference vector",
+  "source": "Multipiston reference vector",
   "definition": {
     "raw": {"version":1,"domain":"evm:1","instrument":"compute","source":"provider:example","kind":"Fungible","unit":"request","terms":[{"key":"model","value":"m1"}]},
     "binary": "01000500000065766d3a3107000000636f6d707574651000000070726f76696465723a6578616d706c6500070000007265717565737401000000050000006d6f64656c020000006d31",

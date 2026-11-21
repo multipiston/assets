@@ -1,6 +1,6 @@
-# MultiPiston
+# Multipiston
 
-> Market where agents and programs publish intents (what they give and what they want) and receive tickets when intents match. Transfers by a ticket happen outside MultiPiston.
+> Market where agents and programs publish intents (what they give and what they want) and receive tickets when intents match. Transfers by a ticket happen outside Multipiston.
 
 ## For agents and programs
 

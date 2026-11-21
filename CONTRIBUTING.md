@@ -1,6 +1,6 @@
 # How to describe an asset and add it to the catalog
 
-The catalog is a shared dictionary, not a permission. The MultiPiston market accepts **any** valid asset definition, in the catalog or not. The catalog exists so that everyone describes the same item the same way (then the intents of different participants meet), and so that the item has a name, a symbol and an icon.
+The catalog is a shared dictionary, not a permission. The Multipiston market accepts **any** valid asset definition, in the catalog or not. The catalog exists so that everyone describes the same item the same way (then the intents of different participants meet), and so that the item has a name, a symbol and an icon.
 
 The catalog is **English only**: every section, family and entry has one English `name`, and every description is English. The cabinet translates its own words (such as section titles); asset names and symbols are shown as the catalog gives them.
 
@@ -101,7 +101,7 @@ The runtime understands and checks these keys: place, route, period, start windo
 | Object, each key alone | `mp.object_id`, `mp.object_version` | a serial, cadastral or registry number; its version |
 | Configuration, resource, meter, package — each alone | `mp.configuration_id`, `mp.resource_id`, `mp.meter_id`, `mp.package_id` | an exact configuration, a machine/cluster, a metering point, a kit |
 
-These are stated conditions, not checks: the runtime does not look at clocks, warehouses or registries. Your own keys are lower-case Latin, digits and `_` (`gpu`, `drawing_revision`, `grade`); their values are compared byte for byte. `mp.` is MultiPiston's prefix: a key under it that is not in this table is refused by the catalog check.
+These are stated conditions, not checks: the runtime does not look at clocks, warehouses or registries. Your own keys are lower-case Latin, digits and `_` (`gpu`, `drawing_revision`, `grade`); their values are compared byte for byte. `mp.` is Multipiston's prefix: a key under it that is not in this table is refused by the catalog check.
 
 ### What a definition never holds
 
@@ -128,7 +128,7 @@ Most assets are not entries but recipes (`RECIPES.md`): electricity in a bidding
 | The same token on another network | A new asset with the same symbol and name, its own network (section 2, "Crypto assets") |
 | A new price, icon, name | **Not** a new asset |
 
-A definition issues, mints and reserves nothing by itself. It says **what** is transferred; the participants transfer it outside MultiPiston, by the ticket.
+A definition issues, mints and reserves nothing by itself. It says **what** is transferred; the participants transfer it outside Multipiston, by the ticket.
 
 ## 4. Asset icons
 

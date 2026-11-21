@@ -1,6 +1,6 @@
 # @multipiston/catalog
 
-Use the asset SDK to choose a catalog entry, fill in a recipe or prepare your own asset for an API request. It returns the `definition` and `{ chain, token }` reference you send to MultiPiston.
+Use the asset SDK to choose a catalog entry, fill in a recipe or prepare your own asset for an API request. It returns the `definition` and `{ chain, token }` reference you send to Multipiston.
 
 Install `multipiston-catalog-<version>.tgz` from a catalog release. On the catalog website, browser modules are available at `/catalog/engine/index.js`.
 
@@ -64,6 +64,6 @@ toAtoms("12.5004", 3);  // null: choose an amount in whole units
 fromAtoms("12500", 3); // "12.5"
 ```
 
-## Send to MultiPiston
+## Send to Multipiston
 
 Use `ref.chain` and `ref.token` in the intent's `have`, `want` or `want_any_of`. Include each referenced asset's definition once in `asset_definitions`, and a receive route for each asset you accept. Follow `/agents.html#publishing` for `prepare`, `commit` and recovery with `reconcile`.

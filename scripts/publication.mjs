@@ -53,7 +53,7 @@ export const dataViews = (catalog, { sha256, base }) => {
     const family = families.get(r.family);
     files[`catalog/recipes/${r.id}.json`] = json({
       schema: "multipiston.catalog-recipe/1", catalog_version: catalog.version,
-      family_name: family.name, family_identity: family.identity.replace("the runtime does not compute payouts", "MultiPiston does not calculate payouts"), units: unitsOfRecipe(r).map((id) => ({ id, ...units.get(id) })), ...r,
+      family_name: family.name, family_identity: family.identity.replace("the runtime does not compute payouts", "Multipiston does not calculate payouts"), units: unitsOfRecipe(r).map((id) => ({ id, ...units.get(id) })), ...r,
     });
     files[`catalog/recipes/${r.id}.md`] = recipeCard(catalog, r, family);
   }
@@ -99,7 +99,7 @@ const paramRule = (p) =>
           : p.type === "period" ? `a period label (${p.grains.join(", ")}), ${p.clock} clock, the day starts at ${String(p.day_start).padStart(2, "0")}:00`
             : `a day YYYY-MM-DD, ${p.clock} clock`;
 const recipeUsage = (r) => `import { loadCatalog } from "@multipiston/catalog";
-const site = "https://<site>"; // Replace with your MultiPiston site's address.
+const site = "https://<site>"; // Replace with your Multipiston site's address.
 const catalog = loadCatalog(await (await fetch(site + "/catalog/catalog.json")).json());
 const built = catalog.build(${JSON.stringify(r.id)}, ${JSON.stringify(r.example.values)});
 if (!built.ok) throw new Error("Check parameters: " + built.invalid.join(", "));
@@ -153,12 +153,12 @@ export const IMPORT_MAP = JSON.stringify({ imports: {
 } });
 // The frame of a page: the name after its title and its footer — the catalog's, or the rules'.
 const CATALOG = {
-  name: "MultiPiston asset catalog",
-  footer: `MultiPiston asset catalog. A dictionary, not a permission: any valid description works in an intent right away. Machine-readable: <a href="/llms.txt">llms.txt</a> · <a href="/catalog/index.json">index.json</a> · <a href="/catalog/catalog.json">catalog.json</a> · <a href="/agents.html">rules for agents</a>.`,
+  name: "Multipiston asset catalog",
+  footer: `Multipiston asset catalog. A dictionary, not a permission: any valid description works in an intent right away. Machine-readable: <a href="/llms.txt">llms.txt</a> · <a href="/catalog/index.json">index.json</a> · <a href="/catalog/catalog.json">catalog.json</a> · <a href="/agents.html">rules for agents</a>.`,
 };
 const RULES = {
-  name: "MultiPiston",
-  footer: `MultiPiston. Machine-readable: <a href="/llms.txt">llms.txt</a> · <a href="/openapi.json">openapi.json</a> · the asset catalog: <a href="/catalog/index.html">for people</a>, <a href="/catalog/catalog.json">catalog.json</a>.`,
+  name: "Multipiston",
+  footer: `Multipiston. Machine-readable: <a href="/llms.txt">llms.txt</a> · <a href="/openapi.json">openapi.json</a> · the asset catalog: <a href="/catalog/index.html">for people</a>, <a href="/catalog/catalog.json">catalog.json</a>.`,
 };
 // The rules read as a document: the contents first, a line over each section, code set apart.
 const RULES_STYLE = `main{max-width:860px}p,li{max-width:76ch}li{margin:4px 0}
@@ -183,7 +183,7 @@ const shortRef = (ref) => `${ref.chain} ${ref.token.slice(0, 10)}…${ref.token.
 export const manualPages = (catalog, rules, site = null) => {
   const files = {};
   files["agents.html"] = page("Rules for agents and programs",
-    "How an agent or a program connects to MultiPiston, describes an asset, publishes, renews and withdraws an intent, and reads its tickets.",
+    "How an agent or a program connects to Multipiston, describes an asset, publishes, renews and withdraws an intent, and reads its tickets.",
     rules.trimEnd(), "/agents.html", "/openapi.json", `<style>${RULES_STYLE}</style>`, RULES);
   const families = byId(catalog.families);
   const sectionOf = (family) => catalog.sections.find((s) => s.id === families.get(family).section);
@@ -191,8 +191,8 @@ export const manualPages = (catalog, rules, site = null) => {
   const entriesOf = (family) => catalog.assets.filter((a) => a.family === family && a.status === "listed");
 
   // The hub: how assets work, the order of choice, the sections.
-  files["catalog/index.html"] = page("Asset catalog", "Every asset of MultiPiston in one shape: entries, recipes and family templates, with the rule to describe any asset.", `
-<p class="crumbs muted">MultiPiston</p>
+  files["catalog/index.html"] = page("Asset catalog", "Every asset of Multipiston in one shape: entries, recipes and family templates, with the rule to describe any asset.", `
+<p class="crumbs muted">Multipiston</p>
 <h1>Asset catalog</h1>
 <p class="muted">Version ${catalog.version} · ${esc(catalog.updated)} · ${catalog.assets.length} entries · ${catalog.recipes.length} recipes · ${catalog.sections.length} sections · ${catalog.families.length} families</p>
 <h2>How an asset is described</h2>
@@ -268,13 +268,13 @@ const ref = deriveAsset(definition);
 
   for (const s of catalog.sections) {
     const fams = catalog.families.filter((f) => f.section === s.id);
-    files[`catalog/sections/${s.id}.html`] = page(s.name, `${s.name}: ${fams.length} families of the MultiPiston asset catalog, their entries and recipes.`, `
+    files[`catalog/sections/${s.id}.html`] = page(s.name, `${s.name}: ${fams.length} families of the Multipiston asset catalog, their entries and recipes.`, `
 <p class="crumbs muted"><a href="/catalog/index.html">Asset catalog</a></p>
 <h1>${esc(s.name)}</h1>
 ${fams.map((f) => {
       const entries = entriesOf(f.id), recipes = recipesOf(f.id);
       return `<h2 id="${esc(f.id)}">${esc(f.name)} <span class="badge">${esc(f.id)}</span></h2>
-<p class="muted">${esc(f.identity.replace("the runtime does not compute payouts", "MultiPiston does not calculate payouts"))}</p>
+<p class="muted">${esc(f.identity.replace("the runtime does not compute payouts", "Multipiston does not calculate payouts"))}</p>
 ${recipes.length ? `<div class="panel"><table><tr><th>Recipe</th><th></th></tr>${recipes.map((r) => `<tr><td><div class="row">${icon(r.icon)}<a href="/catalog/recipes/${esc(r.id)}.html">${esc(r.name)}</a></div></td><td>${r.template ? '<span class="badge">template</span>' : ""}${r.regulated ? ' <span class="badge">regulated</span>' : ""}</td></tr>`).join("")}</table></div>` : ""}
 ${entries.length ? `<div class="panel"><table><tr><th>Entry</th><th>Name</th><th>Ref</th></tr>${entries.map((a) => `<tr><td><div class="row">${icon(a.icon)}<a href="/catalog/entries/${esc(a.id)}.json">${esc(a.symbol)}</a></div></td><td>${esc(a.name)}${a.network ? ` <span class="muted">· ${esc(catalog.networks.find((n) => n.id === a.network)?.name ?? a.network)}</span>` : ""}</td><td><code>${esc(shortRef(a.ref))}</code></td></tr>`).join("")}</table></div>` : ""}`;
     }).join("\n")}
@@ -284,7 +284,7 @@ ${entries.length ? `<div class="panel"><table><tr><th>Entry</th><th>Name</th><th
   for (const r of catalog.recipes) {
     const family = families.get(r.family), section = sectionOf(r.family);
     const built = buildDefinition(r, r.example.values);
-    files[`catalog/recipes/${r.id}.html`] = page(r.name, `${r.name}: the MultiPiston recipe ${r.id} — parameters, options, a worked example and its exact ref.`, `
+    files[`catalog/recipes/${r.id}.html`] = page(r.name, `${r.name}: the Multipiston recipe ${r.id} — parameters, options, a worked example and its exact ref.`, `
 <p class="crumbs muted"><a href="/catalog/index.html">Asset catalog</a> › <a href="/catalog/sections/${esc(section.id)}.html">${esc(section.name)}</a> › <a href="/catalog/sections/${esc(section.id)}.html#${esc(r.family)}">${esc(family.name)}</a></p>
 <div class="row">${icon(r.icon)}<h1>${esc(r.name)}</h1></div>
 <p><span class="badge">${esc(r.symbol)}</span> <span class="badge">${r.template ? "family template" : "recipe"}</span>${r.regulated ? ' <span class="badge">regulated</span>' : ""} <code>${esc(r.id)}</code></p>

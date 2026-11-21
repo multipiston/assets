@@ -266,7 +266,7 @@ export const checkSource = (src) => {
       for (const f of ["instrument", "source", "unit"]) if (!text(e.definition[f], 256)) say(at, `definition.${f}: no edge spaces or control characters`);
       for (const t of e.definition.terms) {
         if (!text(t.key, 64) || CONTROL.test(t.value) || LONE.test(t.value)) say(at, `term ${t.key}: no edge spaces or control characters`);
-        // mp.* is MultiPiston's: the runtime would read a new typed key differently from today.
+        // mp.* is Multipiston's: the runtime would read a new typed key differently from today.
         if (t.key.startsWith("mp.") && !TYPED_TERMS.includes(t.key)) say(at, `term ${t.key}: mp.* is reserved for the typed terms`);
       }
       if (!/^(spec|issuer|registry):\S/.test(e.definition.source)) say(at, "definition.source: spec:…, issuer:… or registry:…");

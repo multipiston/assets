@@ -122,7 +122,7 @@ test("the views of a release say the same as the catalog, in smaller files", () 
 // Every page of the site links only files the release publishes.
 test("the rules for agents: one page of the site, every link of it reaches its place", () => {
   const pages = manualPages(catalog, rules), page = pages["agents.html"];
-  assert.ok(page.startsWith("<!doctype html>") && page.includes("<title>Rules for agents and programs — MultiPiston</title>"));
+  assert.ok(page.startsWith("<!doctype html>") && page.includes("<title>Rules for agents and programs — Multipiston</title>"));
   assert.ok(page.includes('<link rel="canonical" href="/agents.html"><link rel="alternate" type="application/json" href="/openapi.json">'));
   assert.ok(!/<script/i.test(page));
   assert.ok(!/\*\*|```|\]\(|^#+ /m.test(rules), "no Markdown left");

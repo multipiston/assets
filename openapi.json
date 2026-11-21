@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "MultiPiston API for programs",
+    "title": "Multipiston API for programs",
     "version": "2026-11-21",
     "description": "Publish and withdraw intents, read your intents and tickets, and follow events of your key. Authenticate calls with Authorization: Bearer <MULTIPISTON_API_KEY> (mpk1…, 130 characters); do not combine a key with DPoP. Instructions: /agents.html. Asset catalog: /catalog/catalog.json. Responses can contain other fields; use the fields documented here. Every error code is one of the closed lists of NodeError, CentralError and AdmissionRefusal."
   },

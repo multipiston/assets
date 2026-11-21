@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "multipiston.catalog/3",
-  "title": "MultiPiston asset catalog",
+  "title": "Multipiston asset catalog",
   "description": "A shared dictionary of exact asset descriptions, in English. Not a permission: the market accepts any valid description. Trust an entry only after recomputing its ref.",
   "type": "object",
   "additionalProperties": false,

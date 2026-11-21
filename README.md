@@ -1,6 +1,6 @@
 # multipiston-catalog
 
-The MultiPiston asset catalog: exact asset definitions, recipes that describe every asset of a kind in one shape, 200 families and the rules for agents and programs. In English only. This repository is the source of truth; the site, the cabinet and agents read only signed releases.
+The Multipiston asset catalog: exact asset definitions, recipes that describe every asset of a kind in one shape, 200 families and the rules for agents and programs. In English only. This repository is the source of truth; the site, the cabinet and agents read only signed releases.
 
 **The catalog is a dictionary, not a permission.** The market accepts any valid asset definition. The catalog exists so that everyone describes one item the same way, and so that the item has a name and an icon. The runtime does not read the catalog.
 
@@ -56,7 +56,7 @@ Earlier versions and icons are never deleted: an old link keeps working.
 
 ## How to check a release
 
-1. The signature `catalog.json.minisig` — with the MultiPiston public key: it is given here and in `/agents.html` (the owner creates the key; until then releases are unsigned).
+1. The signature `catalog.json.minisig` — with the Multipiston public key: it is given here and in `/agents.html` (the owner creates the key; until then releases are unsigned).
 2. `version` is not lower than the one already known.
 3. Every `ref` is recomputed from its `definition` (`engine/definition.js`).
 4. Repeatability: `node scripts/build.mjs <dir>` on the tag gives the same bytes.

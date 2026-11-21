@@ -1,7 +1,7 @@
 {
   "name": "@multipiston/catalog",
   "version": "1.0.0",
-  "description": "MultiPiston asset SDK: catalog entries, recipes, asset definitions, references and amounts for API requests.",
+  "description": "Multipiston asset SDK: catalog entries, recipes, asset definitions, references and amounts for API requests.",
   "private": true,
   "type": "module",
   "main": "./index.js",
